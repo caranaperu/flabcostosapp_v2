@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-01-20T04:30:53 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_1" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b76cceb2-1003-4572-a49b-9f477028d227">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="clabs.xml"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="ireport.jasperserver.url" value="http://192.168.0.5:8080/jasperserver/"/>
+	<property name="ireport.jasperserver.user" value="jasperadmin"/>
+	<property name="ireport.jasperserver.report.resource" value="/reports/dblabs/costo_insumo_xls_rpt_files/main_jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/reports/dblabs/costo_insumo_xls_rpt"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="p_insumo_id" class="java.lang.Integer"/>
+	<parameter name="p_date_from" class="java.sql.Date"/>
+	<parameter name="p_date_to" class="java.sql.Date"/>
+	<queryString>
+		<![CDATA[select i.insumo_codigo,
+       i.insumo_descripcion,
+       insumo_history_fecha,
+       insumo_history_id,
+       ih.insumo_tipo,
+       case when ih.insumo_tipo != 'PR' then
+            ti.tinsumo_descripcion
+       else 'Producto'
+       end as tinsumo_descripcion,
+       ih.tcostos_codigo,
+       case when ih.insumo_tipo != 'PR' then
+            tc.tcostos_descripcion
+       else NULL
+       end as tcostos_descripcion,
+       um.unidad_medida_descripcion,
+       case when tc.tcostos_indirecto = TRUE then
+            null
+       else ih.insumo_merma
+       end as insumo_merma,
+       ih.insumo_costo,
+       mo.moneda_descripcion as moneda_costo_descripcion,
+       case when  tc.tcostos_indirecto = TRUE then
+            null
+       else ih.insumo_precio_mercado
+       end as insumo_precio_mercado
+from tb_insumo_history ih
+inner join tb_insumo i on i.insumo_id = ih.insumo_id
+inner join tb_tinsumo ti on ti.tinsumo_codigo = ih.tinsumo_codigo
+inner join tb_tcostos tc on tc.tcostos_codigo = ih.tcostos_codigo
+inner join tb_unidad_medida um on um.unidad_medida_codigo = ih.unidad_medida_codigo_costo
+inner join tb_moneda mo on mo.moneda_codigo = ih.moneda_codigo_costo
+where ih.insumo_id = $P{p_insumo_id} and insumo_history_fecha between  $P{p_date_from}  and  $P{p_date_to}  
+order by ih.insumo_id,insumo_history_fecha,insumo_history_id]]>
+	</queryString>
+	<field name="insumo_codigo" class="java.lang.String"/>
+	<field name="insumo_descripcion" class="java.lang.String"/>
+	<field name="insumo_history_fecha" class="java.sql.Timestamp"/>
+	<field name="insumo_history_id" class="java.lang.Integer"/>
+	<field name="insumo_tipo" class="java.lang.String"/>
+	<field name="tinsumo_descripcion" class="java.lang.String"/>
+	<field name="tcostos_codigo" class="java.lang.String"/>
+	<field name="tcostos_descripcion" class="java.lang.String"/>
+	<field name="unidad_medida_descripcion" class="java.lang.String"/>
+	<field name="insumo_merma" class="java.math.BigDecimal"/>
+	<field name="insumo_costo" class="java.math.BigDecimal"/>
+	<field name="moneda_costo_descripcion" class="java.lang.String"/>
+	<field name="insumo_precio_mercado" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="17" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="0" y="0" width="802" height="12" uuid="ce864f22-b40a-4fcf-9ace-c32ab23de8fb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Historico De Costos entre "+new SimpleDateFormat("dd-MMM-yyyy").format($P{p_date_from})+" al "+new SimpleDateFormat("dd-MMM-yyyy").format($P{p_date_to})]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="15" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<staticText>
+				<reportElement x="0" y="0" width="82" height="15" uuid="787bde4e-8316-496f-9f9b-30cc1a47c23c"/>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Codigo ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="82" y="0" width="80" height="15" uuid="039d48aa-f686-4c59-a3d5-3c7c2730417c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Descripcion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="162" y="0" width="80" height="15" uuid="e878bb31-4a56-4b53-bdfd-613bfe057070"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="242" y="0" width="80" height="15" uuid="0019fd61-9d7c-4196-a0af-ad5613c0fb59">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="322" y="0" width="80" height="15" uuid="82e96316-a57e-4313-b0a7-eacb50822531">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Tipo Costos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="402" y="0" width="80" height="15" uuid="cbb91f08-a054-41d5-972f-14369e07d1ce"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Unidad Medida]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="482" y="0" width="80" height="15" uuid="b2b47f2d-cdac-4f60-a99b-1ac2f2303254"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[% Merma]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="562" y="0" width="80" height="15" uuid="a2cb0ba4-bbcd-410d-8cee-ce5c67afa093"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Precio Mercado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="642" y="0" width="80" height="15" uuid="7e16a77c-29a2-4486-8cfd-1c8489f401b0"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Costo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="722" y="0" width="80" height="15" uuid="b513b51a-8c92-4b28-a5bb-0bb6e588785a"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Moneda Costo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<textField>
+				<reportElement x="0" y="0" width="82" height="17" uuid="7855029c-6b0e-4ab9-8be2-cfeac6e2c058"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{insumo_codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="82" y="0" width="80" height="17" uuid="aed6f94b-c089-4611-907d-bda6bc869991">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{insumo_descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="162" y="0" width="80" height="17" uuid="ae24182b-0e86-4338-9439-b57564c1d3ac"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tinsumo_descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="242" y="0" width="80" height="17" uuid="01dc777b-dae4-4a9e-baa8-9e0c4021ddbd">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{insumo_history_fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="322" y="0" width="80" height="17" uuid="6eddcd0f-b59a-46a0-b554-b7819d23cbe2"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tcostos_descripcion} == null ?  "No Aplicable" : $F{tcostos_descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="402" y="0" width="80" height="17" uuid="97b298fa-3bec-4ef4-b32c-9262679aac64"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{unidad_medida_descripcion}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="482" y="0" width="80" height="17" uuid="e641a096-03f5-454c-8bb3-4ed05710402e"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{insumo_merma}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="562" y="0" width="80" height="17" uuid="9d4ff481-8dfa-4cbd-a7ff-2eff25de52d3"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{insumo_precio_mercado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="642" y="0" width="80" height="17" uuid="151ed923-3712-4418-af71-09bcaad9afbe"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{insumo_costo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="722" y="0" width="80" height="17" uuid="ce8d5361-474f-4f76-a6b1-50f3ed42fb95">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{moneda_costo_descripcion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
