@@ -22,6 +22,7 @@ class InsumoModel extends ProductoModel {
     protected $unidad_medida_codigo_ingreso;
     protected $insumo_costo;
     protected $insumo_precio_mercado;
+    protected $insumo_usa_factor_ajuste;
 
 
     /**
@@ -94,5 +95,28 @@ class InsumoModel extends ProductoModel {
      */
     public function get_insumo_costo() : float {
         return $this->insumo_costo;
+    }
+
+    /**
+     * Setea si el insumo esta sujeto a factor de ajuste de costo.
+     *
+     * Si es true se permitira ingresar entradas de importacion (insumo_entries)
+     *
+     * @param boolean $insumo_usa_factor_ajuste true usa factor de ajuste
+     */
+    public function set_insumo_usa_factor_ajuste(bool $insumo_usa_factor_ajuste) : void {
+        $this->insumo_usa_factor_ajuste = self::getAsBool($insumo_usa_factor_ajuste);
+    }
+
+    /**
+     * Retorna insumo esta sujeto a factor de ajuste de costo.
+     *
+     * @return boolean true si usa factor de ajuste..
+     */
+    public function get_insumo_usa_factor_ajuste() : bool {
+        if (!isset($this->insumo_usa_factor_ajuste)) {
+            return false;
+        }
+        return $this->insumo_usa_factor_ajuste;
     }
 }

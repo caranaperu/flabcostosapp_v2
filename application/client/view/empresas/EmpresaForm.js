@@ -40,28 +40,6 @@ isc.WinEmpresaForm.addProperties({
                     colSpan: 4
                 },
                 {
-                    name: "tipo_empresa_codigo",
-                    editorType: "comboBoxExt",
-                    showPending: true,
-                    width: "120",
-                    valueField: "tipo_empresa_codigo",
-                    displayField: "tipo_empresa_descripcion",
-                    optionDataSource: mdl_tipoempresa,
-                    pickListFields: [{
-                        name: "tipo_empresa_codigo",
-                        width: '30%'
-                    }, {
-                        name: "tipo_empresa_descripcion",
-                        width: '70%'
-                    }],
-                    pickListWidth: 260,
-                    completeOnTab: true,
-                    // Solo es pasado al servidor si no existe cache data all en el modelo
-                    // de lo contrario el sort se hace en el lado cliente.
-                    initialSort: [{property: 'tipo_empresa_descripcion'}],
-                    startRow: true
-                },
-                {
                     name: "empresa_direccion",
                     showPending: true,
                     width: "300",

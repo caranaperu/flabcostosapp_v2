@@ -36,11 +36,11 @@ class EmpresaController extends app\common\controller\TSLAppDefaultCRUDControlle
             "paramsList" => [
                 "fetch" => [],
                 "read" => ['empresa_id', 'verifyExist'],
-                "add" => ['empresa_razon_social', 'tipo_empresa_codigo','empresa_ruc', 'empresa_direccion', 'empresa_telefonos', 'empresa_fax', 'empresa_correo', 'activo'],
+                "add" => ['empresa_razon_social', 'empresa_ruc', 'empresa_direccion', 'empresa_telefonos', 'empresa_fax', 'empresa_correo', 'activo'],
                 "del" => ['empresa_id', 'versionId'],
-                "upd" => ['empresa_id', 'empresa_razon_social', 'tipo_empresa_codigo', 'empresa_ruc', 'empresa_direccion', 'empresa_telefonos', 'empresa_fax',  'empresa_correo', 'versionId', 'activo'],
+                "upd" => ['empresa_id', 'empresa_razon_social',  'empresa_ruc', 'empresa_direccion', 'empresa_telefonos', 'empresa_fax',  'empresa_correo', 'versionId', 'activo'],
             ],
-            "paramsFixableToNull" => ['empresa_','tipo_empresa_'],
+            "paramsFixableToNull" => ['empresa_'],
             "paramsFixableToValue" => ["empresa_id" => ["valueToFix" => 'null', "valueToReplace" => NULL, "isID" => true]],
             "paramToMapId" => 'empresa_id'
         ];

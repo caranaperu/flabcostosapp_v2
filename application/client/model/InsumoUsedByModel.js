@@ -33,7 +33,7 @@ isc.RestDataSource.create({
         }
     ],
     fetchDataURL: glb_dataUrl + 'insumoController?op=fetch&libid=SmartClient',
-    addDataURL: glb_dataUrl + 'insumoController?op=add&libid=SmartClient',
-    updateDataURL: glb_dataUrl + 'insumoController?op=upd&libid=SmartClient',
-    removeDataURL: glb_dataUrl + 'insumoController?op=del&libid=SmartClient'
+   // addDataURL: glb_dataUrl + 'insumoController?op=add&libid=SmartClient',
+   // updateDataURL: glb_dataUrl + 'insumoController?op=upd&libid=SmartClient',
+   // removeDataURL: glb_dataUrl + 'insumoController?op=del&libid=SmartClient'
 });

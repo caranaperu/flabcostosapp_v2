@@ -50,35 +50,55 @@ isc.CostosHistoricosReportWindow.addProperties({
                     disabled: true,
                     click: function () {
                         var reportWindow;
-                        // prepara la llamada
-                        var url = glb_reportServerUrl + '/flow.html?_flowId=viewReportFlow&standAlone=false&decorate=no&_flowId=viewReportFlow' +
+                        var forJasper = false;
+                        var url;
+
+                        if (forJasper === true) {
+                            // prepara la llamada
+                            url = glb_reportServerUrl + '/flow.html?_flowId=viewReportFlow&standAlone=false&decorate=no&_flowId=viewReportFlow' +
                                 '&ParentFolderUri=/reports/dblabs&&viewAsDashboardFrame=false&theme=jasper_dark';
 
-                        if (formReportCostosHistoricos.getValue('formato_xls') == false) {
-                            url += '&reportUnit=/reports/dblabs/costo_insumo_rpt';
+                            if (formReportCostosHistoricos.getValue('output_format') !== "formato_xls") {
+                                url += '&reportUnit=/reports/dblabs/costo_insumo_rpt';
+                            } else {
+                                url += '&reportUnit=/reports/dblabs/costo_insumo_xls_rpt&output=xls';
+                            }
+
+                            url += '&p_insumo_id=' + formReportCostosHistoricos.getValue('insumo_id');
+                            if (formReportCostosHistoricos.getValue('fecha_desde') !== undefined && formReportCostosHistoricos.getValue('fecha_desde') !== '') {
+                                url += '&p_date_from=' + formReportCostosHistoricos.getValue('fecha_desde').toSerializeableDate();
+                            }
+                            if (formReportCostosHistoricos.getValue('fecha_hasta') !== undefined && formReportCostosHistoricos.getValue('fecha_hasta') !== '') {
+                                url += '&p_date_to=' + formReportCostosHistoricos.getValue('fecha_hasta').toSerializeableDate();
+                            }
+
+                            // user y password
+                            url += '&j_username=' + glb_reportServerUser;
+                            url += '&j_password=' + glb_reportServerPsw;
                         } else {
-                            url += '&reportUnit=/reports/dblabs/costo_insumo_xls_rpt&output=xls';
-                        }
+                            url = glb_dataUrl + 'reports/rptHistoricoCostosController?op=op_list_historico_costos&libid=SmartClient';
+                            url += '&insumo_id=' + formReportCostosHistoricos.getValue('insumo_id');
+                            if (formReportCostosHistoricos.getValue('fecha_desde') !== undefined && formReportCostosHistoricos.getValue('fecha_desde') !== '') {
+                                url += '&from_date=' + formReportCostosHistoricos.getValue('fecha_desde').toSerializeableDate();
+                            }
+                            if (formReportCostosHistoricos.getValue('fecha_hasta') !== undefined && formReportCostosHistoricos.getValue('fecha_hasta') !== '') {
+                                url += '&to_date=' + formReportCostosHistoricos.getValue('fecha_hasta').toSerializeableDate();
+                            }
 
-                        url += '&p_insumo_id=' + formReportCostosHistoricos.getValue('insumo_id');
-                        if (formReportCostosHistoricos.getValue('fecha_desde') !== undefined && formReportCostosHistoricos.getValue('fecha_desde') !== '') {
-                            url += '&p_date_from=' + formReportCostosHistoricos.getValue('fecha_desde').toSerializeableDate();
-                        }
-                        if (formReportCostosHistoricos.getValue('fecha_hasta') !== undefined && formReportCostosHistoricos.getValue('fecha_hasta') !== '') {
-                            url += '&p_date_to=' + formReportCostosHistoricos.getValue('fecha_hasta').toSerializeableDate();
-                        }
+                            if (formReportCostosHistoricos.getValue('output_format') == "formato_screen") {
+                                url += '&PARAM_toScreen=1';
+                            }
+                            if (formReportCostosHistoricos.getValue('output_format') == "formato_xls") {
+                                url += '&PARAM_toExcel=true';
+                            }
 
-                        // user y password
-                        url += '&j_username=' + glb_reportServerUser;
-                        url += '&j_password=' + glb_reportServerPsw;
+                            reportWindow = isc.ReportsOutputWindow.getInstance(url);
 
-
-                        reportWindow = isc.ReportsOutputWindow.getInstance(url);
-
-                        if (formReportCostosHistoricos.getValue('formato_xls') == true) {
-                            reportWindow .hide();
-                        } else {
-                            reportWindow.show();
+                            if (formReportCostosHistoricos.getValue('output_format') == "formato_xls") {
+                                reportWindow.hide();
+                            } else {
+                                reportWindow.show();
+                            }
                         }
                     }
                 }),
@@ -150,7 +170,16 @@ isc.CostosHistoricosReportWindow.addProperties({
                         }
                         return true;
                     }},
-                {name: "formato_xls", title: 'Para Excel', defaultValue: false, type: 'boolean', length: 50}
+                {name: "output_format",
+                    type: "radioGroup",
+                    colSpan: "*",
+                    required: true,
+                    vertical: false,
+                    valueMap: {"formato_xls":"Para Excel","formato_screen":"Pantalla","formato_printer":"Impresora"},
+                    defaultValue:"formato_screen",
+                    redrawOnChange:true,
+                    title: "Tipo Impresion"
+                },
             ],
             itemChanged: function () {
                 formButtons.getMember(1).setDisabled(!formReportCostosHistoricos.valuesAreValid(false));

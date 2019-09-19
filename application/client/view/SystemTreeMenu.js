@@ -115,6 +115,16 @@ isc.SystemTreeMenu.addProperties({
                 mainWindowClass: 'WinClienteWindow',
                 formWindowClass: 'WinClienteForm'
             });
+        } else if (menuId === 'smn_presentacion') {
+            controller = isc.DefaultController.create({
+                mainWindowClass: 'WinPresentacionWindow',
+                formWindowClass: 'WinPresentacionForm'
+            });
+        } else if (menuId === 'smn_insumo_entries') {
+            controller = isc.DefaultController.create({
+                mainWindowClass: 'WinInsumoEntriesWindow',
+                formWindowClass: 'WinInsumoEntriesForm'
+            });
         }
 
         return controller;

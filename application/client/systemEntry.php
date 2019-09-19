@@ -81,12 +81,18 @@
 
     <SCRIPT SRC=view/insumos/InsumoCostosHistoricosForm.js></SCRIPT>
     <SCRIPT SRC=view/insumos/InsumoUsedByForm.js></SCRIPT>
+    <SCRIPT SRC=view/insumos/InsumoEntriesAssocForm.js></SCRIPT>
     <SCRIPT SRC=./model/InsumoCostosHistoricoModel.js></SCRIPT>
     <SCRIPT SRC=./model/InsumoUsedByModel.js></SCRIPT>
     <SCRIPT SRC=./model/InsumoModel.js></SCRIPT>
     <SCRIPT SRC=./model/InsumoProductoDetalleModel.js></SCRIPT>
+    <SCRIPT SRC=./model/InsumoEntriesModel.js></SCRIPT>
+    <SCRIPT SRC=./model/InsumoEntriesAssocModel.js></SCRIPT>
+
     <SCRIPT SRC=./view/insumos/InsumoWindow.js></SCRIPT>
     <SCRIPT SRC=./view/insumos/InsumoForm.js></SCRIPT>
+    <SCRIPT SRC=./view/insumo_entries/InsumoEntriesWindow.js></SCRIPT>
+    <SCRIPT SRC=./view/insumo_entries/InsumoEntriesForm.js></SCRIPT>
 
     <SCRIPT SRC=./model/ProductoModel.js></SCRIPT>
     <SCRIPT SRC=./model/ProductoDetalleModel.js></SCRIPT>
@@ -118,6 +124,9 @@
     <SCRIPT SRC=./model/InsumoCostosHistoricosReportModel.js></SCRIPT>
     <SCRIPT SRC=./view/reports/CostosHistoricosReportWindow.js></SCRIPT>
 
+    <SCRIPT SRC=./model/PresentacionModel.js></SCRIPT>
+    <SCRIPT SRC=./view/presentacion/PresentacionWindow.js></SCRIPT>
+    <SCRIPT SRC=./view/presentacion/PresentacionForm.js></SCRIPT>
 
 </head>
 <body></body>

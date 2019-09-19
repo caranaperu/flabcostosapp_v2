@@ -22,4 +22,5 @@ $lang['insumo_merma'] = 'Merma';
 $lang['insumo_costo'] = 'Costo';
 $lang['insumo_precio_mercado'] = 'Precio Mercado';
 $lang['moneda_codigo_costo'] = 'Moneda de Costo';
+$lang['insumo_usa_factor_ajuste'] = 'Usa Factor de Ajuste?';
 $lang['versionId'] = 'Version';

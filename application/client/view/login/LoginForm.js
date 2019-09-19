@@ -30,7 +30,7 @@ isc.WinLoginForm.addProperties({
                 {name: "usuarios_password", size: 20, width: 150, endRow: true}
             ],
             postSaveData: function(formMode,data)  {
-                alert(glb_dataUrl + 'systemEntryController?op=fetch&libid=SmartClient');
+                //alert(glb_dataUrl + 'systemEntryController?op=fetchForUser&libid=SmartClient');
                 window.location = glb_dataUrl + 'systemEntryController?op=fetch&libid=SmartClient';
             }
         });

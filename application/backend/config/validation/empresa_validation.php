@@ -20,11 +20,6 @@ $config['v_empresa'] = array(
             'rules' => 'required|max_length[200]'
         ),
         array(
-            'field' => 'tipo_empresa_codigo',
-            'label' => 'lang:tipo_empresa_codigo',
-            'rules' => 'required|max_length[3]'
-        ),
-        array(
             'field' => 'empresa_ruc',
             'label' => 'lang:empresa_ruc',
             'rules' => 'required|numeric|min_length[11]|max_length[11]'
@@ -67,11 +62,6 @@ $config['v_empresa'] = array(
             'field' => 'empresa_razon_social',
             'label' => 'lang:empresa_razon_social',
             'rules' => 'required|max_length[200]'
-        ),
-        array(
-            'field' => 'tipo_empresa_codigo',
-            'label' => 'lang:tipo_empresa_codigo',
-            'rules' => 'required|max_length[3]'
         ),
         array(
             'field' => 'empresa_ruc',

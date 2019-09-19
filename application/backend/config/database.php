@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '192.168.0.5',
+	'hostname' => '192.168.0.7',
 	'username' => 'clabsuser',
 	'password' => 'melivane',
-	'database' => 'db_clabs',
+	'database' => 'db_flabcostos',
 	'dbdriver' => 'postgre',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

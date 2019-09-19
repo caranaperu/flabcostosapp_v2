@@ -15,7 +15,7 @@ isc.InsumoCostosHistoricosForm.addProperties({
     autoCenter: true,
     autoDraw: false,
     autoSize: false,
-    height: 400,
+    height: 415,
     //  width: 870,
     ID: 'InsumoCostosHistoricosFormID',
     infoKey: undefined,

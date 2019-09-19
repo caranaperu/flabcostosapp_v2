@@ -13,13 +13,13 @@
  * Define el directorio base para llamar a las operaciones de
  * datos.
  */
-var glb_dataUrl = '/flabcostosapp/index.php/';
+var glb_dataUrl = '/flabcostosapp_v2/index.php/';
 
 /**
  * @cfg {String} glb_mainUrl
  * Define el directorio base de la aplicacion
  */
-var glb_mainUrl = '/flabcostosapp/';
+var glb_mainUrl = '/flabcostosapp_v2/';
 
 /**
  * @cfg {int} glb_empresaId

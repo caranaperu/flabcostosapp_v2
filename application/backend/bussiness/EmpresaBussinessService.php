@@ -30,7 +30,7 @@ class EmpresaBussinessService extends \app\common\bussiness\TSLAppCRUDBussinessS
         $model = new EmpresaModel();
         // Leo el id enviado en el DTO
         $model->set_empresa_razon_social($dto->getParameterValue('empresa_razon_social'));
-        $model->set_tipo_empresa_codigo($dto->getParameterValue('tipo_empresa_codigo'));
+        $model->set_tipo_empresa_codigo('IMP');
         $model->set_empresa_ruc($dto->getParameterValue('empresa_ruc'));
         $model->set_empresa_direccion($dto->getParameterValue('empresa_direccion'));
         $model->set_empresa_telefonos($dto->getParameterValue('empresa_telefonos'));
@@ -53,7 +53,7 @@ class EmpresaBussinessService extends \app\common\bussiness\TSLAppCRUDBussinessS
         // Leo el id enviado en el DTO
         $model->set_empresa_id($dto->getParameterValue('empresa_id'));
         $model->set_empresa_razon_social($dto->getParameterValue('empresa_razon_social'));
-        $model->set_tipo_empresa_codigo($dto->getParameterValue('tipo_empresa_codigo'));
+        $model->set_tipo_empresa_codigo('IMP');
         $model->set_empresa_ruc($dto->getParameterValue('empresa_ruc'));
         $model->set_empresa_direccion($dto->getParameterValue('empresa_direccion'));
         $model->set_empresa_telefonos($dto->getParameterValue('empresa_telefonos'));

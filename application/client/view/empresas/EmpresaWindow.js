@@ -23,7 +23,7 @@ isc.WinEmpresaWindow.addProperties({
             fields: [
                 {
                     name: "empresa_razon_social",
-                    width: '35%'
+                    width: '40%'
                 },
                 {
                     name: "empresa_ruc",
@@ -31,11 +31,7 @@ isc.WinEmpresaWindow.addProperties({
                 },
                 {
                     name: "empresa_direccion",
-                    width: '35%'
-                },
-                {
-                    name: "tipo_empresa_descripcion",
-                    width: '15s%'
+                    width: '45%'
                 }
             ],
             canReorderFields: false,

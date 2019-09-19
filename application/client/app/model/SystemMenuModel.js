@@ -22,7 +22,7 @@ isc.RestDataSource.create({
         {name: "menu_orden"},
         {name: "activo"}
     ],
-    fetchDataURL: glb_dataUrl + 'systemMenuController?op=fetch&libid=SmartClient&sys_systemcode=' + glb_systemident,
+    fetchDataURL: glb_dataUrl + 'systemMenuController?op=fetch&_operationId=fetchForUser&libid=SmartClient&sys_systemcode=' + glb_systemident,
     operationBindings: [
         {operationType: "fetch", dataProtocol: "postParams"}
     ]});

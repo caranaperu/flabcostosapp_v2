@@ -98,7 +98,9 @@ class TipoInsumoDAO_postgre extends \app\common\dao\TSLAppBasicRecordDAO_postgre
      * @inheritdoc
      */
     protected function getRecordQueryByCode($code,\TSLRequestConstraints &$constraints = NULL, string $subOperation = NULL) : string {
-        return 'select tinsumo_codigo,tinsumo_descripcion,tinsumo_protected,activo,' .
+        // el campo tinsumo_protected es mapeado a 1 o 0 dado que la conversion a booleana del php no funcionaria
+        // correctamente.
+        return 'select tinsumo_codigo,tinsumo_descripcion,case when tinsumo_protected = \'f\' then \'0\' else \'1\' end as tinsumo_protected,activo,' .
                 'xmin as "versionId" from tb_tinsumo where tinsumo_codigo =  \'' . $code . '\'';
     }
 

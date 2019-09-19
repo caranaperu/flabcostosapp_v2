@@ -53,7 +53,16 @@ isc.ReportsOutputWindow.addProperties({
                     click: function () {
                         reportsOutputWindow.hide();
                     }
-                })
+                    }), isc.Button.create({
+                          //ID: "btnExit" + this.ID,
+                          width: '100',
+                          autoDraw: false,
+                          title: "Imprimir",
+                          click: function () {
+                              //reportsOutputWindow.print();
+                              isc.Canvas.printComponents(reportsOutputWindow._htmlPane,{'omitcontrols': ['ul']});
+                          }
+                      })
             ]
         });
 

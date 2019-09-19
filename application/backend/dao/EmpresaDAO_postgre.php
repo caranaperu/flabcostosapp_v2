@@ -43,7 +43,7 @@ class EmpresaDAO_postgre extends \app\common\dao\TSLAppBasicRecordDAO_postgre {
         $sql = 'insert into tb_empresa (empresa_razon_social,tipo_empresa_codigo,empresa_ruc,empresa_direccion,' .
                 'empresa_telefonos,empresa_fax,empresa_correo,activo,usuario) values(' .
                 '\'' . $record->get_empresa_razon_social() . '\',' .
-                '\'' . $record->get_tipo_empresa_codigo() . '\',' .
+                '\'IMP\',' .
                 '\'' . $record->get_empresa_ruc() . '\',' .
                 '\'' . $record->get_empresa_direccion() . '\',' .
                 '\'' . $record->get_empresa_telefonos() . '\',' .
@@ -133,7 +133,7 @@ class EmpresaDAO_postgre extends \app\common\dao\TSLAppBasicRecordDAO_postgre {
         /* @var $record  EmpresaModel  */
         $sql = 'update tb_empresa set empresa_razon_social=\'' . $record->get_empresa_razon_social() . '\'' .
                 ',empresa_ruc=\'' . $record->get_empresa_ruc() . '\'' .
-                ',tipo_empresa_codigo=\'' . $record->get_tipo_empresa_codigo() . '\'' .
+                ',tipo_empresa_codigo=\'IMP\'' .
                 ',empresa_direccion=\'' . $record->get_empresa_direccion() . '\'' .
                 ',empresa_telefonos=\'' . $record->get_empresa_telefonos() . '\'' .
                 ',empresa_fax=\'' . $record->get_empresa_fax() . '\'' .
@@ -145,10 +145,9 @@ class EmpresaDAO_postgre extends \app\common\dao\TSLAppBasicRecordDAO_postgre {
     }
 
     private function _getFecthNormalized() {
-        $sql ='select empresa_id,empresa_razon_social,ep.tipo_empresa_codigo,tipo_empresa_descripcion,empresa_ruc,empresa_direccion,' .
+        $sql ='select empresa_id,empresa_razon_social,ep.tipo_empresa_codigo,empresa_ruc,empresa_direccion,' .
             'empresa_telefonos,empresa_fax,empresa_correo,ep.activo,ep.xmin as "versionId" '.
-            'from  tb_empresa ep '.
-            'inner join tb_tipo_empresa te on te.tipo_empresa_codigo = ep.tipo_empresa_codigo';
+            'from  tb_empresa ep ';
         return $sql;
     }
 

@@ -66,8 +66,8 @@
 switch (ENVIRONMENT)
 {
 	case 'development':
-		//error_reporting(-1);
-        error_reporting(0);
+		error_reporting(E_ALL);
+        //error_reporting(0);
 		ini_set('display_errors', 0);
 	break;
 
@@ -115,7 +115,7 @@ $system_path = '/var/www/common/system';
  *
  * NO TRAILING SLASH!
  */
-	$application_folder = '/var/www/flabcostosapp/application/backend';
+	$application_folder = '/var/www/flabcostosapp_v2/application/backend';
 
 /*
  *---------------------------------------------------------------

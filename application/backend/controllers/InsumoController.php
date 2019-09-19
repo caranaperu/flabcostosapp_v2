@@ -35,9 +35,9 @@ class InsumoController extends app\common\controller\TSLAppDefaultCRUDController
             "paramsList" => [
                 "fetch" => [],
                 "read" => ['insumo_id', 'verifyExist'],
-                "add" => ['empresa_id','insumo_tipo', 'insumo_codigo', 'insumo_descripcion','tinsumo_codigo','tcostos_codigo','unidad_medida_codigo_ingreso','unidad_medida_codigo_costo','insumo_merma','insumo_costo','insumo_precio_mercado','moneda_codigo_costo','activo'],
+                "add" => ['empresa_id','insumo_tipo', 'insumo_codigo', 'insumo_descripcion','tinsumo_codigo','tcostos_codigo','unidad_medida_codigo_ingreso','unidad_medida_codigo_costo','insumo_merma','insumo_costo','insumo_precio_mercado','moneda_codigo_costo','insumo_usa_factor_ajuste','activo'],
                 "del" => ['insumo_id', 'versionId'],
-                "upd" => ['empresa_id','insumo_id','insumo_tipo','insumo_codigo', 'insumo_descripcion','tinsumo_codigo','tcostos_codigo','unidad_medida_codigo_ingreso','unidad_medida_codigo_costo','insumo_merma','insumo_costo','insumo_precio_mercado','moneda_codigo_costo','versionId', 'activo'],
+                "upd" => ['empresa_id','insumo_id','insumo_tipo','insumo_codigo', 'insumo_descripcion','tinsumo_codigo','tcostos_codigo','unidad_medida_codigo_ingreso','unidad_medida_codigo_costo','insumo_merma','insumo_costo','insumo_precio_mercado','moneda_codigo_costo','insumo_usa_factor_ajuste','versionId', 'activo'],
             ],
             "paramsFixableToNull" => ['insumo_','tinsumo_','unidad_medida_','tcostos_','moneda_','empresa_'],
             "paramsFixableToValue" => ["insumo_id" => ["valueToFix" => 'null', "valueToReplace" => NULL, "isID" => true],

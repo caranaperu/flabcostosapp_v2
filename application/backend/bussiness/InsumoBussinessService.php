@@ -41,6 +41,7 @@ class InsumoBussinessService extends \app\common\bussiness\TSLAppCRUDBussinessSe
         $model->set_insumo_costo($dto->getParameterValue('insumo_costo'));
         $model->set_insumo_precio_mercado($dto->getParameterValue('insumo_precio_mercado'));
         $model->set_moneda_codigo_costo($dto->getParameterValue('moneda_codigo_costo'));
+        $model->set_insumo_usa_factor_ajuste(($dto->getParameterValue('insumo_usa_factor_ajuste')== 'true' ? 1 : 0));
         if ($dto->getParameterValue('activo') != NULL)
             $model->setActivo($dto->getParameterValue('activo'));
         $model->setUsuario($dto->getSessionUser());
@@ -69,6 +70,7 @@ class InsumoBussinessService extends \app\common\bussiness\TSLAppCRUDBussinessSe
         $model->set_insumo_costo($dto->getParameterValue('insumo_costo'));
         $model->set_insumo_precio_mercado($dto->getParameterValue('insumo_precio_mercado'));
         $model->set_moneda_codigo_costo($dto->getParameterValue('moneda_codigo_costo'));
+        $model->set_insumo_usa_factor_ajuste(($dto->getParameterValue('insumo_usa_factor_ajuste')== 'true' ? 1 : 0));
 
         $model->setVersionId($dto->getParameterValue('versionId'));
         if ($dto->getParameterValue('activo') != NULL)

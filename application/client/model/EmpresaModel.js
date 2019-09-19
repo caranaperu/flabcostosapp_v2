@@ -25,10 +25,6 @@ isc.RestDataSource.create({
         {name: "empresa_correo", title: "Correo", validators: [{type: "regexp", expression: glb_RE_email},{type: "lengthRange", max: 100}]},
         {name: "empresa_telefonos", title: "Telefonos",validators: [{type: "lengthRange", max: 60}]},
         {name: "empresa_fax", title: "Fax", mask:glb_MSK_phone, validators: [{type: "lengthRange", min: 7, max : 10}]},
-        {name: "tipo_empresa_codigo", required: true,  foreignKey: "mdl_tipo_producto.tipo_empresa_codigo"},
-        // virtual
-        {name: "tipo_empresa_descripcion", title: 'Tipo Empresa'}
-
     ],
     fetchDataURL: glb_dataUrl + 'empresaController?op=fetch&libid=SmartClient',
     addDataURL: glb_dataUrl + 'empresaController?op=add&libid=SmartClient',

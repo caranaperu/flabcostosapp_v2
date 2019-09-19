@@ -15,7 +15,7 @@ isc.InsumoUsedByForm.addProperties({
     autoCenter: true,
     autoDraw: false,
     autoSize: false,
-    height: 400,
+    height: 410,
     //  width: 870,
     ID: 'InsumoUsedByFormID',
     infoKey: undefined,

@@ -143,7 +143,16 @@ isc.RestDataSourceInsumo.create({
             name: "moneda_descripcion",
             title: "Moneda Costo"
         },
-        {name: "moneda_simbolo"}
+        {name: "moneda_simbolo"},
+        {
+            name: "insumo_usa_factor_ajuste",
+            title: "Usa Factor De Ajuste",
+            type: 'boolean',
+            getFieldValue: function(r, v, f, fn) {
+                return mdl_insumo._getBooleanFieldValue(v);
+            },
+            required: true
+        }
 
     ],
     fetchDataURL: glb_dataUrl + 'insumoController?op=fetch&libid=SmartClient',
