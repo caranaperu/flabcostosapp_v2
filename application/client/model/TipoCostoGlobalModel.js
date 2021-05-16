@@ -7,17 +7,16 @@
  * $Date: 2014-04-06 19:53:42 -0500 (dom, 06 abr 2014) $
  */
 isc.RestDataSource.create({
-    ID: "mdl_moneda",
+    ID: "mdl_tcosto_global",
     dataFormat: "json",
     jsonPrefix: '',
     jsonSuffix: '',
-    cacheAllData: true, // Son datos pequeños hay que evitar releer
+    cacheAllData: false, // Son datos pequeños hay que evitar releer
     fields: [
-        {name: "moneda_codigo", title: 'Codigo', primaryKey: "true", required: true},
-        {name: "moneda_descripcion", title: "Descripcion", required: true},
-        {name: "moneda_simbolo", title: "Siglas", required: true},
-        {name: "moneda_protected", title: '', type: 'boolean', getFieldValue: function(r, v, f, fn) {
-                return mdl_moneda._getBooleanFieldValue(v);
+        {name: "tcosto_global_codigo", title: 'Codigo', primaryKey: "true", required: true},
+        {name: "tcosto_global_descripcion", title: "Descripcion", required: true},
+        {name: "tcosto_global_protected", title: '', type: 'boolean', getFieldValue: function(r, v, f, fn) {
+                return mdl_tcosto_global._getBooleanFieldValue(v);
             }, required: true}
 
     ],
@@ -32,12 +31,11 @@ isc.RestDataSource.create({
         } else {
             return true;
         }
-
     },
-    fetchDataURL: glb_dataUrl + 'monedaController?op=fetch&libid=SmartClient',
-    addDataURL: glb_dataUrl + 'monedaController?op=add&libid=SmartClient',
-    updateDataURL: glb_dataUrl + 'monedaController?op=upd&libid=SmartClient',
-    removeDataURL: glb_dataUrl + 'monedaController?op=del&libid=SmartClient',
+    fetchDataURL: glb_dataUrl + 'tipoCostoGlobalController?op=fetch&libid=SmartClient',
+    addDataURL: glb_dataUrl + 'tipoCostoGlobalController?op=add&libid=SmartClient',
+    updateDataURL: glb_dataUrl + 'tipoCostoGlobalController?op=upd&libid=SmartClient',
+    removeDataURL: glb_dataUrl + 'tipoCostoGlobalController?op=del&libid=SmartClient',
     operationBindings: [
         {operationType: "fetch", dataProtocol: "postParams"},
         {operationType: "add", dataProtocol: "postParams"},

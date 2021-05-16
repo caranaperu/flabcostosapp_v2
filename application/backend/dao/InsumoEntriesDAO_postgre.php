@@ -92,8 +92,8 @@ class InsumoEntriesDAO_postgre extends \app\common\dao\TSLAppBasicRecordDAO_post
                 }
             } else {
                 // el order by predeterminado para fetchForInsumosEntriesAssoc
-            }
                 $sql .= 'order by insumo_entries_fecha,insumo_entries_id ';
+            }
         }
 
         // Chequeamos paginacion

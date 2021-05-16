@@ -128,6 +128,10 @@
     <SCRIPT SRC=./view/presentacion/PresentacionWindow.js></SCRIPT>
     <SCRIPT SRC=./view/presentacion/PresentacionForm.js></SCRIPT>
 
+    <SCRIPT SRC=./model/TipoCostoGlobalModel.js></SCRIPT>
+    <SCRIPT SRC=./view/tcosto_global/TipoCostoGlobalWindow.js></SCRIPT>
+    <SCRIPT SRC=./view/tcosto_global/TipoCostoGlobalForm.js></SCRIPT>
+
 </head>
 <body></body>
 <SCRIPT>

@@ -522,7 +522,7 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
-function __autoload($class) {
+spl_autoload_register(function($class) {
     if (strstr($class, 'TSL')) {
         if (strstr($class, 'Exception')) {
             include_once(APPPATH . '../../../common/framework/techsoft/fw/exceptions/' . $class . '.php');
@@ -546,7 +546,7 @@ function __autoload($class) {
             include_once(APPPATH . '../../../common/framework/techsoft/fw/bussiness/' . $class . '.php');
         } else if (strstr($class, 'TSLDb') || strstr($class, 'RequestConstraints')) {
             include_once(APPPATH . '../../../common/framework/techsoft/fw/db/' . $class . '.php');
-        } else if (strstr($class, 'FilterProcessor') || strstr($class, 'ParametersProcessor') || strstr($class, 'SorterProcessor') || strstr($class, 'ConstraintProcessor')) {
+        } else if (strstr($class, 'FilterProcessor') || strstr($class, 'InputProcessor') || strstr($class, 'SorterProcessor') || strstr($class, 'ConstraintProcessor')) {
             include_once(APPPATH . '../../../common/framework/techsoft/fw/request/' . $class . '.php');
         } else if (strstr($class, 'ResponseProcessor')) {
             include_once(APPPATH . '../../../common/framework/techsoft/fw/response/' . $class . '.php');
@@ -583,4 +583,4 @@ function __autoload($class) {
     } else if (strstr($class, 'ResponseProcessor')) {
         include_once(APPPATH . '.response/processor/' . $class . '.php');
     }
-}
+});
