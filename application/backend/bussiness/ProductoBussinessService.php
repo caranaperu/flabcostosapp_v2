@@ -35,6 +35,7 @@ class ProductoBussinessService extends \app\common\bussiness\TSLAppCRUDBussiness
         $model->set_insumo_tipo($dto->getParameterValue('insumo_tipo'));
         $model->set_insumo_codigo($dto->getParameterValue('insumo_codigo'));
         $model->set_insumo_descripcion($dto->getParameterValue('insumo_descripcion'));
+        $model->set_taplicacion_entries_id($dto->getParameterValue('taplicacion_entries_id'));
         $model->set_unidad_medida_codigo_costo($dto->getParameterValue('unidad_medida_codigo_costo'));
         $model->set_insumo_merma($dto->getParameterValue('insumo_merma'));
         $model->set_insumo_precio_mercado($dto->getParameterValue('insumo_precio_mercado'));
@@ -61,6 +62,7 @@ class ProductoBussinessService extends \app\common\bussiness\TSLAppCRUDBussiness
         $model->set_insumo_tipo($dto->getParameterValue('insumo_tipo'));
         $model->set_insumo_codigo($dto->getParameterValue('insumo_codigo'));
         $model->set_insumo_descripcion($dto->getParameterValue('insumo_descripcion'));
+        $model->set_taplicacion_entries_id($dto->getParameterValue('taplicacion_entries_id'));
         $model->set_unidad_medida_codigo_costo($dto->getParameterValue('unidad_medida_codigo_costo'));
         $model->set_insumo_merma($dto->getParameterValue('insumo_merma'));
         $model->set_insumo_precio_mercado($dto->getParameterValue('insumo_precio_mercado'));
@@ -97,4 +99,3 @@ class ProductoBussinessService extends \app\common\bussiness\TSLAppCRUDBussiness
     }
 
 }
-

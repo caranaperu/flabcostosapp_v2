@@ -62,6 +62,20 @@ isc.WinProductoForm.addProperties({
                     length: 60,
                     width: "220"
                 },
+                {name: "taplicacion_entries_id", editorType: "comboBoxExt",
+                    length: 50, width: 180,
+                    showPending: true,
+                    displayField: "taplicacion_entries_descripcion",
+                    valueField: "taplicacion_entries_id",
+                    pickListFields: [
+                        {name: "taplicacion_descripcion", width: '50%'},
+                        {name: "taplicacion_entries_descripcion", width: '50%'}
+                    ],
+                    pickListWidth: 240,
+                    optionOperationId: 'fetchForPick',
+                    optionDataSource: mdl_taplicacion_entries,
+                    title: 'Tipo Aplicacion'
+                },
                 {
                     name: "insumo_merma",
                     showPending: true,

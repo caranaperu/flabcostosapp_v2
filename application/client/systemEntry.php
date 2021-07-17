@@ -132,6 +132,39 @@
     <SCRIPT SRC=./view/tcosto_global/TipoCostoGlobalWindow.js></SCRIPT>
     <SCRIPT SRC=./view/tcosto_global/TipoCostoGlobalForm.js></SCRIPT>
 
+
+    <SCRIPT SRC=./model/TipoCostoGlobalEntriesModel.js></SCRIPT>
+    <SCRIPT SRC=./view/tcosto_global_entries/TipoCostoGlobalEntriesWindow.js></SCRIPT>
+    <SCRIPT SRC=./view/tcosto_global_entries/TipoCostoGlobalEntriesForm.js></SCRIPT>
+
+    <SCRIPT SRC=./model/ProcesosModel.js></SCRIPT>
+    <SCRIPT SRC=./view/procesos/ProcesosWindow.js></SCRIPT>
+    <SCRIPT SRC=./view/procesos/ProcesosForm.js></SCRIPT>
+
+    <SCRIPT SRC=./model/SubProcesosModel.js></SCRIPT>
+    <SCRIPT SRC=./view/subprocesos/SubProcesosWindow.js></SCRIPT>
+    <SCRIPT SRC=./view/subprocesos/SubProcesosForm.js></SCRIPT>
+
+    <SCRIPT SRC=./model/ProductoProcesosModel.js></SCRIPT>
+    <SCRIPT SRC=./model/ProductoProcesosDetalleModel.js></SCRIPT>
+    <SCRIPT SRC=./view/producto_procesos/ProductoProcesosWindow.js></SCRIPT>
+    <SCRIPT SRC=./view/producto_procesos/ProductoProcesosForm.js></SCRIPT>
+
+    <SCRIPT SRC=./model/TipoAplicacionModel.js></SCRIPT>
+    <SCRIPT SRC=./model/TipoAplicacionEntriesModel.js></SCRIPT>
+
+    <SCRIPT SRC=./view/taplicacion/TipoAplicacionWindow.js></SCRIPT>
+    <SCRIPT SRC=./view/taplicacion/TipoAplicacionForm.js></SCRIPT>
+
+    <SCRIPT SRC=./model/TipoAplicacionProcesosModel.js></SCRIPT>
+    <SCRIPT SRC=./model/TipoAplicacionProcesosDetalleModel.js></SCRIPT>
+    <SCRIPT SRC=./view/taplicacion_procesos/TipoAplicacionProcesosWindow.js></SCRIPT>
+    <SCRIPT SRC=./view/taplicacion_procesos/TipoAplicacionProcesosForm.js></SCRIPT>
+
+    <SCRIPT SRC=./model/ProduccionModel.js></SCRIPT>
+    <SCRIPT SRC=./view/produccion/ProduccionWindow.js></SCRIPT>
+    <SCRIPT SRC=./view/produccion/ProduccionForm.js></SCRIPT>
+
 </head>
 <body></body>
 <SCRIPT>

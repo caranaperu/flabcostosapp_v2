@@ -65,6 +65,16 @@ class TipoCostoGlobalDAO_postgre extends \app\common\dao\TSLAppBasicRecordDAO_po
             }
         }
 
+        // Chequeamos paginacion
+        $startRow = $constraints->getStartRow();
+        $endRow = $constraints->getEndRow();
+
+        if ($endRow > $startRow) {
+            $sql .= ' LIMIT ' . ($endRow - $startRow) . ' OFFSET ' . $startRow;
+        }
+
+        $sql = str_replace('like', 'ilike', $sql);
+
         return $sql;
     }
 

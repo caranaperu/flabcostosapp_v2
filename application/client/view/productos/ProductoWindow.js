@@ -29,6 +29,10 @@ isc.WinProductoWindow.addProperties({
                     width: '18%'
                 },
                 {
+                    name: "taplicacion_entries_descripcion",
+                    width: '18%'
+                },
+                {
                     name: "insumo_merma",
                     align: 'right',
                     width: '8%',

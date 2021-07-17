@@ -40,6 +40,11 @@ isc.RestDataSourceProducto.create({
             }]
         },
         {
+            name: "taplicacion_entries_id",
+            foreignKey: "mdl_taplicacion_entries.taplicacion_entries_id",
+            required: true
+        },
+        {
             name: "empresa_id",
             foreignKey: "mdl_empresa.empresa_id",
             required: true
@@ -86,6 +91,10 @@ isc.RestDataSourceProducto.create({
         {
             name: "unidad_medida_descripcion_costo",
             title: "Unidad Costo"
+        },
+        {
+            name: "taplicacion_entries_descripcion",
+            title: 'Tipo Aplicacion'
         },
         {
             name: "moneda_descripcion",

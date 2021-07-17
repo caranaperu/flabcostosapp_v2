@@ -26,6 +26,7 @@ class ProductoModel extends TSLDataModel {
     protected $insumo_merma;
     protected $moneda_codigo_costo;
     protected $insumo_precio_mercado;
+    protected $taplicacion_entries_id;
 
 
     private static $_INSUMO_TIPO = ['IN', 'PR'];
@@ -190,6 +191,26 @@ class ProductoModel extends TSLDataModel {
      */
     public function get_insumo_precio_mercado() : float {
         return $this->insumo_precio_mercado;
+    }
+
+    /**
+     * Retorna el identificador al tipo de aplicacion al que pertenece al producto
+     * en caso de insumo puede ser null
+     *
+     * @return int con el id del tipo de aplicacion.
+     */
+    public function get_taplicacion_entries_id() : int {
+        return $this->taplicacion_entries_id;
+    }
+
+    /**
+     * Setea el identificador al tipo de aplicacion al que pertenece al producto
+     * en caso de insumo puede ser null
+     *
+     * @param int $taplicacion_entries_id con el id del tipo de aplicacion
+     */
+    public function set_taplicacion_entries_id(int $taplicacion_entries_id) : void {
+        $this->taplicacion_entries_id = $taplicacion_entries_id;
     }
 
     /**

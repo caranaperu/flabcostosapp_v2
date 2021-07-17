@@ -35,6 +35,11 @@ $config['v_producto'] = array(
             'rules' => 'required|max_length[60]'
         ),
         array(
+            'field' => 'taplicacion_entries_id',
+            'label' => 'lang:taplicacion_entries_id',
+            'rules' => 'required|integer'
+        ),
+        array(
             'field' => 'insumo_merma',
             'label' => 'lang:insumo_merma',
             'rules' => 'required|decimal|greater_than[0.00] '
@@ -87,6 +92,11 @@ $config['v_producto'] = array(
             'field' => 'insumo_descripcion',
             'label' => 'lang:insumo_descripcion',
             'rules' => 'required|max_length[60]'
+        ),
+        array(
+            'field' => 'taplicacion_entries_id',
+            'label' => 'lang:taplicacion_entries_id',
+            'rules' => 'required|integer'
         ),
         array(
             'field' => 'unidad_medida_codigo_costo',

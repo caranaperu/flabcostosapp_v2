@@ -21,6 +21,12 @@ var menu =
         "smn_presentacion": {windowClass: "WinPresentacionWindow", formClass: "WinPresentacionForm"},
         "smn_insumo_entries": {windowClass: "WinInsumoEntriesWindow", formClass: "WinInsumoEntriesForm"},
         "smn_tcosto_global": {windowClass: "WinTipoCostoGlobalWindow", formClass: "WinTipoCostoGlobalForm"},
+        "smn_tcosto_global_entries": {windowClass: "WinTipoCostoGlobalEntriesWindow", formClass: "WinTipoCostoGlobalEntriesForm"},
+        "smn_procesos": {windowClass: "WinProcesosWindow", formClass: "WinProcesosForm"},
+        "smn_producto_procesos": {windowClass: "WinProductoProcesosWindow", formClass: "WinProductoProcesosForm"},
+        "smn_taplicacion": {windowClass: "WinTipoAplicacionWindow", formClass: "WinTipoAplicacionForm"},
+        "smn_taplicacion_procesos": {windowClass: "WinTipoAplicacionProcesosWindow", formClass: "WinTipoAplicacionProcesosForm"},
+        "mn_produccion": {windowClass: "WinProduccionWindow", formClass: "WinProduccionForm"},
     }
 
 isc.SystemTreeMenu.addProperties({
@@ -61,13 +67,12 @@ isc.SystemTreeMenu.addProperties({
     _getController: function (menuId) {
         var controller;
         if (typeof menu[menuId] !== 'undefined') {
-            alert("Paso");
             controller = isc.DefaultController.create({
                 mainWindowClass: menu[menuId].windowClass,
                 formWindowClass: menu[menuId].formClass
             });
         } else {
-            alert("Menu no definido, informar a casa de desarrollo")
+            alert("Menu ["+menuId+"] no definido, informar a casa de desarrollo");
         }
         return controller;
     }
