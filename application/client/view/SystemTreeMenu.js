@@ -27,6 +27,7 @@ var menu =
         "smn_taplicacion": {windowClass: "WinTipoAplicacionWindow", formClass: "WinTipoAplicacionForm"},
         "smn_taplicacion_procesos": {windowClass: "WinTipoAplicacionProcesosWindow", formClass: "WinTipoAplicacionProcesosForm"},
         "mn_produccion": {windowClass: "WinProduccionWindow", formClass: "WinProduccionForm"},
+        "smn_costos_proceso": {windowClass: undefined, formClass: "WinCostoProcesoForm"},
     }
 
 isc.SystemTreeMenu.addProperties({
@@ -57,7 +58,7 @@ isc.SystemTreeMenu.addProperties({
             if (!this._controllersList[leaf.menu_codigo]) {
                 this._controllersList[leaf.menu_codigo] = this._getController(leaf.menu_codigo);
             }
-            if (leaf.menu_codigo === 'smn_entidad') {
+            if (leaf.menu_codigo === 'smn_entidad' || leaf.menu_codigo === 'smn_costos_proceso') {
                 this._controllersList[leaf.menu_codigo].doSetup(true, null);
             } else {
                 this._controllersList[leaf.menu_codigo].doSetup(false, null);

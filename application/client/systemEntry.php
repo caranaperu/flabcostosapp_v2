@@ -165,6 +165,10 @@
     <SCRIPT SRC=./view/produccion/ProduccionWindow.js></SCRIPT>
     <SCRIPT SRC=./view/produccion/ProduccionForm.js></SCRIPT>
 
+    <SCRIPT SRC=./model/CostoProcesoModel.js></SCRIPT>
+    <SCRIPT SRC=./view/costos/CostoProcesoWindow.js></SCRIPT>
+
+
 </head>
 <body></body>
 <SCRIPT>

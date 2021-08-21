@@ -82,6 +82,19 @@ isc.RestDataSourceProducto.create({
             }]
         },
         {
+            name: "insumo_cantidad_costo",
+            title: 'Cantidad Costo',
+            required: true,
+            validators: [{
+                type: 'floatRange',
+                min: 0.0001,
+                max: 100000.00
+            }, {
+                type: "floatPrecision",
+                precision: 2
+            }]
+        },
+        {
             name: "moneda_codigo_costo",
             title: 'Moneda Costo',
             foreignKey: "mdl_moneda.moneda_codigo",
@@ -94,7 +107,7 @@ isc.RestDataSourceProducto.create({
         },
         {
             name: "taplicacion_entries_descripcion",
-            title: 'Tipo Aplicacion'
+            title: 'Modo Aplicacion'
         },
         {
             name: "moneda_descripcion",

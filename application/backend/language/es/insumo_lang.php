@@ -21,6 +21,7 @@ $lang['unidad_medida_codigo_costo'] = 'Unidad de Costo';
 $lang['insumo_merma'] = 'Merma';
 $lang['insumo_costo'] = 'Costo';
 $lang['insumo_precio_mercado'] = 'Precio Mercado';
+$lang['insumo_cantidad_costo'] = 'Cantidad Costo';
 $lang['moneda_codigo_costo'] = 'Moneda de Costo';
 $lang['insumo_usa_factor_ajuste'] = 'Usa Factor de Ajuste?';
 $lang['taplicacion_entries_id'] = 'Tipo de Aplicacion';

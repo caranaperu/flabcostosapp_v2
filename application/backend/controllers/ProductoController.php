@@ -36,9 +36,9 @@ class ProductoController extends app\common\controller\TSLAppDefaultCRUDControll
             "paramsList" => [
                 "fetch" => [],
                 "read" => ['insumo_id', 'verifyExist'],
-                "add" => ['empresa_id','insumo_tipo', 'insumo_codigo', 'insumo_descripcion','taplicacion_entries_id','unidad_medida_codigo_costo','insumo_merma','insumo_precio_mercado','moneda_codigo_costo','activo'],
+                "add" => ['empresa_id','insumo_tipo', 'insumo_codigo', 'insumo_descripcion','taplicacion_entries_id','unidad_medida_codigo_costo','insumo_merma','insumo_precio_mercado','insumo_cantidad_costo','moneda_codigo_costo','activo'],
                 "del" => ['insumo_id', 'versionId'],
-                "upd" => ['empresa_id','insumo_id','insumo_tipo','insumo_codigo', 'insumo_descripcion','taplicacion_entries_id','unidad_medida_codigo_costo','insumo_merma','insumo_precio_mercado','moneda_codigo_costo','versionId', 'activo'],
+                "upd" => ['empresa_id','insumo_id','insumo_tipo','insumo_codigo', 'insumo_descripcion','taplicacion_entries_id','unidad_medida_codigo_costo','insumo_merma','insumo_precio_mercado','insumo_cantidad_costo','moneda_codigo_costo','versionId', 'activo'],
             ],
             "paramsFixableToNull" => ['insumo_','unidad_medida_','moneda_','empresa_','taplicacion_entries'],
             "paramsFixableToValue" => ["insumo_id" => ["valueToFix" => 'null', "valueToReplace" => NULL, "isID" => true],

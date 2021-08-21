@@ -12,7 +12,7 @@ isc.defineClass("WinProductoForm", "WindowBasicFormExt");
 isc.WinProductoForm.addProperties({
     ID: "winProductoForm",
     title: "Mantenimiento de Productos",
-    width: 700,
+    width: 750,
     height: 245,
     efficientDetailGrid: false,
     joinKeyFields: [{
@@ -24,7 +24,7 @@ isc.WinProductoForm.addProperties({
         return isc.DynamicFormExt.create({
             ID: "formProducto",
             numCols: 4,
-            colWidths: ["100", "120", "100", "*"],
+            colWidths: ["120", "120", "100", "*"],
             fixedColWidths: false,
             padding: 5,
             dataSource: mdl_producto,
@@ -91,6 +91,9 @@ isc.WinProductoForm.addProperties({
                     align: 'center',
                     itemIds: ["unidad_medida_codigo_costo", "moneda_codigo_costo"]
                 },
+                {name: "insumo_cantidad_costo", showPending: true, width: '80',
+                    startRow: true
+                },
                 {
                     name: "unidad_medida_codigo_costo",
                     editorType: "comboBoxExt",
@@ -111,7 +114,6 @@ isc.WinProductoForm.addProperties({
                     // Solo es pasado al servidor si no existe cache data all en el modelo
                     // de lo contrario el sort se hace en el lado cliente.
                     initialSort: [{property: 'unidad_medida_descripcion'}],
-                    startRow: true
                 },
                 {
                     name: "moneda_codigo_costo",
@@ -132,7 +134,8 @@ isc.WinProductoForm.addProperties({
                     completeOnTab: true,
                     // Solo es pasado al servidor si no existe cache data all en el modelo
                     // de lo contrario el sort se hace en el lado cliente.
-                    initialSort: [{property: 'moneda_descripcion'}]
+                    initialSort: [{property: 'moneda_descripcion'}],
+                    startRow: true
                 },
                 {name: "insumo_precio_mercado", showPending: true, width: '80'
                  //   visibleWhen: {tcostos_indirecto: false}
@@ -163,7 +166,7 @@ isc.WinProductoForm.addProperties({
                 groupStartOpen: "all",
                 showGroupSummary: true,
                 showGroupSummaryInHeader: true,
-                width: 700,
+                width: 750,
                 fields: [
                     {
                         name: "empresa_razon_social",

@@ -11,7 +11,7 @@ isc.defineClass("WinProductoWindow", "WindowGridListExt");
 isc.WinProductoWindow.addProperties({
     ID: "winProductoWindow",
     title: "Productos",
-    width: 800,
+    width: 850,
     height: 400,
     createGridList: function() {
         return isc.ListGrid.create({
@@ -38,6 +38,14 @@ isc.WinProductoWindow.addProperties({
                     width: '8%',
                     filterEditorProperties: {
                         operator: "equals"
+                    }
+                },
+                {
+                    name: "insumo_cantidad_costo",align: 'right',
+                    width: '10%',
+                    filterEditorProperties: {
+                        operator: "equals",
+                        type: 'float'
                     }
                 },
                 {

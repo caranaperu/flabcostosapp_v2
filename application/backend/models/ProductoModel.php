@@ -13,6 +13,8 @@ if (!defined('BASEPATH')) {
  *
  * @author  Carlos Arana Reategui <aranape@gmail.com>
  * @history , 09-02-2017 , primera version adaptada a php 7.1
+ *            09-08-2021 Se agrego el campo $insumo_cantidad_costo
+ *
  * @TODO : Las funciones que vienen de la clase padre faltan ser adaptadas.
  *
  */
@@ -26,6 +28,8 @@ class ProductoModel extends TSLDataModel {
     protected $insumo_merma;
     protected $moneda_codigo_costo;
     protected $insumo_precio_mercado;
+    protected $insumo_cantidad_costo;
+
     protected $taplicacion_entries_id;
 
 
@@ -217,10 +221,32 @@ class ProductoModel extends TSLDataModel {
      * Setea el precio de mercado del insumo, esto es basicamente valido
      * si el insumo es de costo directo.
      *
-     * @param double $insumo_precio_mercado con el precio de mercado.
+     * @param float $insumo_precio_mercado con el precio de mercado.
      */
     public function set_insumo_precio_mercado(float $insumo_precio_mercado) : void {
         $this->insumo_precio_mercado = $insumo_precio_mercado;
+    }
+
+    /**
+     *
+     * Retorna cantidadla  de costo o lo que es lo mismo la cantidad de la presentacion
+     * del producto ej. 120M , lo cual estara expresado en la unidad de costo
+     *
+     * @param float con la cantidad
+     */
+    public function get_insumo_cantidad_costo() : float {
+        return $this->insumo_cantidad_costo;
+    }
+
+
+    /**
+     * Setea la cantidad de costo o lo que es lo mismo la cantidad de la presentacion
+     * del producto ej. 120, lo cual estara expresado en la unidad de costo
+     *
+     * @param double $insumo_cantidad_costo la cantidad
+     */
+    public function set_insumo_cantidad_costo(float $insumo_cantidad_costo) : void {
+        $this->insumo_cantidad_costo = $insumo_cantidad_costo;
     }
 
     public function &getPKAsArray() : array {

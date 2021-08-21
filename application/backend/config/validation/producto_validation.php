@@ -50,6 +50,11 @@ $config['v_producto'] = array(
             'rules' => 'required|decimal|greater_than_equal[0.00] '
         ),
         array(
+            'field' => 'insumo_cantidad_costo',
+            'label' => 'lang:insumo_cantidad_costo',
+            'rules' => 'required|decimal|greater_than[0.00] '
+        ),
+        array(
             'field' => 'moneda_codigo_costo',
             'label' => 'lang:moneda_codigo_costo',
             'rules' => 'required|alpha_numeric|max_length[8]'
@@ -112,6 +117,11 @@ $config['v_producto'] = array(
             'field' => 'insumo_precio_mercado',
             'label' => 'lang:insumo_precio_mercado',
             'rules' => 'required|decimal|greater_than_equal[0.00] '
+        ),
+        array(
+            'field' => 'insumo_cantidad_costo',
+            'label' => 'lang:insumo_cantidad_costo',
+            'rules' => 'required|decimal|greater_than[0.00] '
         ),
         array(
             'field' => 'moneda_codigo_costo',
