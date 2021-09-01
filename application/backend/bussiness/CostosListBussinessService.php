@@ -18,7 +18,15 @@ class CostosListBussinessService extends \app\common\bussiness\TSLAppCRUDBussine
         $this->setup("CostosListDAO", "costoslist", "msg_costoslist");
     }
 
-    /**
+    protected function doService(string $action, \TSLIDataTransferObj $dto) : void {
+        if ($action == 'fetch' || $action == 'add') {
+            $this->fetch($dto);
+        } else {
+            parent::doService();
+        }
+    }
+
+            /**
      * No hay operacion add en este caso debido a que es un proceso..
      *
      * @param \TSLIDataTransferObj $dto

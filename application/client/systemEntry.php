@@ -168,7 +168,10 @@
     <SCRIPT SRC=./model/CostoProcesoModel.js></SCRIPT>
     <SCRIPT SRC=./view/costos/CostoProcesoWindow.js></SCRIPT>
 
-
+    <SCRIPT SRC=./model/CostoListModel.js></SCRIPT>
+    <SCRIPT SRC=./model/CostoListDetalleModel.js></SCRIPT>
+    <SCRIPT SRC=./view/costos/CostosListWindow.js></SCRIPT>
+    <SCRIPT SRC=./view/costos/CostosListForm.js></SCRIPT>
 </head>
 <body></body>
 <SCRIPT>

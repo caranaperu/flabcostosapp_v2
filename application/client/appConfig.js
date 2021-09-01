@@ -95,10 +95,10 @@ var glb_systemident = 'labcostos';
 /* @cfg {String} glb_reportServerUrl
  * Define el url basico del  sevidor de reportes
  */
-var glb_reportServerUrl = 'http://192.168.0.5:8080/jasperserver';
+var glb_reportServerUrl = 'http://192.168.18.30:8080/jasperserver';
 
-var glb_reportServerUser = 'laboratorio_user';
-var glb_reportServerPsw = 'laboratorio_user';
+var glb_reportServerUser = 'jasperadmin';
+var glb_reportServerPsw = 'jasperadmin';
 
 
 Date.setShortDisplayFormat("toEuropeanShortDate");

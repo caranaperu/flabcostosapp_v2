@@ -1,5 +1,5 @@
 <?php
-require_once dirname(__FILE__)."/../../../../../../kr3/autoload.php";
+require_once dirname(__FILE__)."/../../../../../../koolreport/autoload.php";
 
 
 class FLabHistoricoCostosReport extends \koolreport\KoolReport {

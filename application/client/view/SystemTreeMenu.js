@@ -28,6 +28,7 @@ var menu =
         "smn_taplicacion_procesos": {windowClass: "WinTipoAplicacionProcesosWindow", formClass: "WinTipoAplicacionProcesosForm"},
         "mn_produccion": {windowClass: "WinProduccionWindow", formClass: "WinProduccionForm"},
         "smn_costos_proceso": {windowClass: undefined, formClass: "WinCostoProcesoForm"},
+        "smn_costos_consulta": {windowClass: "WinCostoListWindow", formClass: "WinCostoListForm"},
     }
 
 isc.SystemTreeMenu.addProperties({

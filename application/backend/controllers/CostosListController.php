@@ -23,11 +23,13 @@ class CostosListController extends app\common\controller\TSLAppDefaultCRUDContro
 
         $this->setupOpts = [
             "validateOptions" => [
-                "fetch" => ["langId" => 'costos_list', "validationId" => 'costos_list_validation', "validationGroupId" => 'v_costos_list', "validationRulesId" => 'fetchCostosList'],
+                "fetch" => [],
+                "add" => ["langId" => 'costos_list', "validationId" => 'costos_list_validation', "validationGroupId" => 'v_costos_list', "validationRulesId" => 'addCostosList'],
                 "del" => ["langId" => 'costos_list', "validationId" => 'costos_list_validation', "validationGroupId" => 'v_costos_list', "validationRulesId" => 'delCostosList'],
             ],
             "paramsList" => [
-                "fetch" => ['costos_list_descripcion','costos_list_fecha_desde','costos_list_fecha_hasta','costos_list_fecha_tcambio'],
+                "fetch" => [],
+                "add" => ['costos_list_descripcion','costos_list_fecha_desde','costos_list_fecha_hasta','costos_list_fecha_tcambio'],
                 "del" => ['costos_list_id', 'versionId'],
             ],
             "paramsFixableToNull" => ['costos_list_'],

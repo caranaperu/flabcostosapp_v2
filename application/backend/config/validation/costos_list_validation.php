@@ -13,11 +13,11 @@ $config['v_costos_list'] = array(
             'rules' => 'required|integer'
         )
     ),
-    'fetchCostosList' => array(
+    'addCostosList' => array(
         array(
             'field' => 'costos_list_descripcion',
             'label' => 'lang:costos_list_descripcion',
-            'rules' => 'required|alpha|max_length[60]'
+            'rules' => 'required|alpha_numeric_spaces|max_length[60]'
         ),
         array(
             'field' => 'costos_list_fecha_desde',

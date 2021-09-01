@@ -12,16 +12,18 @@ isc.defineClass("WinCostoProcesoForm", "WindowBasicFormExt");
 isc.WinCostoProcesoForm.addProperties({
     ID: "winCostoProcesoForm",
     title: "Proceso De Costos",
-    width: 565, height: 260,
+    width: 500, height: 240,
     canDragResize: true,
     createForm: function(formMode) {
         return isc.DynamicFormExt.create({
             ID: "formCostoProcesoData",
             numCols: 4,
-            //colWidths: ["90", "*"],
+            colWidths: ["120", "*", "*", "*"],
             fixedColWidths: false,
             padding: 5,
             errorOrientation: "right",
+            askForSave: true,
+            askMessage: 'Desea proceder a procesar ?',
             validateOnExit: true,
             dataSource: mdl_proceso_costo,
             addOperation: 'fetchProceso', // la operacion add sera mapeada a fetch
@@ -75,23 +77,7 @@ isc.WinCostoProcesoForm.addProperties({
                     endRow: true
                 }
             ],
-            isAllowedToSave: function (values,oldValues) {
-                alert("paso");
-                isc.say('xxxxxx');
-
-                isc.confirm('Esta seguro de iniciar el proceso ?',
-                    function (val) {
-                        alert(val);
-                       return val;
-                    });
-                alert("paso 2");
-
-                return true;
-            },
             postSaveData: function (mode,record) {
-                // dado que en realidad ejecuta un proceso , no debe entrar a modo update sino siempre
-                // debe quedar en modo add.
-                //formCostoProcesoData.setEditMode('add');
                 isc.say('Proceso terminado correctamente');
             },
             // ,cellBorder: 1
