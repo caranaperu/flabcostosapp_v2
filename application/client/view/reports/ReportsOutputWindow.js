@@ -17,7 +17,7 @@ isc.ReportsOutputWindow.addProperties({
     autoDraw: false,
     width: '970',
     height: '700',
-    title: 'Reporte de Records',
+    title: 'No Definido',
     _htmlPane: undefined,
     /**
      * Metodo para cambiar el url que presenta el pane de salida
@@ -112,5 +112,8 @@ isc.ReportsOutputWindow.addClassProperties({
         }
 
         return this._myInstance;
+    },
+    setTitle: function(title) {
+        this._myInstance.title = title;
     }
 });

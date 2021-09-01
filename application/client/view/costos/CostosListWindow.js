@@ -18,6 +18,7 @@ isc.WinCostoListWindow.addProperties({
     },
     printReport: function(url,format) {
         var reportWindow = isc.ReportsOutputWindow.getInstance(url);
+        reportWindow.setTitle("Lista De Costos")
         if (format != 'XLS') {
             reportWindow.show();
         } else {
@@ -27,6 +28,7 @@ isc.WinCostoListWindow.addProperties({
     createGridList: function() {
         return isc.ListGrid.create({
             ID: "CostoList",
+            //autoFitWidthApproach: 'both',
             alternateRecordStyles: true,
             showRecordComponents: true,
             showRecordComponentsByCell: true,
@@ -40,20 +42,44 @@ isc.WinCostoListWindow.addProperties({
                 },
                 {
                     name: "costos_list_fecha",
-                    filterOperator: "equals"
+                    width: '15%',
+                    filterEditorProperties: {
+                        operator: "greaterOrEqual",
+                        editorType: 'date',
+                        useTextField: true
+                    }
+
                 },
-                {name: "costos_list_descripcion"},
+                {
+                    name: "costos_list_descripcion",
+                    //width: '50%',
+                },
                 {
                     name: "costos_list_fecha_desde",
-                    filterOperator: "equals"
+                    width: '12%',
+                    filterEditorProperties: {
+                        operator: "greaterOrEqual",
+                        editorType: 'date',
+                        useTextField: true
+                    }
                 },
                 {
                     name: "costos_list_fecha_hasta",
-                    filterOperator: "equals"
+                    width: '12%',
+                    filterEditorProperties: {
+                        operator: "greaterOrEqual",
+                        editorType: 'date',
+                        useTextField: true
+                    }
                 },
                 {
                     name: "costos_list_fecha_tcambio",
-                    filterOperator: "equals"
+                    width: '12%',
+                    filterEditorProperties: {
+                        operator: "greaterOrEqual",
+                        editorType: 'date',
+                        useTextField: true
+                    }
                 },
                 {
                     name: "I",
@@ -108,9 +134,12 @@ isc.WinCostoListWindow.addProperties({
                     url += '&reportUnit=/SistemCostos/cstr_CostosListReport';
 
                     url += '&p_costos_list_id=' + record.costos_list_id;
+
                     // user y password
                     url += '&j_username=' + glb_reportServerUser;
                     url += '&j_password=' + glb_reportServerPsw;
+
+                    url += '&userLocale=es_PE';
 
                     if (format !== undefined) {
                         url += (format == 'XLS' ? '&output=xlsx' : '&output=pdf');

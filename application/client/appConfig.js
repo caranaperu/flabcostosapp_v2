@@ -97,9 +97,10 @@ var glb_systemident = 'labcostos';
  */
 var glb_reportServerUrl = 'http://192.168.18.30:8080/jasperserver';
 
-var glb_reportServerUser = 'jasperadmin';
-var glb_reportServerPsw = 'jasperadmin';
+var glb_reportServerUser = 'flabscarana';
+var glb_reportServerPsw = 'flabs202106';
 
 
 Date.setShortDisplayFormat("toEuropeanShortDate");
+Date.setShortDatetimeDisplayFormat("toEuropeanShortDatetime");
 Date.setInputFormat("DMY");
