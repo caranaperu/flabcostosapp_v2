@@ -103,4 +103,6 @@ var glb_reportServerPsw = 'flabs202106';
 
 Date.setShortDisplayFormat("toEuropeanShortDate");
 Date.setShortDatetimeDisplayFormat("toEuropeanShortDatetime");
+Date.setNormalDatetimeDisplayFormat("toEuropeanShortDatetime");
+Time.setDefaultDisplayTimezone("+00:00");
 Date.setInputFormat("DMY");

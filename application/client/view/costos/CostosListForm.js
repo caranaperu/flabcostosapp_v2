@@ -90,9 +90,9 @@ isc.WinCostoListForm.addProperties({
                     },
                     {name: "taplicacion_entries_descripcion"},
                     {name: "moneda_descripcion"},
-                    {name: "costos_list_detalle_costo_base"},
-                    {name: "costos_list_detalle_costo_agregado"},
-                    {name: "costos_list_detalle_costo_total"},
+                    {name: "costos_list_detalle_costo_base",format: ",0.00"},
+                    {name: "costos_list_detalle_costo_agregado",format: ",0.00"},
+                    {name: "costos_list_detalle_costo_total",format: ",0.00"},
                 ],
                 getCellCSSText: function(record, rowNum, colNum) {
                     if (record.costos_list_detalle_costo_base < 0 || record.costos_list_detalle_costo_agregado < 0) {

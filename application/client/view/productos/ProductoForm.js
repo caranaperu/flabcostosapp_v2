@@ -478,7 +478,7 @@ isc.WinProductoForm.addProperties({
         tabset.addAdditionalTab({
             ID: 'TabInfoCostosHistoricosFormProducto',
             title: 'Historico de Costos',
-            paneClass: 'InsumoCostosHistoricosForm',
+            paneClass: 'ProductoCostosHistoricosForm',
             joinField: 'insumo_id'
         });
 

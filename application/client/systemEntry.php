@@ -94,6 +94,10 @@
     <SCRIPT SRC=./view/insumo_entries/InsumoEntriesWindow.js></SCRIPT>
     <SCRIPT SRC=./view/insumo_entries/InsumoEntriesForm.js></SCRIPT>
 
+
+    <SCRIPT SRC=./model/ProductoCostosHistoricoModel.js></SCRIPT>
+    <SCRIPT SRC=./view/productos/ProductoCostosHistoricosForm.js></SCRIPT>
+
     <SCRIPT SRC=./model/ProductoModel.js></SCRIPT>
     <SCRIPT SRC=./model/ProductoDetalleModel.js></SCRIPT>
     <SCRIPT SRC=./view/productos/ProductoWindow.js></SCRIPT>

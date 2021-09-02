@@ -51,23 +51,39 @@ class CostosListDetalleDAO_postgre extends \app\common\dao\TSLAppBasicRecordDAO_
      */
     protected function getFetchQuery(\TSLDataModel &$record = NULL, \TSLRequestConstraints &$constraints = NULL, string $subOperation = NULL) : string
     {
+        if ($subOperation == 'fetchForProductoCostosHistoricos') {
+            $insumo_id = $constraints->getFilterField('insumo_id');
+            $p_date_from = $constraints->getFilterField('p_date_from');
+            $p_date_to = $constraints->getFilterField('p_date_to');
 
-        $sql = 'SELECT costos_list_detalle_id,costos_list_id,insumo_id,insumo_descripcion,moneda_descripcion,taplicacion_entries_descripcion,'.
-            'unidad_medida_siglas,costos_list_detalle_qty_presentacion,costos_list_detalle_costo_base,costos_list_detalle_costo_agregado,'.
-            'costos_list_detalle_costo_total,xmin AS "versionId" ' .
-            'FROM  tb_costos_list_detalle ';
+            $sql = 'SELECT costos_list_detalle_id,costos_list_fecha,costos_list_descripcion,moneda_descripcion,costos_list_detalle_costo_base,costos_list_detalle_costo_agregado,'.
+                'costos_list_detalle_costo_total ' .
+                'FROM  tb_costos_list_detalle cd '.
+                'inner join tb_costos_list c on c.costos_list_id = cd.costos_list_id '.
+                'where insumo_id='.$insumo_id.' ';
+                if (isset($p_date_from) && isset($p_date_to)) {
+                    $sql .= 'and costos_list_fecha >= \''.$p_date_from.'\' and costos_list_fecha <= \''.$p_date_to.'\' ';
+                }
+                $sql .= 'order by costos_list_fecha desc';
+
+        } else {
+            $sql = 'SELECT costos_list_detalle_id,costos_list_id,insumo_id,insumo_descripcion,moneda_descripcion,taplicacion_entries_descripcion,'.
+                'unidad_medida_siglas,costos_list_detalle_qty_presentacion,costos_list_detalle_costo_base,costos_list_detalle_costo_agregado,'.
+                'costos_list_detalle_costo_total,xmin AS "versionId" ' .
+                'FROM  tb_costos_list_detalle ';
 
 
-        $where = $constraints->getFilterFieldsAsString();
+            $where = $constraints->getFilterFieldsAsString();
 
-        if (strlen($where) > 0) {
-            $sql .= ' where ' . $where;
-        }
+            if (strlen($where) > 0) {
+                $sql .= ' where ' . $where;
+            }
 
-        if (isset($constraints)) {
-            $orderby = $constraints->getSortFieldsAsString();
-            if ($orderby !== NULL) {
-                $sql .= ' order by ' . $orderby;
+            if (isset($constraints)) {
+                $orderby = $constraints->getSortFieldsAsString();
+                if ($orderby !== NULL) {
+                    $sql .= ' order by ' . $orderby;
+                }
             }
         }
 
@@ -80,6 +96,7 @@ class CostosListDetalleDAO_postgre extends \app\common\dao\TSLAppBasicRecordDAO_
         }
 
         $sql = str_replace('like', 'ilike', $sql);
+        //echo $sql;
         return $sql;
     }
 
