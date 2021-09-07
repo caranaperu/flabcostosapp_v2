@@ -5,7 +5,7 @@
 -- Dumped from database version 12.8 (Ubuntu 12.8-0ubuntu0.20.04.1)
 -- Dumped by pg_dump version 12.8 (Ubuntu 12.8-0ubuntu0.20.04.1)
 
--- Started on 2021-09-06 21:04:01 -05
+-- Started on 2021-09-07 02:51:57 -05
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -4690,8 +4690,8 @@ AAAAD	sasass	t	ADMIN	2021-05-21 02:37:33.766335	\N	\N
 
 COPY public.tb_produccion (produccion_id, produccion_fecha, taplicacion_entries_id, produccion_qty, unidad_medida_codigo, activo, usuario, fecha_creacion, usuario_mod, fecha_modificacion) FROM stdin;
 8	2021-07-06	5	88.00	LITROS	t	ADMIN	2021-07-17 00:29:02.438257	postgres	2021-08-13 06:52:06.079145
-7	2021-07-08	17	44.00	LITROS	t	ADMIN	2021-07-16 23:34:54.49224	ADMIN	2021-08-13 06:52:52.599707
 1	2021-07-21	17	12.00	LITROS	t	ADMIN	2021-07-16 23:20:20.772754	ADMIN	2021-08-13 19:13:14.959492
+7	2021-07-08	17	44.60	LITROS	t	ADMIN	2021-07-16 23:34:54.49224	ADMIN	2021-09-07 02:24:30.68234
 \.
 
 
@@ -4763,14 +4763,14 @@ labcostos	62	smn_producto	Producto	A         	74	165	t	TESTUSER	2016-08-06 15:02
 labcostos	80	mn_costo_global	Costos Globales	A         	4	15	t	TESTUSER	2021-05-14 00:41:25	\N	\N
 labcostos	79	smn_tcosto_global	Tipo Costos Globales	A         	80	100	t	TESTUSER	2021-05-14 00:41:25	\N	\N
 labcostos	81	smn_tcosto_global_entries	Movimientos Costos Globales	A         	80	110	t	TESTUSER	2021-05-14 00:41:25	\N	\N
-labcostos	88	mn_taplicacion	Modo Aplicacion	A         	4	20	t	TESTUSER	2021-05-20 01:31:19	\N	\N
 labcostos	87	smn_taplicacion_procesos	Modo Aplicacion/Procesos	A         	88	125	t	TESTUSER	2021-05-14 00:41:25	\N	\N
 labcostos	86	smn_taplicacion	Modos de Aplicacion	A         	88	120	t	TESTUSER	2021-06-30 03:11:24	\N	\N
-labcostos	89	mn_produccion	Produccion	A         	4	20	t	TESTUSER	2018-11-04 23:49:15.304	\N	\N
 labcostos	90	mn_costos	Costos	A         	4	20	t	TESTUSER	2018-11-04 23:49:15.304	\N	\N
 labcostos	91	smn_costos_proceso	Proceso	A         	90	20	t	TESTUSER	2018-11-04 23:49:15.304	\N	\N
 labcostos	92	smn_costos_consulta	Consulta	A         	90	22	t	TESTUSER	2018-11-04 23:49:15.304	\N	\N
 labcostos	84	smn_subprocesos	Sub Procesos	A         	82	100	f	TESTUSER	2021-05-14 00:41:25	\N	\N
+labcostos	89	smn_produccion	Ingresos Produccion	A         	88	130	t	TESTUSER	2018-11-04 23:49:15.304	\N	\N
+labcostos	88	mn_taplicacion	Modo Aplicacion	A         	4	140	t	TESTUSER	2021-05-20 01:31:19	\N	\N
 labcostos	85	smn_producto_procesos	Producto/Procesos	A         	74	120	f	TESTUSER	2021-05-14 00:41:25	\N	\N
 labcostos	64	smn_empresas	Empresas	A         	56	120	f	TESTUSER	2016-09-15 00:42:19.770493	\N	\N
 labcostos	93	mn_insumos	Insumos	A         	4	12	t	TESTUSER	2018-11-04 23:49:15.304	\N	\N
@@ -6724,7 +6724,7 @@ ALTER TABLE ONLY public.tb_sys_usuario_perfiles
     ADD CONSTRAINT fk_usuarioperfiles_usuario FOREIGN KEY (usuarios_id) REFERENCES public.tb_usuarios(usuarios_id);
 
 
--- Completed on 2021-09-06 21:04:01 -05
+-- Completed on 2021-09-07 02:51:57 -05
 
 --
 -- PostgreSQL database dump complete

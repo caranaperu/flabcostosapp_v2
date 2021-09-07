@@ -20,7 +20,7 @@ var menu =
         "smn_producto_procesos": {windowClass: "WinProductoProcesosWindow", formClass: "WinProductoProcesosForm"},
         "smn_taplicacion": {windowClass: "WinTipoAplicacionWindow", formClass: "WinTipoAplicacionForm"},
         "smn_taplicacion_procesos": {windowClass: "WinTipoAplicacionProcesosWindow", formClass: "WinTipoAplicacionProcesosForm"},
-        "mn_produccion": {windowClass: "WinProduccionWindow", formClass: "WinProduccionForm"},
+        "smn_produccion": {windowClass: "WinProduccionWindow", formClass: "WinProduccionForm"},
         "smn_costos_proceso": {windowClass: undefined, formClass: "WinCostoProcesoForm"},
         "smn_costos_consulta": {windowClass: "WinCostoListWindow", formClass: "WinCostoListForm"},
     }
