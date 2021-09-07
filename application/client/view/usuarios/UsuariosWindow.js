@@ -22,8 +22,7 @@ isc.WinUsuariosWindow.addProperties({
             fetchOperation: 'fetchJoined',
             fields: [
                 {name: "usuarios_code", width: '15%'},
-                {name: "usuarios_nombre_completo", width: '30%'},
-                {name: "empresa_razon_social", width: '30%'},
+                {name: "usuarios_nombre_completo", width: '50%'},
                 {name: "usuarios_admin", width: '*'},
                 {name: "activo",  width: '*'}
             ],

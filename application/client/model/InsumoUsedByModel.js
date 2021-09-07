@@ -26,10 +26,6 @@ isc.RestDataSource.create({
         {
             name: "insumo_descripcion",
             title: "Descripcion"
-        },
-        {
-            name: "empresa_razon_social",
-            title: "Creado Por"
         }
     ],
     fetchDataURL: glb_dataUrl + 'insumoController?op=fetch&libid=SmartClient',

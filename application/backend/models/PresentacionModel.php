@@ -14,6 +14,8 @@ class PresentacionModel extends TSLDataModel {
 
     protected $tpresentacion_codigo;
     protected $tpresentacion_descripcion;
+    protected $unidad_medida_codigo_costo;
+    protected $tpresentacion_cantidad_costo;
     protected $tpresentacion_protected;
 
     /**
@@ -72,6 +74,47 @@ class PresentacionModel extends TSLDataModel {
         return $this->tpresentacion_descripcion;
     }
 
+
+
+    /**
+     * Setea el codigo de la unidad de medida que la presentacion usara para costeo
+     *
+     * @param string $unidad_medida_codigo_costo codigo de la unidad de medida
+     */
+    public function set_unidad_medida_codigo_costo(string $unidad_medida_codigo_costo) : void {
+        $this->unidad_medida_codigo_costo = $unidad_medida_codigo_costo;
+    }
+
+    /**
+     * Retorna el codigo de la unidad de medida que la presentacion usara para costeo
+     *
+     * @return string el codigo de la unidad de medida
+     */
+    public function get_unidad_medida_codigo_costo() : string {
+        return $this->unidad_medida_codigo_costo;
+    }
+
+    /**
+     *
+     * Retorna cantidad  de costo o lo que es lo mismo la cantidad de la presentacion
+     * del producto ej. 120M , lo cual estara expresado en la unidad de costo
+     *
+     * @param float con la cantidad
+     */
+    public function get_tpresentacion_cantidad_costo() : float {
+        return $this->tpresentacion_cantidad_costo;
+    }
+
+
+    /**
+     * Setea la cantidad de costo o lo que es lo mismo la cantidad de la presentacion
+     * del producto ej. 120, lo cual estara expresado en la unidad de costo
+     *
+     * @param double $tpresentacion_cantidad_costo la cantidad
+     */
+    public function set_tpresentacion_cantidad_costo(float $tpresentacion_cantidad_costo) : void {
+        $this->tpresentacion_cantidad_costo = $tpresentacion_cantidad_costo;
+    }
 
     public function &getPKAsArray() : array {
         $pk['tpresentacion_codigo'] = $this->getId();

@@ -94,11 +94,6 @@ class TipoAplicacionProcesosDAO_postgre extends \app\common\dao\TSLAppBasicRecor
 
         $sql = str_replace('like', 'ilike', $sql);
 
-        // Si es fetchjoined ajustamos el query
-     /*   if ($subOperation == 'fetchJoined') {
-            $sql = str_replace('"empresa_id"', 'pd.empresa_id', $sql);
-        }
-*/
         return $sql;
     }
 

@@ -31,24 +31,6 @@ isc.WinUsuariosForm.addProperties({
                 {name: "usuarios_code", width: 80, size: 15, showPending: true, endRow: true},
                 {name: "usuarios_password", size: 20, width: 150, showPending: true, endRow: true},
                 {name: "usuarios_nombre_completo", size: 250, width: 300, showPending: true, endRow: true},
-                {
-                    name: "empresa_id",
-                    editorType: "comboBoxExt",
-                    showPending: true,
-                    width: "120",
-                    valueField: "empresa_id",
-                    displayField: "empresa_razon_social",
-                    optionDataSource: mdl_empresa,
-                    pickListFields: [{
-                        name: "empresa_razon_social"
-                    }],
-                    pickListWidth: 260,
-                    completeOnTab: true,
-                    // Solo es pasado al servidor si no existe cache data all en el modelo
-                    // de lo contrario el sort se hace en el lado cliente.
-                    initialSort: [{property: 'empresa_razon_social'}],
-                    startRow: true
-                },
                 {name: "usuarios_admin", defaultValue: false, showPending: true, endRow: true},
                 {name: "activo", defaultValue: true, showPending: true, endRow: true}
             ]

@@ -70,14 +70,12 @@ class LoginController extends app\common\controller\TSLAppDefaultController {
             if ($this->checkLogin() == true) {
                 $model = $this->DTO->getOutMessage()->getResultData();
 
-                $this->setSessionData('empresa_id',$model->get_empresa_id());
                 $this->setSessionData('usuario_id',$model->get_usuarios_id());
                 $this->setSessionData('usuario_code',$model->get_usuarios_code());
                 $this->setSessionData('usuario_name',$model->get_usuarios_nombre_completo());
                 $this->setSessionData('isLoggedIn',true);
 
             } else {
-                $this->unsetSessionData('empresa_id');
                 $this->unsetSessionData('usuario_id');
                 $this->unsetSessionData('usuario_code');
                 $this->unsetSessionData('usuario_name');

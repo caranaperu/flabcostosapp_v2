@@ -27,6 +27,8 @@ class PresentacionBussinessService extends \app\common\bussiness\TSLAppCRUDBussi
         // Leo el id enviado en el DTO
         $model->set_tpresentacion_codigo($dto->getParameterValue('tpresentacion_codigo'));
         $model->set_tpresentacion_descripcion($dto->getParameterValue('tpresentacion_descripcion'));
+        $model->set_unidad_medida_codigo_costo($dto->getParameterValue('unidad_medida_codigo_costo'));
+        $model->set_tpresentacion_cantidad_costo($dto->getParameterValue('tpresentacion_cantidad_costo'));
         $model->set_tpresentacion_protected(($dto->getParameterValue('tpresentacion_protected') == 'true' ? true : false));
         if ($dto->getParameterValue('activo') != NULL)
             $model->setActivo($dto->getParameterValue('activo'));
@@ -45,6 +47,8 @@ class PresentacionBussinessService extends \app\common\bussiness\TSLAppCRUDBussi
         // Leo el id enviado en el DTO
         $model->set_tpresentacion_codigo($dto->getParameterValue('tpresentacion_codigo'));
         $model->set_tpresentacion_descripcion($dto->getParameterValue('tpresentacion_descripcion'));
+        $model->set_unidad_medida_codigo_costo($dto->getParameterValue('unidad_medida_codigo_costo'));
+        $model->set_tpresentacion_cantidad_costo($dto->getParameterValue('tpresentacion_cantidad_costo'));
         $model->set_tpresentacion_protected(($dto->getParameterValue('tpresentacion_protected') == 'true' ? true : false));
 
         $model->setVersionId($dto->getParameterValue('versionId'));

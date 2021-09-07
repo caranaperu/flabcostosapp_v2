@@ -14,46 +14,25 @@ if (!defined('BASEPATH')) {
  * @author  Carlos Arana Reategui <aranape@gmail.com>
  * @history , 09-02-2017 , primera version adaptada a php 7.1
  *            09-08-2021 Se agrego el campo $insumo_cantidad_costo
+ *            05-09-2021 Se retira insumo cantidad costo ya que se decidio que para un producto dicho valor viene
+ *                       en la presentacion.
  *
  * @TODO : Las funciones que vienen de la clase padre faltan ser adaptadas.
  *
  */
 class ProductoModel extends TSLDataModel {
-    protected $empresa_id;
     protected $insumo_id;
     protected $insumo_tipo;
     protected $insumo_codigo;
     protected $insumo_descripcion;
-    protected $unidad_medida_codigo_costo;
+    protected $tpresentacion_codigo;
     protected $insumo_merma;
     protected $moneda_codigo_costo;
     protected $insumo_precio_mercado;
-    protected $insumo_cantidad_costo;
-
     protected $taplicacion_entries_id;
 
 
     private static $_INSUMO_TIPO = ['IN', 'PR'];
-
-    /**
-     * Retorna a que empresa pertenece la creacion de este producto.
-     *
-     * @return int empresa_id con el id de la empresa asociada a este producto.
-     */
-    public function get_empresa_id() : int {
-        return $this->empresa_id;
-    }
-
-    /**
-     * Setea a que empresa esta asociado este producto , hay que indicar
-     * que para un solo producto puede haber diferentes definiciones , segun
-     * sea la empresa por ejemplo importadora , fabrica , distribuidora.
-     *
-     * @param int $empresa_id con el id de la empresa asociada a este producto
-     */
-    public function set_empresa_id(int $empresa_id) : void {
-        $this->empresa_id = $empresa_id;
-    }
 
 
     public function set_insumo_id(int $insumo_id) : void {
@@ -125,27 +104,24 @@ class ProductoModel extends TSLDataModel {
         return $this->insumo_descripcion;
     }
 
-
     /**
-     * Setea el codigo de la unidad de medida del insumo en las unidades minimas
-     * de costeo.
+     * Setea el codigo de presentacion del producto , esto no sera seteado cuando el tipo de insumo
+     * es precisamente insummo no producto
      *
-     * @param string $unidad_medida_codigo_costo codigo de la unidad de medida del insumo para costos
+     * @param string $tpresentacion_codigo codigo de presentacion
      */
-    public function set_unidad_medida_codigo_costo(string $unidad_medida_codigo_costo) : void {
-        $this->unidad_medida_codigo_costo = $unidad_medida_codigo_costo;
+    public function set_tpresentacion_codigo(string $tpresentacion_codigo) : void {
+        $this->tpresentacion_codigo = $tpresentacion_codigo;
     }
 
     /**
-     * Retorna el codigo de la unidad de medida del insumoen las unidades minimas
-     * de costeo.
+     * Retorna el codigo de presentacion del producto
      *
-     * @return string el codigo de la unidad de medida del insumo para costo
+     * @return string codigo de presentacion
      */
-    public function get_unidad_medida_codigo_costo() : string {
-        return $this->unidad_medida_codigo_costo;
+    public function get_tpresentacion_codigo() : string {
+        return $this->tpresentacion_codigo;
     }
-
 
 
     /**
@@ -227,27 +203,6 @@ class ProductoModel extends TSLDataModel {
         $this->insumo_precio_mercado = $insumo_precio_mercado;
     }
 
-    /**
-     *
-     * Retorna cantidadla  de costo o lo que es lo mismo la cantidad de la presentacion
-     * del producto ej. 120M , lo cual estara expresado en la unidad de costo
-     *
-     * @param float con la cantidad
-     */
-    public function get_insumo_cantidad_costo() : float {
-        return $this->insumo_cantidad_costo;
-    }
-
-
-    /**
-     * Setea la cantidad de costo o lo que es lo mismo la cantidad de la presentacion
-     * del producto ej. 120, lo cual estara expresado en la unidad de costo
-     *
-     * @param double $insumo_cantidad_costo la cantidad
-     */
-    public function set_insumo_cantidad_costo(float $insumo_cantidad_costo) : void {
-        $this->insumo_cantidad_costo = $insumo_cantidad_costo;
-    }
 
     public function &getPKAsArray() : array {
         $pk['insumo_id'] = $this->getId();

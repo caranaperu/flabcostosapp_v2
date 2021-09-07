@@ -26,9 +26,6 @@ isc.RestDataSourceUsuarios.create({
         {name: "activo", title: "Activo", type: 'boolean',  getFieldValue: function (r, v, f, fn) {
                 return mdl_usuarios._getBooleanFieldValue(v);
             }},
-        {name: "empresa_id", title:'Empresa',required: true,  foreignKey: "mdl_empresa.empresa_id"},
-        // virtual
-        {name: "empresa_razon_social", title:'Empresa'}
 
     ],
     fetchDataURL: glb_dataUrl + 'usuariosController?op=fetch&libid=SmartClient',

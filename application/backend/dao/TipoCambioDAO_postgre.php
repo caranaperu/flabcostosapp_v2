@@ -145,7 +145,6 @@ class TipoCambioDAO_postgre extends \app\common\dao\TSLAppBasicRecordDAO_postgre
         'activo=\'' . $record->getActivo() . '\',' .
         'usuario_mod=\'' . $record->get_Usuario_mod() . '\'' .
         ' where "tipo_cambio_id" = ' . $record->get_tipo_cambio_id() . '  and xmin =' . $record->getVersionId();
-
     }
 
     protected function getLastSequenceOrIdentityQuery(\TSLDataModel &$record = NULL) : string

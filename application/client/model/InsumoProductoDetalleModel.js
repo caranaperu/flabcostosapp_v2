@@ -31,11 +31,6 @@ isc.RestDataSource.create({
             name: "insumo_descripcion",
             title: "Descripcion"
         },
-        {name: "empresa_id"},
-        {
-            name: "empresa_razon_social",
-            title: 'Origen'
-        },
         {name: "unidad_medida_codigo_costo"},
         {name: "insumo_merma"},
         {name: "insumo_costo"},

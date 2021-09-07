@@ -62,7 +62,7 @@ class TipoAplicacionProcesosModel extends TSLDataModel {
     /**
      * Retorna la fecha desde que tiene validez esta relacion.
      *
-     * @return string la fecha de la cotizacion..
+     * @return string la fecha
      */
     public function get_taplicacion_procesos_fecha_desde(): string {
         return $this->taplicacion_procesos_fecha_desde;

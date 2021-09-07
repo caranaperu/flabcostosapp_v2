@@ -1,6 +1,6 @@
 /**
  * Clase especifica para la definicion de la ventana para
- * la edicion de los registros de los items de las cotizaciones.
+ * la edicion de los registros que relacionan un producto y sus procesos.
  *
  * @version 1.00
  * @since 1.00
@@ -60,14 +60,6 @@ isc.WinProductoProcesosForm.addProperties({
                     // Solo es pasado al servidor si no existe cache data all en el modelo
                     // de lo contrario el sort se hace en el lado cliente.
                     initialSort: [{property: 'insumo_descripcion'}],
-                    pickListCriteria: {
-                        _constructor: "AdvancedCriteria",
-                        operator: "and",
-                        criteria: [{
-                            fieldName: 'empresa_id',
-                            value: glb_empresaId,
-                            operator: 'equals'
-                        }]},
                     startRow: true
                 },
                 {

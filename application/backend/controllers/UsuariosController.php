@@ -36,11 +36,11 @@ class UsuariosController extends app\common\controller\TSLAppDefaultCRUDControll
             "paramsList" => [
                 "fetch" => [],
                 "read" => ['usuarios_id', 'verifyExist'],
-                "add" => ['usuarios_code', 'usuarios_password', 'usuarios_nombre_completo', 'usuarios_admin','empresa_id', 'activo'],
+                "add" => ['usuarios_code', 'usuarios_password', 'usuarios_nombre_completo', 'usuarios_admin', 'activo'],
                 "del" => ['usuarios_id', 'versionId'],
-                "upd" => ['usuarios_id', 'usuarios_code', 'usuarios_password', 'usuarios_nombre_completo', 'usuarios_admin','empresa_id', 'versionId', 'activo']
+                "upd" => ['usuarios_id', 'usuarios_code', 'usuarios_password', 'usuarios_nombre_completo', 'usuarios_admin', 'versionId', 'activo']
             ],
-            "paramsFixableToNull" => ['usuarios_id','empresa_'],
+            "paramsFixableToNull" => ['usuarios_id'],
             "paramsFixableToValue" => ["usuarios_id" => ["valueToFix" => 'null', "valueToReplace" => NULL, "isID" => true]],
             "paramToMapId" => 'usuarios_id'
         ];

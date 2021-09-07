@@ -12,7 +12,7 @@ isc.defineClass("WinInsumoForm", "WindowBasicFormExt");
 isc.WinInsumoForm.addProperties({
     ID: "winInsumoForm",
     title: "Mantenimiento de Insumos",
-    width: 592, height: 320,
+    width: 610, height: 320,
     createForm: function (formMode) {
         return isc.DynamicFormExt.create({
             ID: "formInsumo",
@@ -93,22 +93,6 @@ isc.WinInsumoForm.addProperties({
                 {name: "insumo_merma", showPending: true, width: '80',
                     visibleWhen: {tcostos_indirecto: false}
                 },
-                {name: "insumo_usa_factor_ajuste", showPending: true,
-                    defaultValue: false,
-                    change: function(form, item, value, oldValue) {
-                        // No uso directamente el oldValue del parametro ya que este no indica el estado original del
-                        // registro sino el estado anterior en pantalla
-                        if (form.getOldValue('insumo_usa_factor_ajuste') == true && value == false) {
-                            isc.ask('Si los apaga y contiene datos para el calculo de factor de ajuste estos seran eliminados, desea continuar?', function (value) {
-                                if (value == false) {
-                                    item.setValue(oldValue);
-                                }
-                            });
-                        } else {
-                            return true;
-                        }
-                    }
-                },
                 {
                     name: "insumos_separator_01",
                     defaultValue: "Costo",
@@ -149,12 +133,7 @@ isc.WinInsumoForm.addProperties({
                 {name: "insumo_precio_mercado", showPending: true, width: '80',
                     visibleWhen: {tcostos_indirecto: false}
                 },
-                {name: "tcostos_indirecto", hidden:true},
-                {
-                    name: "empresa_id",
-                    hidden: true,
-                    defaultValue: glb_empresaId
-                }
+                {name: "tcostos_indirecto", hidden:true}
             ]//, cellBorder: 1
         });
     },
@@ -170,23 +149,9 @@ isc.WinInsumoForm.addProperties({
      */
     addAdditionalTabs: function (tabset) {
         tabset.addAdditionalTab({
-            ID: 'TabInfoCostosHistoricosFormInsumo',
-            title: 'Historico de Costos',
-            paneClass: 'InsumoCostosHistoricosForm',
-            joinField: 'insumo_id'
-        });
-
-        tabset.addAdditionalTab({
             ID: 'TabInfoUsedByFormInsumo',
             title: 'Usado Por',
             paneClass: 'InsumoUsedByForm',
-            joinField: 'insumo_id'
-        });
-
-        tabset.addAdditionalTab({
-            ID: 'TabInfoInsumoEntriesAssocForm',
-            title: 'Ingresos para Factor De ajuste',
-            paneClass: 'InsumoEntriesAssocForm',
             joinField: 'insumo_id'
         });
     },

@@ -34,7 +34,10 @@ isc.WinCostoListWindow.addProperties({
             showRecordComponentsByCell: true,
             recordComponentPoolingMode: "recycle",
             dataSource: mdl_costos_list,
+            sortField: 'costos_list_fecha',
+            sortDirection: "descending",
             autoFetchData: true,
+            selectionType: 'single',
             fields: [
                 {
                     name: "costos_list_ide",
@@ -91,6 +94,7 @@ isc.WinCostoListWindow.addProperties({
                 var fieldName = this.getFieldName(colNum);
 
                 if (fieldName == "I") {
+                    console.log("Paso a crear boton "+ record.costos_list_descripcion);
                     return isc.ImgButton.create({
                         showDown: false,
                         showRollOver: false,
@@ -113,6 +117,32 @@ isc.WinCostoListWindow.addProperties({
                 } else {
                     return null;
                 }
+            },
+            updateRecordComponent: function (record, colNum, component, recordChanged) {
+
+                var fieldName = this.getFieldName(colNum);
+                console.log("Paso a reusar boton "+record.costos_list_descripcion);
+                console.log(component);
+
+                if (fieldName == "I") {
+                   CostoList.selectSingleRecord(record);
+
+                    component.addProperties({
+                        src: "[ISOMORPHIC]/../assets/images/print.png",
+                        click: function() {
+                            isc.ask('Desea imprimir la Lista : ' + record.costos_list_descripcion + ' <BR>Desea Continuar ?',
+                                function(val) {
+                                    if (val == true) {
+                                        url = CostoList.getReportURL(record,undefined);
+                                        winCostoListWindow.printReport(url,undefined);
+                                    }
+                                });
+                        }
+                    });
+                } else {
+                    return null;
+                }
+                return component;
             },
             getReportURL: function(record,format) {
                 if (record === undefined) {

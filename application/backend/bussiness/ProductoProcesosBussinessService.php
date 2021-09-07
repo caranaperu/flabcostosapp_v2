@@ -20,8 +20,6 @@ class ProductoProcesosBussinessService extends \app\common\bussiness\TSLAppCRUDB
     }
 
     /**
-     * El numero de cotizacion no se envia al agregar ya que se determina en el
-     * momento del add y no puede ser determinado desde el cliente.
      *
      * @param \TSLIDataTransferObj $dto
      * @return \TSLDataModel especificamente como ProductoProcesosModel

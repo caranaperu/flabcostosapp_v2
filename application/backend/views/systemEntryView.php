@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-<title>CLABS</title>
+<title>Future Labs - Costos</title>
 <body>
 
 </body>
@@ -15,12 +15,6 @@
     i.name='usuario_name';
     i.value='<?php echo $this->session->userdata("usuario_name") ?>';
     f.appendChild(i);
-
-    var l=document.createElement('input');
-    l.type='hidden';
-    l.name='empresa_id';
-    l.value='<?php echo $this->session->userdata("empresa_id") ?>';
-    f.appendChild(l);
 
 
     var g=document.createElement('input');

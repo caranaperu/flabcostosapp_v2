@@ -17,7 +17,6 @@ $lang['msg_productodetalle_rec_duplicatekey'] = 'El componente ya existe';
 $lang['producto_detalle_id'] = 'id del producto detalle';
 $lang['insumo_id_origen'] = 'Producto Origen';
 $lang['insumo_id'] = 'Componente';
-$lang['empresa_id'] = 'id de la empresa';
 $lang['unidad_medida_codigo'] = 'Unidad de Medida';
 $lang['producto_detalle_cantidad'] = 'Cantidad';
 $lang['producto_detalle_valor'] = 'Valor';

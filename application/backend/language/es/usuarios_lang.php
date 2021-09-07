@@ -15,5 +15,4 @@ $lang['usuarios_code'] = 'Codigo de Usuario';
 $lang['usuarios_password'] = 'Password de Usuario';
 $lang['usuarios_nombre_completo'] = 'Nombres del Usuario';
 $lang['usuarios_admin'] = 'Administrador?';
-$lang['empresa_id'] = 'Empresa';
 $lang['versionId'] = 'Version';

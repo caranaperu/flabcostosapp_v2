@@ -21,8 +21,8 @@ class InsumoModel extends ProductoModel {
     protected $tcostos_codigo;
     protected $unidad_medida_codigo_ingreso;
     protected $insumo_costo;
+    protected $unidad_medida_codigo_costo;
     protected $insumo_precio_mercado;
-    protected $insumo_usa_factor_ajuste;
 
 
     /**
@@ -87,6 +87,25 @@ class InsumoModel extends ProductoModel {
         $this->insumo_costo = $insumo_costo;
     }
 
+    /**
+     * Setea el codigo de la unidad de medida del insumo en las unidades minimas
+     * de costeo.
+     *
+     * @param string $unidad_medida_codigo_costo codigo de la unidad de medida del insumo para costos
+     */
+    public function set_unidad_medida_codigo_costo(string $unidad_medida_codigo_costo) : void {
+        $this->unidad_medida_codigo_costo = $unidad_medida_codigo_costo;
+    }
+
+    /**
+     * Retorna el codigo de la unidad de medida del insumoen las unidades minimas
+     * de costeo.
+     *
+     * @return string el codigo de la unidad de medida del insumo para costo
+     */
+    public function get_unidad_medida_codigo_costo() : string {
+        return $this->unidad_medida_codigo_costo;
+    }
 
     /**
      * Retorna el costo de produccion a unidades de costo.
@@ -97,26 +116,4 @@ class InsumoModel extends ProductoModel {
         return $this->insumo_costo;
     }
 
-    /**
-     * Setea si el insumo esta sujeto a factor de ajuste de costo.
-     *
-     * Si es true se permitira ingresar entradas de importacion (insumo_entries)
-     *
-     * @param boolean $insumo_usa_factor_ajuste true usa factor de ajuste
-     */
-    public function set_insumo_usa_factor_ajuste(bool $insumo_usa_factor_ajuste) : void {
-        $this->insumo_usa_factor_ajuste = self::getAsBool($insumo_usa_factor_ajuste);
-    }
-
-    /**
-     * Retorna insumo esta sujeto a factor de ajuste de costo.
-     *
-     * @return boolean true si usa factor de ajuste..
-     */
-    public function get_insumo_usa_factor_ajuste() : bool {
-        if (!isset($this->insumo_usa_factor_ajuste)) {
-            return false;
-        }
-        return $this->insumo_usa_factor_ajuste;
-    }
 }

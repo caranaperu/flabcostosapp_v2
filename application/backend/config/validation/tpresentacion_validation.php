@@ -20,6 +20,16 @@ $config['v_tpresentacion'] = array(
             'rules' => 'required|max_length[60]'
         ),
         array(
+            'field' => 'unidad_medida_codigo_costo',
+            'label' => 'lang:unidad_medida_codigo_costo',
+            'rules' => 'required|alpha|max_length[8]'
+        ),
+        array(
+            'field' => 'tpresentacion_cantidad_costo',
+            'label' => 'lang:tpresentacion_cantidad_costo',
+            'rules' => 'required|decimal|greater_than[0.00] '
+        ),
+        array(
             'field' => 'tpresentacion_protected',
             'label' => 'lang:tpresentacion_protected',
             'rules' => 'required|is_boolean'
@@ -52,6 +62,16 @@ $config['v_tpresentacion'] = array(
             'field' => 'tpresentacion_descripcion',
             'label' => 'lang:tpresentacion_descripcion',
             'rules' => 'required|max_length[60]'
+        ),
+        array(
+            'field' => 'unidad_medida_codigo_costo',
+            'label' => 'lang:unidad_medida_codigo_costo',
+            'rules' => 'required|alpha|max_length[8]'
+        ),
+        array(
+            'field' => 'tpresentacion_cantidad_costo',
+            'label' => 'lang:tpresentacion_cantidad_costo',
+            'rules' => 'required|decimal|greater_than[0.00] '
         ),
         array(
             'field' => 'tpresentacion_protected',

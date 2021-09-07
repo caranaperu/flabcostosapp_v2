@@ -6,10 +6,10 @@
  * @Author: Carlos Arana Reategui
  *
  */
-isc.defineClass("RestDataSourceCotizacion", "RestDataSourceExt");
+isc.defineClass("RestDataSourceTipoAplicacion", "RestDataSourceExt");
 
 
-isc.RestDataSourceCotizacion.create({
+isc.RestDataSourceTipoAplicacion.create({
     ID: "mdl_taplicacion_procesos",
     showPrompt: true,
     dataFormat: "json",

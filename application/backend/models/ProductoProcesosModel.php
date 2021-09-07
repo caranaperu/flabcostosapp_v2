@@ -62,7 +62,7 @@ class ProductoProcesosModel extends TSLDataModel {
     /**
      * Retorna la fecha desde que tiene validez esta relacion.
      *
-     * @return string la fecha de la cotizacion..
+     * @return string la fecha..
      */
     public function get_producto_procesos_fecha_desde(): string {
         return $this->producto_procesos_fecha_desde;

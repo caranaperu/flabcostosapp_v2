@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>CLABS</title>
+    <title>Future Labs - Costos</title>
     <SCRIPT>var isomorphicDir = "../../../common/client/isomorphic/";</SCRIPT>
     <SCRIPT SRC=../../../common/client/isomorphic/system/modules-debug/ISC_Core.js></SCRIPT>
     <SCRIPT SRC=../../../common/client/isomorphic/system/modules-debug/ISC_Foundation.js></SCRIPT>
@@ -13,7 +13,6 @@
     <SCRIPT SRC=../../../common/client/isomorphic/skins/EnterpriseBlue/load_skin.js></SCRIPT>
 
     <SCRIPT SRC=./appConfig.js></SCRIPT>
-    <SCRIPT>glb_empresaId = <?php echo $_POST["empresa_id"]; ?>;</SCRIPT>
 
     <SCRIPT SRC=../../../common/client/isomorphic_lib/view/IControlledCanvas.js></SCRIPT>
     <SCRIPT SRC=../../../common/client/isomorphic_lib/controller/DefaultController.js></SCRIPT>
@@ -79,21 +78,13 @@
     <SCRIPT SRC=./view/tcostos/TipoCostosWindow.js></SCRIPT>
     <SCRIPT SRC=./view/tcostos/TipoCostosForm.js></SCRIPT>
 
-    <SCRIPT SRC=view/insumos/InsumoCostosHistoricosForm.js></SCRIPT>
     <SCRIPT SRC=view/insumos/InsumoUsedByForm.js></SCRIPT>
-    <SCRIPT SRC=view/insumos/InsumoEntriesAssocForm.js></SCRIPT>
-    <SCRIPT SRC=./model/InsumoCostosHistoricoModel.js></SCRIPT>
     <SCRIPT SRC=./model/InsumoUsedByModel.js></SCRIPT>
     <SCRIPT SRC=./model/InsumoModel.js></SCRIPT>
     <SCRIPT SRC=./model/InsumoProductoDetalleModel.js></SCRIPT>
-    <SCRIPT SRC=./model/InsumoEntriesModel.js></SCRIPT>
-    <SCRIPT SRC=./model/InsumoEntriesAssocModel.js></SCRIPT>
 
     <SCRIPT SRC=./view/insumos/InsumoWindow.js></SCRIPT>
     <SCRIPT SRC=./view/insumos/InsumoForm.js></SCRIPT>
-    <SCRIPT SRC=./view/insumo_entries/InsumoEntriesWindow.js></SCRIPT>
-    <SCRIPT SRC=./view/insumo_entries/InsumoEntriesForm.js></SCRIPT>
-
 
     <SCRIPT SRC=./model/ProductoCostosHistoricoModel.js></SCRIPT>
     <SCRIPT SRC=./view/productos/ProductoCostosHistoricosForm.js></SCRIPT>
@@ -103,29 +94,10 @@
     <SCRIPT SRC=./view/productos/ProductoWindow.js></SCRIPT>
     <SCRIPT SRC=./view/productos/ProductoForm.js></SCRIPT>
 
-    <SCRIPT SRC=./model/ReglasModel.js></SCRIPT>
-    <SCRIPT SRC=./view/reglas/ReglasWindow.js></SCRIPT>
-    <SCRIPT SRC=./view/reglas/ReglasForm.js></SCRIPT>
-
-    <SCRIPT SRC=./model/TipoClienteModel.js></SCRIPT>
-    <SCRIPT SRC=./view/tcliente/TipoClienteWindow.js></SCRIPT>
-    <SCRIPT SRC=./view/tcliente/TipoClienteForm.js></SCRIPT>
-
-    <SCRIPT SRC=./model/ClienteModel.js></SCRIPT>
-    <SCRIPT SRC=./view/cliente/ClienteWindow.js></SCRIPT>
-    <SCRIPT SRC=./view/cliente/ClienteForm.js></SCRIPT>
 
     <SCRIPT SRC=view/reports/ReportsOutputWindow.js></SCRIPT>
 
-    <SCRIPT SRC=./model/CotizacionModel.js></SCRIPT>
-    <SCRIPT SRC=./model/CotizacionDetalleModel.js></SCRIPT>
-    <SCRIPT SRC=./model/ClienteCotizacionModel.js></SCRIPT>
-    <SCRIPT SRC=./model/ProductoCotizacionDetalleModel.js></SCRIPT>
 
-    <SCRIPT SRC=./view/cotizacion/CotizacionWindow.js></SCRIPT>
-    <SCRIPT SRC=./view/cotizacion/CotizacionForm.js></SCRIPT>
-
-    <SCRIPT SRC=./model/InsumoCostosHistoricosReportModel.js></SCRIPT>
     <SCRIPT SRC=./view/reports/CostosHistoricosReportWindow.js></SCRIPT>
 
     <SCRIPT SRC=./model/PresentacionModel.js></SCRIPT>

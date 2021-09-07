@@ -17,7 +17,6 @@ class UsuariosModel extends TSLDataModel {
     protected $usuarios_password;
     protected $usuarios_nombre_completo;
     protected $usuarios_admin;
-    protected $empresa_id;
 
 
     public function set_usuarios_id(int $usuarios_id) {
@@ -101,24 +100,6 @@ class UsuariosModel extends TSLDataModel {
         return $this->usuarios_admin;
     }
 
-    /**
-     * Retorna el id de la empresa al que esta asociado este
-     * usuario.
-     *
-     * @return integer con el id al que pertenece el usuario.
-     */
-    public function get_empresa_id() : int {
-        return $this->empresa_id;
-    }
-
-    /**
-     * Setea el id de la empresa al que esta asociado este usuario.
-     *
-     * @param integer $empresa_id con el id de la empresa.
-     */
-    public function set_empresa_id(int $empresa_id) {
-        $this->empresa_id = $empresa_id;
-    }
 
     public function &getPKAsArray() : array {
         $pk['usuarios_id'] = $this->getId();

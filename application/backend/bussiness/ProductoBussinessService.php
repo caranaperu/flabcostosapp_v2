@@ -31,15 +31,13 @@ class ProductoBussinessService extends \app\common\bussiness\TSLAppCRUDBussiness
     protected function &getModelToAdd(\TSLIDataTransferObj $dto) : \TSLDataModel {
         $model = new ProductoModel();
         // Leo el id enviado en el DTO
-        $model->set_empresa_id($dto->getParameterValue('empresa_id'));
         $model->set_insumo_tipo($dto->getParameterValue('insumo_tipo'));
         $model->set_insumo_codigo($dto->getParameterValue('insumo_codigo'));
         $model->set_insumo_descripcion($dto->getParameterValue('insumo_descripcion'));
         $model->set_taplicacion_entries_id($dto->getParameterValue('taplicacion_entries_id'));
-        $model->set_unidad_medida_codigo_costo($dto->getParameterValue('unidad_medida_codigo_costo'));
+        $model->set_tpresentacion_codigo($dto->getParameterValue('tpresentacion_codigo'));
         $model->set_insumo_merma($dto->getParameterValue('insumo_merma'));
         $model->set_insumo_precio_mercado($dto->getParameterValue('insumo_precio_mercado'));
-        $model->set_insumo_cantidad_costo($dto->getParameterValue('insumo_cantidad_costo'));
         $model->set_moneda_codigo_costo($dto->getParameterValue('moneda_codigo_costo'));
 
 
@@ -58,16 +56,14 @@ class ProductoBussinessService extends \app\common\bussiness\TSLAppCRUDBussiness
     protected function &getModelToUpdate(\TSLIDataTransferObj $dto) : \TSLDataModel {
         $model = new ProductoModel();
         // Leo el id enviado en el DTO
-        $model->set_empresa_id($dto->getParameterValue('empresa_id'));
         $model->set_insumo_id($dto->getParameterValue('insumo_id'));
         $model->set_insumo_tipo($dto->getParameterValue('insumo_tipo'));
         $model->set_insumo_codigo($dto->getParameterValue('insumo_codigo'));
         $model->set_insumo_descripcion($dto->getParameterValue('insumo_descripcion'));
         $model->set_taplicacion_entries_id($dto->getParameterValue('taplicacion_entries_id'));
-        $model->set_unidad_medida_codigo_costo($dto->getParameterValue('unidad_medida_codigo_costo'));
+        $model->set_tpresentacion_codigo($dto->getParameterValue('tpresentacion_codigo'));
         $model->set_insumo_merma($dto->getParameterValue('insumo_merma'));
         $model->set_insumo_precio_mercado($dto->getParameterValue('insumo_precio_mercado'));
-        $model->set_insumo_cantidad_costo($dto->getParameterValue('insumo_cantidad_costo'));
         $model->set_moneda_codigo_costo($dto->getParameterValue('moneda_codigo_costo'));
 
         $model->setVersionId($dto->getParameterValue('versionId'));

@@ -44,15 +44,9 @@ isc.RestDataSourceProducto.create({
             foreignKey: "mdl_taplicacion_entries.taplicacion_entries_id",
             required: true
         },
-        {
-            name: "empresa_id",
-            foreignKey: "mdl_empresa.empresa_id",
-            required: true
-        },
-        {
-            name: "unidad_medida_codigo_costo",
-            title: 'Unidad Costo',
-            foreignKey: "mdl_unidadmedida.unidad_medida_codigo",
+        {   name: "tpresentacion_codigo",
+            title: "Codigo Presentacion",
+            foreignKey: "mdl_presentacion.tpresentacion_codigo",
             required: true
         },
         {
@@ -82,19 +76,6 @@ isc.RestDataSourceProducto.create({
             }]
         },
         {
-            name: "insumo_cantidad_costo",
-            title: 'Cantidad Costo',
-            required: true,
-            validators: [{
-                type: 'floatRange',
-                min: 0.0001,
-                max: 100000.00
-            }, {
-                type: "floatPrecision",
-                precision: 2
-            }]
-        },
-        {
             name: "moneda_codigo_costo",
             title: 'Moneda Costo',
             foreignKey: "mdl_moneda.moneda_codigo",
@@ -102,12 +83,12 @@ isc.RestDataSourceProducto.create({
         },
         // campos join
         {
-            name: "unidad_medida_descripcion_costo",
-            title: "Unidad Costo"
-        },
-        {
             name: "taplicacion_entries_descripcion",
             title: 'Modo Aplicacion'
+        },
+        {
+            name: "tpresentacion_descripcion",
+            title: 'Presentacion'
         },
         {
             name: "moneda_descripcion",

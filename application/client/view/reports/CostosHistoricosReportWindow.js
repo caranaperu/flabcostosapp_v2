@@ -127,14 +127,6 @@ isc.CostosHistoricosReportWindow.addProperties({
                     displayField: "insumo_descripcion",
                     optionDataSource: mdl_insumo_costos_historico_report,
                     optionOperationId: 'fetchSimpleList',
-                    pickListCriteria: {
-                        _constructor: "AdvancedCriteria",
-                        operator: "and",
-                        criteria: [{
-                            fieldName: 'empresa_id',
-                            value: glb_empresaId,
-                            operator: 'equals'
-                        }]},
                     pickListFields: [
                         {
                             name: "insumo_codigo"

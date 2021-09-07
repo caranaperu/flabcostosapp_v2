@@ -24,7 +24,7 @@ isc.WinProductoForm.addProperties({
         return isc.DynamicFormExt.create({
             ID: "formProducto",
             numCols: 4,
-            colWidths: ["120", "120", "100", "*"],
+            colWidths: ["120", "120", "120", "*"],
             fixedColWidths: false,
             padding: 5,
             dataSource: mdl_producto,
@@ -38,11 +38,6 @@ isc.WinProductoForm.addProperties({
                 {
                     name: "insumo_id",
                     hidden: true
-                },
-                {
-                    name: "empresa_id",
-                    hidden: true,
-                    defaultValue: glb_empresaId
                 },
                 {
                     name: "insumo_tipo",
@@ -77,9 +72,31 @@ isc.WinProductoForm.addProperties({
                     title: 'Tipo Aplicacion'
                 },
                 {
+                    name: "tpresentacion_codigo",
+                    editorType: "comboBoxExt",
+                    showPending: true,
+                    width: "250",
+                    valueField: "tpresentacion_codigo",
+                    displayField: "tpresentacion_descripcion",
+                    optionDataSource: mdl_presentacion,
+                    pickListFields: [{
+                        name: "tpresentacion_codigo",
+                        width: '20%'
+                    }, {
+                        name: "tpresentacion_descripcion",
+                        width: '80%'
+                    }],
+                    pickListWidth: 260,
+                    completeOnTab: true,
+                    // Solo es pasado al servidor si no existe cache data all en el modelo
+                    // de lo contrario el sort se hace en el lado cliente.
+                    initialSort: [{property: 'tpresentacion_descripcion'}],
+                },
+                {
                     name: "insumo_merma",
                     showPending: true,
-                    width: '80'
+                    width: '80',
+                    startRow: true
                 },
                 {
                     name: "producto_separator_01",
@@ -89,31 +106,7 @@ isc.WinProductoForm.addProperties({
                     width: "*",
                     canCollapse: false,
                     align: 'center',
-                    itemIds: ["unidad_medida_codigo_costo", "moneda_codigo_costo"]
-                },
-                {name: "insumo_cantidad_costo", showPending: true, width: '80',
-                    startRow: true
-                },
-                {
-                    name: "unidad_medida_codigo_costo",
-                    editorType: "comboBoxExt",
-                    showPending: true,
-                    width: "120",
-                    valueField: "unidad_medida_codigo",
-                    displayField: "unidad_medida_descripcion",
-                    optionDataSource: mdl_unidadmedida,
-                    pickListFields: [{
-                        name: "unidad_medida_codigo",
-                        width: '30%'
-                    }, {
-                        name: "unidad_medida_descripcion",
-                        width: '70%'
-                    }],
-                    pickListWidth: 260,
-                    completeOnTab: true,
-                    // Solo es pasado al servidor si no existe cache data all en el modelo
-                    // de lo contrario el sort se hace en el lado cliente.
-                    initialSort: [{property: 'unidad_medida_descripcion'}],
+                    itemIds: ["moneda_codigo_costo", "insumo_precio_mercado"]
                 },
                 {
                     name: "moneda_codigo_costo",
@@ -168,10 +161,6 @@ isc.WinProductoForm.addProperties({
                 showGroupSummaryInHeader: true,
                 width: 750,
                 fields: [
-                    {
-                        name: "empresa_razon_social",
-                        width: '20%'
-                    },
                     {
                         name: "insumo_descripcion",
                         width: '20%'
@@ -267,10 +256,6 @@ isc.WinProductoForm.addProperties({
                                 hidden: true
                             },
                             {
-                                name: "empresa_id",
-                                hidden: true
-                            },
-                            {
                                 name: "insumo_id",
                                 editorType: "comboBoxExt",
                                 showPending: true,
@@ -285,9 +270,6 @@ isc.WinProductoForm.addProperties({
                                         width: '20%'
                                     }, {
                                         name: "insumo_descripcion",
-                                        width: '40%'
-                                    }, {
-                                        name: 'empresa_razon_social',
                                         width: '40%'
                                     }],
                                 useClientFiltering: false,
@@ -326,7 +308,6 @@ isc.WinProductoForm.addProperties({
                                     var record = item.getSelectedRecord();
                                     if (record) {
                                         form.getItem('tcostos_indirecto').setValue(record.tcostos_indirecto);
-                                        form.getItem('empresa_id').setValue(record.empresa_id);
                                         if (record.tcostos_indirecto == true) {
                                             form.getItem('unidad_medida_codigo').setValue('NING');
                                             form.getItem('producto_detalle_merma').setValue(0.00);
@@ -341,7 +322,6 @@ isc.WinProductoForm.addProperties({
                                         form.getItem('moneda_simbolo').setValue(record.moneda_simbolo);
                                         form.getItem('producto_detalle_valor').setValue(record.insumo_costo);
                                     } else {
-                                        form.getItem('empresa_id').setValue(-1);
                                         form.getItem('unidad_medida_codigo').setValue('NING');
                                         form.getItem('producto_detalle_merma').setValue(0.00);
                                         form.getItem('tcostos_indirecto').setValue(false);

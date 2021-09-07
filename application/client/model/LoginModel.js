@@ -17,8 +17,7 @@ isc.RestDataSource.create({
         {name: "usuarios_password", title: 'Password', required: true},
         {name: "usuarios_admin", title: "Admin", type: 'boolean',  getFieldValue: function (r, v, f, fn) {
                 return mdl_login._getBooleanFieldValue(v);
-            }},
-        {name: "empresa_id", title:'Empresa',required: true,  foreignKey: "mdl_empresa.empresa_id"}
+            }}
     ],
     addDataURL: glb_dataUrl + 'loginController?op=fetch&libid=SmartClient',
     removeDataURL: glb_dataUrl + 'loginController?op=del&libid=SmartClient',

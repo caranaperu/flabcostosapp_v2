@@ -36,11 +36,11 @@ class PresentacionController extends app\common\controller\TSLAppDefaultCRUDCont
             "paramsList" => [
                 "fetch" => [],
                 "read" => ['tpresentacion_codigo', 'verifyExist'],
-                "add" => ['tpresentacion_codigo','tpresentacion_descripcion','tpresentacion_protected','activo'],
+                "add" => ['tpresentacion_codigo','tpresentacion_descripcion','unidad_medida_codigo_costo','tpresentacion_cantidad_costo','tpresentacion_protected','activo'],
                 "del" => ['tpresentacion_codigo', 'versionId'],
-                "upd" => ['tpresentacion_codigo', 'tpresentacion_descripcion','tpresentacion_protected','versionId', 'activo'],
+                "upd" => ['tpresentacion_codigo', 'tpresentacion_descripcion','unidad_medida_codigo_costo','tpresentacion_cantidad_costo','tpresentacion_protected','versionId', 'activo'],
             ],
-            "paramsFixableToNull" => ['tpresentacion_'],
+            "paramsFixableToNull" => ['tpresentacion_','unidad_medida'],
             "paramsFixableToValue" => ["tpresentacion_codigo" => ["valueToFix" => 'null', "valueToReplace" => NULL, "isID" => true]],
            "paramToMapId" => 'tpresentacion_codigo'
         ];

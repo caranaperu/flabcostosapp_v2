@@ -1,6 +1,6 @@
 /**
  * Clase especifica para la definicion de la ventana para
- * la edicion de los registros de los items de las cotizaciones.
+ * la edicion de los registros de modos de aplicacion de un producto.
  *
  * @version 1.00
  * @since 1.00

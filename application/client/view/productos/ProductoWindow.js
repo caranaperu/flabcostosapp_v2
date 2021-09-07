@@ -33,24 +33,16 @@ isc.WinProductoWindow.addProperties({
                     width: '18%'
                 },
                 {
+                    name: "tpresentacion_descripcion",
+                    width: '15%'
+                },
+                {
                     name: "insumo_merma",
                     align: 'right',
                     width: '8%',
                     filterEditorProperties: {
                         operator: "equals"
                     }
-                },
-                {
-                    name: "insumo_cantidad_costo",align: 'right',
-                    width: '10%',
-                    filterEditorProperties: {
-                        operator: "equals",
-                        type: 'float'
-                    }
-                },
-                {
-                    name: "unidad_medida_descripcion_costo",
-                    width: '10%'
                 },
                 {
                     name: "moneda_descripcion",
@@ -82,11 +74,8 @@ isc.WinProductoWindow.addProperties({
                     fieldName: 'insumo_tipo',
                     value: 'PR',
                     operator: 'equals'
-                }, {
-                    fieldName: 'empresa_id',
-                    value: glb_empresaId,
-                    operator: 'equals'
-                }]
+                }
+                ]
             },
             canReorderFields: false,
             showFilterEditor: true,

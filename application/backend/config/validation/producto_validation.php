@@ -10,11 +10,6 @@ $config['v_producto'] = array(
     ),
     'updProducto' => array(
         array(
-            'field' => 'empresa_id',
-            'label' => 'lang:id',
-            'rules' => 'required|integer'
-        ),
-        array(
             'field' => 'insumo_id',
             'label' => 'lang:insumo_id',
             'rules' => 'required|integer'
@@ -40,6 +35,11 @@ $config['v_producto'] = array(
             'rules' => 'required|integer'
         ),
         array(
+            'field' => 'tpresentacion_codigo',
+            'label' => 'lang:tpresentacion_codigo',
+            'rules' => 'required|max_length[15]'
+        ),
+        array(
             'field' => 'insumo_merma',
             'label' => 'lang:insumo_merma',
             'rules' => 'required|decimal|greater_than[0.00] '
@@ -48,11 +48,6 @@ $config['v_producto'] = array(
             'field' => 'insumo_precio_mercado',
             'label' => 'lang:insumo_precio_mercado',
             'rules' => 'required|decimal|greater_than_equal[0.00] '
-        ),
-        array(
-            'field' => 'insumo_cantidad_costo',
-            'label' => 'lang:insumo_cantidad_costo',
-            'rules' => 'required|decimal|greater_than[0.00] '
         ),
         array(
             'field' => 'moneda_codigo_costo',
@@ -79,11 +74,6 @@ $config['v_producto'] = array(
     ),
     'addProducto' => array(
         array(
-            'field' => 'empresa_id',
-            'label' => 'lang:id',
-            'rules' => 'required|integer'
-        ),
-        array(
             'field' => 'insumo_tipo',
             'label' => 'lang:insumo_tipo',
             'rules' => 'required|alpha_numeric|max_length[2]'
@@ -104,9 +94,9 @@ $config['v_producto'] = array(
             'rules' => 'required|integer'
         ),
         array(
-            'field' => 'unidad_medida_codigo_costo',
-            'label' => 'lang:unidad_medida_codigo_costo',
-            'rules' => 'required|alpha|max_length[8]'
+            'field' => 'tpresentacion_codigo',
+            'label' => 'lang:tpresentacion_codigo',
+            'rules' => 'required|max_length[15]'
         ),
         array(
             'field' => 'insumo_merma',
@@ -117,11 +107,6 @@ $config['v_producto'] = array(
             'field' => 'insumo_precio_mercado',
             'label' => 'lang:insumo_precio_mercado',
             'rules' => 'required|decimal|greater_than_equal[0.00] '
-        ),
-        array(
-            'field' => 'insumo_cantidad_costo',
-            'label' => 'lang:insumo_cantidad_costo',
-            'rules' => 'required|decimal|greater_than[0.00] '
         ),
         array(
             'field' => 'moneda_codigo_costo',

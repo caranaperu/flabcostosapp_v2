@@ -9,7 +9,9 @@ $lang['msg_tpresentacion_rec_foreignkey_add'] = 'Debe existir la presentacion , 
 $lang['msg_tpresentacion_rec_foreignkey_del'] = 'La presentacion se encuentra usada ';
 $lang['msg_tpresentacion_rec_inactivo'] = 'La presentacion ya existe , pero esta inactiva';
 
-$lang['tpresentacion_codigo'] = 'Codigo de Tipo';
+$lang['tpresentacion_codigo'] = 'Codigo de Presentacion';
 $lang['tpresentacion_descripcion'] = 'Descripcion';
+$lang['unidad_medida_codigo_costo'] = 'Unidad Medida Costo';
+$lang['tpresentacion_cantidad_costo'] = 'Cantidad Costo';
 $lang['tpresentacion_protected'] = 'Flag de Proteccion';
 $lang['versionId'] = 'Version';

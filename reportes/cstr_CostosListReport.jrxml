@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cstr_CostosListReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b31ff76b-73ce-4a01-9650-85f232f51f29">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="CostosSistemaDA"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="net.sf.jasperreports.export.xls.remove.empty.space.between.columns" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.remove.empty.space.between.rows" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.detect.cell.type" value="true"/>
+	<property name="ireport.jasperserver.url" value="http://localhost:8080/jasperserver/"/>
+	<property name="ireport.jasperserver.user" value="jasperadmin"/>
+	<property name="ireport.jasperserver.report.resource" value="/SistemCostos/cstr_CostosListReport_files/main_jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/SistemCostos/cstr_CostosListReport"/>
+	<property name="net.sf.jasperreports.export.pdf.exclude.key.forXls"/>
+	<property name="net.sf.jasperreports.export.html.exclude.key.forXls"/>
+	<property name="net.sf.jasperreports.export.xlsx.exclude.key.forScreen"/>
+	<property name="net.sf.jasperreports.export.xls.exclude.key.forScreen"/>
+	<property name="net.sf.jasperreports.export.csv.exclude.key.forScreen"/>
+	<property name="net.sf.jasperreports.export.csv.exclude.key.forXls"/>
+	<parameter name="p_costos_list_id" class="java.lang.Long">
+		<parameterDescription><![CDATA[Identificador unico de la lista de costos]]></parameterDescription>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[SELECT costos_list_descripcion,
+	costos_list_fecha,
+	costos_list_fecha_desde,
+	costos_list_fecha_hasta,
+	costos_list_fecha_tcambio,
+	ld.insumo_descripcion,
+	ld.taplicacion_entries_descripcion ,
+	ld.costos_list_detalle_qty_presentacion,
+	ld.unidad_medida_siglas,
+	ld.moneda_descripcion,
+	ld.costos_list_detalle_costo_base ,
+	ld.costos_list_detalle_costo_agregado ,
+	ld.costos_list_detalle_costo_total
+FROM tb_costos_list l
+inner join tb_costos_list_detalle ld on ld.costos_list_id = l.costos_list_id
+WHERE
+	 l.costos_list_id = $P{p_costos_list_id}]]>
+	</queryString>
+	<field name="costos_list_descripcion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="costos_list_descripcion"/>
+		<property name="com.jaspersoft.studio.field.label" value="costos_list_descripcion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_costos_list"/>
+	</field>
+	<field name="costos_list_fecha" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="costos_list_fecha"/>
+		<property name="com.jaspersoft.studio.field.label" value="costos_list_fecha"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_costos_list"/>
+	</field>
+	<field name="costos_list_fecha_desde" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="costos_list_fecha_desde"/>
+		<property name="com.jaspersoft.studio.field.label" value="costos_list_fecha_desde"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_costos_list"/>
+	</field>
+	<field name="costos_list_fecha_hasta" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="costos_list_fecha_hasta"/>
+		<property name="com.jaspersoft.studio.field.label" value="costos_list_fecha_hasta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_costos_list"/>
+	</field>
+	<field name="costos_list_fecha_tcambio" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="costos_list_fecha_tcambio"/>
+		<property name="com.jaspersoft.studio.field.label" value="costos_list_fecha_tcambio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_costos_list"/>
+	</field>
+	<field name="insumo_descripcion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="insumo_descripcion"/>
+		<property name="com.jaspersoft.studio.field.label" value="insumo_descripcion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_costos_list_detalle"/>
+	</field>
+	<field name="taplicacion_entries_descripcion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="taplicacion_entries_descripcion"/>
+		<property name="com.jaspersoft.studio.field.label" value="taplicacion_entries_descripcion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_costos_list_detalle"/>
+	</field>
+	<field name="costos_list_detalle_qty_presentacion" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="costos_list_detalle_qty_presentacion"/>
+		<property name="com.jaspersoft.studio.field.label" value="costos_list_detalle_qty_presentacion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_costos_list_detalle"/>
+	</field>
+	<field name="unidad_medida_siglas" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="unidad_medida_siglas"/>
+		<property name="com.jaspersoft.studio.field.label" value="unidad_medida_siglas"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_costos_list_detalle"/>
+	</field>
+	<field name="moneda_descripcion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="moneda_descripcion"/>
+		<property name="com.jaspersoft.studio.field.label" value="moneda_descripcion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_costos_list_detalle"/>
+	</field>
+	<field name="costos_list_detalle_costo_base" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="costos_list_detalle_costo_base"/>
+		<property name="com.jaspersoft.studio.field.label" value="costos_list_detalle_costo_base"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_costos_list_detalle"/>
+	</field>
+	<field name="costos_list_detalle_costo_agregado" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="costos_list_detalle_costo_agregado"/>
+		<property name="com.jaspersoft.studio.field.label" value="costos_list_detalle_costo_agregado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_costos_list_detalle"/>
+	</field>
+	<field name="costos_list_detalle_costo_total" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="costos_list_detalle_costo_total"/>
+		<property name="com.jaspersoft.studio.field.label" value="costos_list_detalle_costo_total"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_costos_list_detalle"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="20" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="81" splitType="Stretch">
+			<textField>
+				<reportElement key="forScreen" x="0" y="56" width="243" height="20" uuid="c833148e-efcc-40a3-bdf4-4c70c0a668ec"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Costos Agregados entre : "+DATEFORMAT($F{costos_list_fecha_desde},"dd/MM/YYY")+ " Al "+DATEFORMAT($F{costos_list_fecha_hasta},"dd/MM/YYY")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="forScreen" x="348" y="56" width="207" height="20" uuid="ded1a2a9-4b6f-4d29-ac46-05783cd8c77a"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tipo de Cambio a Fecha: "+DATEFORMAT($F{costos_list_fecha_tcambio},"dd/MM/YYY")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="forScreen" x="160" y="7" width="229" height="24" uuid="965485eb-a717-4046-b0f2-f102b70e3036"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Listado de Costos]]></text>
+			</staticText>
+			<textField>
+				<reportElement key="forScreen" x="103" y="31" width="348" height="19" uuid="1709a64a-f3c7-4ae5-8cef-9f17129049cc"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{costos_list_descripcion}+"  / "+DATEFORMAT($F{costos_list_fecha},"dd/MM/YYY HH:mm")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="forScreen" x="455" y="7" width="100" height="24" uuid="bda26335-fac2-46cf-a303-954f27c60f0e"/>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pag: "+$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="forScreen" x="0" y="7" width="150" height="24" uuid="514481ca-87f0-44a1-aa43-1c37bedea943"/>
+				<textElement textAlignment="Left">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Emitido: "+DATEFORMAT( TODAY( ),"dd/MM/YYYY hh:mm")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="forXls" x="0" y="10" width="555" height="30" uuid="f34d1dd8-00a1-45e9-a9cf-fd9eccbc593c">
+					<printWhenExpression><![CDATA[$V{PAGE_NUMBER}==1]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Lista de Costos para costos agregados entre "+$F{costos_list_fecha_desde}+" y "+$F{costos_list_fecha_hasta} +" y tipo de cambio a fecha "+$F{costos_list_fecha_tcambio} +" / Calculado el "+DATEFORMAT($F{costos_list_fecha},"dd/MM/YYYY HH:mm")+" / Emitido el "+DATEFORMAT(TODAY(),"dd/MM/YYYY HH:mm")]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout"/>
+			<staticText>
+				<reportElement x="0" y="0" width="138" height="20" uuid="5b358f66-ccdf-4ba3-8ef2-0d5a0ff0adac">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d1050b5c-5a22-4eb6-8d95-4f7f95f0c4db"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Producto]]></text>
+			</staticText>
+			<line>
+				<reportElement key="forScreen" x="0" y="24" width="555" height="1" uuid="a19a26ea-a535-42ab-9a53-b7e496865d79"/>
+			</line>
+			<line>
+				<reportElement key="forScreen" x="0" y="0" width="555" height="1" uuid="b59daa7d-86ec-470c-94d8-65de5bf24231"/>
+			</line>
+			<staticText>
+				<reportElement x="138" y="0" width="100" height="20" uuid="51e3dfa2-ee13-4230-b714-6b309e2b6e6a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d1050b5c-5a22-4eb6-8d95-4f7f95f0c4db"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Modo Aplicacion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="238" y="0" width="63" height="20" uuid="a77a0be1-c211-4ecf-8d8c-253a0c4a1681">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d1050b5c-5a22-4eb6-8d95-4f7f95f0c4db"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Presentacion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="301" y="0" width="58" height="20" uuid="0a8d09ba-c2a3-4137-9ba3-5b3b82589ed2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3a08ce1a-3126-4ffe-b885-2fa4b51d86d0"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Moneda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="359" y="0" width="61" height="20" uuid="94750271-51c3-4193-aace-1897d7ced344">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2089538e-0a43-4bfa-8d0c-55c66b715a07"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Costo Base]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="0" width="72" height="20" uuid="25d290fd-08e5-4fd2-8e41-e1c030076dd6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9263d476-3751-4ef3-be51-489960102703"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Costo Agregado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="492" y="0" width="64" height="18" uuid="3d8c32a7-923e-4fa4-b0bc-1b1f19081e0a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a2f420b1-61fd-41ba-bb68-d9539da78557"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Costo Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout"/>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="0" y="0" width="138" height="18" uuid="066df5dd-8851-45de-bcdc-b50ae6171c96">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d1050b5c-5a22-4eb6-8d95-4f7f95f0c4db"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{insumo_descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="ElementGroupHeight" x="138" y="0" width="100" height="18" uuid="dc20ae39-e825-4213-81dc-ff19bd8613e9"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{taplicacion_entries_descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="ElementGroupHeight" x="238" y="0" width="63" height="18" uuid="69365751-1a47-4328-add9-e0ec4f9da24f"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{costos_list_detalle_qty_presentacion}.toString()+" "+$F{unidad_medida_siglas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="ElementGroupHeight" x="301" y="0" width="58" height="18" uuid="9631ca3a-fc35-4eb1-89ee-5368af15e332">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3a08ce1a-3126-4ffe-b885-2fa4b51d86d0"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{moneda_descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="ElementGroupHeight" x="359" y="0" width="61" height="18" uuid="6008a7fa-0cb3-41b6-9469-9d423c4a8a44">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2089538e-0a43-4bfa-8d0c-55c66b715a07"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{costos_list_detalle_costo_base}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="ElementGroupHeight" x="420" y="0" width="72" height="18" uuid="e49ba05a-9dd8-476f-b947-7df01b0bfd3d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9263d476-3751-4ef3-be51-489960102703"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{costos_list_detalle_costo_agregado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="ElementGroupHeight" x="492" y="0" width="63" height="18" uuid="e70d2bc2-14ad-47f8-8dfc-65bf7234fc2a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a2f420b1-61fd-41ba-bb68-d9539da78557"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{costos_list_detalle_costo_total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="46" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

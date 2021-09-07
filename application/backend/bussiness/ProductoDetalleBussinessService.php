@@ -35,7 +35,6 @@ class ProductoDetalleBussinessService extends \app\common\bussiness\TSLAppCRUDBu
         // Leo el id enviado en el DTO
         $model->set_insumo_id_origen($dto->getParameterValue('insumo_id_origen'));
         $model->set_insumo_id($dto->getParameterValue('insumo_id'));
-        $model->set_empresa_id($dto->getParameterValue('empresa_id'));
         $model->set_unidad_medida_codigo($dto->getParameterValue('unidad_medida_codigo'));
         $model->set_producto_detalle_cantidad($dto->getParameterValue('producto_detalle_cantidad'));
         $model->set_producto_detalle_valor($dto->getParameterValue('producto_detalle_valor'));
@@ -60,7 +59,6 @@ class ProductoDetalleBussinessService extends \app\common\bussiness\TSLAppCRUDBu
         $model->set_producto_detalle_id($dto->getParameterValue('producto_detalle_id'));
         $model->set_insumo_id_origen($dto->getParameterValue('insumo_id_origen'));
         $model->set_insumo_id($dto->getParameterValue('insumo_id'));
-        $model->set_empresa_id($dto->getParameterValue('empresa_id'));
         $model->set_unidad_medida_codigo($dto->getParameterValue('unidad_medida_codigo'));
         $model->set_producto_detalle_cantidad($dto->getParameterValue('producto_detalle_cantidad'));
         $model->set_producto_detalle_valor($dto->getParameterValue('producto_detalle_valor'));

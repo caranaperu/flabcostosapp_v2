@@ -91,6 +91,13 @@ switch (ENVIRONMENT)
 }
 
 /*
+ * SEt locales parea el buen funcionamiento de la conversion a floats
+ */
+setlocale(LC_ALL,"es_PE.UTF_8");
+setlocale(LC_NUMERIC,"C");
+
+
+/*
  *---------------------------------------------------------------
  * SYSTEM DIRECTORY NAME
  *---------------------------------------------------------------

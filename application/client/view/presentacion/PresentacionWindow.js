@@ -11,7 +11,7 @@ isc.defineClass("WinPresentacionWindow", "WindowGridListExt");
 isc.WinPresentacionWindow.addProperties({
     ID: "winPresentacionWindow",
     title: "Presentaciones",
-    width: 500, height: 400,
+    width: 600, height: 400,
     createGridList: function() {
         return isc.ListGrid.create({
             ID: "PresentacionList",
@@ -19,8 +19,20 @@ isc.WinPresentacionWindow.addProperties({
             dataSource: mdl_presentacion,
             autoFetchData: true,
             fields: [
-                {name: "tpresentacion_codigo", title: "Codigo", width: '25%'},
-                {name: "tpresentacion_descripcion", title: "Nombre", width: '75%'}
+                {name: "tpresentacion_codigo", title: "Codigo", width: '15%'},
+                {name: "tpresentacion_descripcion", title: "Nombre", width: '45%'},
+                {
+                    name: "tpresentacion_cantidad_costo",align: 'right',
+                    width: '20%',
+                    filterEditorProperties: {
+                        operator: "equals",
+                        type: 'float'
+                    }
+                },
+                {
+                    name: "unidad_medida_descripcion_costo",
+                    width: '20%'
+                },
             ],
             canReorderFields: false,
             showFilterEditor: true,

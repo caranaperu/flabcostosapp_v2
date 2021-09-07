@@ -31,7 +31,6 @@ class SystemMenuController extends app\common\controller\TSLAppDefaultController
                 // campos de la sesion.
                 if ($operationId == 'fetchForUser') {
                     $this->DTO->getConstraints()->addFilterField('usuario_id', $this->getUserId());
-                    $this->DTO->getConstraints()->addFilterField('empresa_id', $this->getSessionData('empresa_id'));
                 }
             }
 

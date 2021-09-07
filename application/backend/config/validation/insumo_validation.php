@@ -10,11 +10,6 @@ $config['v_insumo'] = array(
     ),
     'updInsumo' => array(
         array(
-            'field' => 'empresa_id',
-            'label' => 'lang:id',
-            'rules' => 'required|integer'
-        ),
-        array(
             'field' => 'insumo_id',
             'label' => 'lang:insumo_id',
             'rules' => 'required|integer'
@@ -75,11 +70,6 @@ $config['v_insumo'] = array(
             'rules' => 'required|alpha_numeric|max_length[8]'
         ),
         array(
-            'field' => 'insumo_usa_factor_ajuste',
-            'label' => 'lang:insumo_usa_factor_ajuste',
-            'rules' => 'required|is_boolean'
-        ),
-        array(
             'field' => 'versionId',
             'label' => 'lang:versionId',
             'rules' => 'required|integer'
@@ -98,11 +88,6 @@ $config['v_insumo'] = array(
         )
     ),
     'addInsumo' => array(
-        array(
-            'field' => 'empresa_id',
-            'label' => 'lang:id',
-            'rules' => 'required|integer'
-        ),
         array(
             'field' => 'insumo_tipo',
             'label' => 'lang:insumo_tipo',
@@ -152,11 +137,6 @@ $config['v_insumo'] = array(
             'field' => 'insumo_precio_mercado',
             'label' => 'lang:insumo_precio_mercado',
             'rules' => 'required|decimal|greater_than_equal[0.00] '
-        ),
-        array(
-            'field' => 'insumo_usa_factor_ajuste',
-            'label' => 'lang:insumo_usa_factor_ajuste',
-            'rules' => 'required|is_boolean'
         ),
         array(
             'field' => 'moneda_codigo_costo',

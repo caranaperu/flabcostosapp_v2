@@ -15,7 +15,7 @@ isc.InsumoUsedByForm.addProperties({
     autoCenter: true,
     autoDraw: false,
     autoSize: false,
-    height: 410,
+    height: 420,
     //  width: 870,
     ID: 'InsumoUsedByFormID',
     infoKey: undefined,
@@ -45,7 +45,7 @@ isc.InsumoUsedByForm.addProperties({
         isc.ListGrid.create({
             autoDraw: false,
             ID: "usedByList",
-            height: 370,
+            height: 375,
             dataSource: "mdl_insumo_used_by",
             fetchOperation: 'fetchForInsumosUsedBy',
             textMatchStyle: 'exact',
@@ -72,8 +72,7 @@ isc.InsumoUsedByForm.addProperties({
                              })],
             fields: [
                 {name: "insumo_codigo", width: '15%'},
-                {name: "insumo_descripcion", width: '45%'},
-                {name: "empresa_razon_social", width: '40%'}
+                {name: "insumo_descripcion", width: '85%'}
             ]
         });
 

@@ -36,9 +36,9 @@ class ProductoDetalleController extends app\common\controller\TSLAppDefaultCRUDC
             "paramsList" => [
                 "fetch" => [],
                 "read" => ['producto_detalle_id', 'verifyExist'],
-                "add" => ['insumo_id_origen','insumo_id','insumo_descripcion','empresa_id','unidad_medida_codigo','unidad_medida_descripcion','producto_detalle_cantidad','producto_detalle_valor','producto_detalle_merma', 'activo'],
+                "add" => ['insumo_id_origen','insumo_id','insumo_descripcion','unidad_medida_codigo','unidad_medida_descripcion','producto_detalle_cantidad','producto_detalle_valor','producto_detalle_merma', 'activo'],
                 "del" => ['producto_detalle_id', 'versionId'],
-                "upd" => ['producto_detalle_id','insumo_id_origen','insumo_id','empresa_id','insumo_descripcion','unidad_medida_codigo','unidad_medida_descripcion','producto_detalle_cantidad','producto_detalle_valor','producto_detalle_merma', 'versionId', 'activo'],
+                "upd" => ['producto_detalle_id','insumo_id_origen','insumo_id','insumo_descripcion','unidad_medida_codigo','unidad_medida_descripcion','producto_detalle_cantidad','producto_detalle_valor','producto_detalle_merma', 'versionId', 'activo'],
             ],
             "paramsFixableToNull" => ['producto_detalle_', 'unidad_medida_','insumo_'],
             "paramsFixableToValue" => ["producto_detalle_id" => ["valueToFix" => 'null', "valueToReplace" => NULL, "isID" => true]],

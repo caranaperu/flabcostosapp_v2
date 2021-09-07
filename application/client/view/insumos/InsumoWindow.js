@@ -48,9 +48,6 @@ isc.WinInsumoWindow.addProperties({
                         operator: "equals",
                         type: 'float'
                     }
-                },
-                {
-                    name: "insumo_usa_factor_ajuste", title:'FA?', width: '4%'
                 }
             ],
             initialCriteria: {
@@ -59,10 +56,6 @@ isc.WinInsumoWindow.addProperties({
                 criteria: [{
                     fieldName: 'insumo_tipo',
                     value: 'IN',
-                    operator: 'equals'
-                }, {
-                    fieldName: 'empresa_id',
-                    value: glb_empresaId,
                     operator: 'equals'
                 }]
             },
