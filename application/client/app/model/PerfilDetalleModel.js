@@ -17,7 +17,7 @@ isc.RestDataSource.create({
     dataFormat: "json",
     jsonPrefix: '',
     jsonSuffix: '',
-   // disableQueuing: true,
+    // disableQueuing: true,
     //  cacheAllData : true, // Son datos pequeños hay que evitar releer
     fields: [
         {name: "perfdet_id", title: "id", type: 'integer', primaryKey: "true", canEdit: "false", required: true},
@@ -58,7 +58,7 @@ isc.RestDataSource.create({
      * segun la base de datos.
      */
     _getBooleanFieldValue: function( value) {
-        if (value !== 't' && value !== 'T' && value !== 'Y' && value !== 'y' && value !== 'TRUE' && value !== 'true') {
+        if (value !== 't' && value !== 'T' && value !== 'Y' && value !== 'y' && value !== 'TRUE' && value !== 'true' && value !== true) {
             return false;
         } else {
             return true;
