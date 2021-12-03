@@ -68,6 +68,7 @@ class MonedaDAO_postgre extends \app\common\dao\TSLAppBasicRecordDAO_postgre {
                 $sql .= ' order by ' . $orderby;
             }
         }
+        $sql = str_replace('like', 'ilike', $sql);
 
         return $sql;
     }
@@ -84,8 +85,8 @@ class MonedaDAO_postgre extends \app\common\dao\TSLAppBasicRecordDAO_postgre {
      * @inheritdoc
      */
     protected function getRecordQueryByCode($code,\TSLRequestConstraints &$constraints = NULL, string $subOperation = NULL) : string {
-        return 'select moneda_codigo,moneda_simbolo,moneda_descripcion,moneda_protected,activo,' .
-                'xmin as "versionId" from tb_moneda where "moneda_codigo" =  \'' . $code . '\'';
+        return 'select moneda_codigo,moneda_simbolo,moneda_descripcion,case when moneda_protected = \'f\' then 0 else 1 end as moneda_protected,activo,' .
+            'xmin as "versionId" from tb_moneda where "moneda_codigo" =  \'' . $code . '\'';
     }
 
     /**

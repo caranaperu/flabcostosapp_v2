@@ -1,5 +1,11 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
+
+/*
+ *  Salt para md5 o hash
+ *
+ */
+defined('SALT_HASH') or define('SALT_HASH', '$2a$07$flabsmesillystrinflabsapp$');
 
 /*
 |--------------------------------------------------------------------------
@@ -11,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | of this setting
 |
 */
-defined('SHOW_DEBUG_BACKTRACE') OR define('SHOW_DEBUG_BACKTRACE', TRUE);
+defined('SHOW_DEBUG_BACKTRACE') or define('SHOW_DEBUG_BACKTRACE', TRUE);
 
 /*
 |--------------------------------------------------------------------------
@@ -26,10 +32,10 @@ defined('SHOW_DEBUG_BACKTRACE') OR define('SHOW_DEBUG_BACKTRACE', TRUE);
 | always be used to set the mode correctly.
 |
 */
-defined('FILE_READ_MODE')  OR define('FILE_READ_MODE', 0644);
-defined('FILE_WRITE_MODE') OR define('FILE_WRITE_MODE', 0666);
-defined('DIR_READ_MODE')   OR define('DIR_READ_MODE', 0755);
-defined('DIR_WRITE_MODE')  OR define('DIR_WRITE_MODE', 0755);
+defined('FILE_READ_MODE') or define('FILE_READ_MODE', 0644);
+defined('FILE_WRITE_MODE') or define('FILE_WRITE_MODE', 0666);
+defined('DIR_READ_MODE') or define('DIR_READ_MODE', 0755);
+defined('DIR_WRITE_MODE') or define('DIR_WRITE_MODE', 0755);
 
 /*
 |--------------------------------------------------------------------------
@@ -39,14 +45,14 @@ defined('DIR_WRITE_MODE')  OR define('DIR_WRITE_MODE', 0755);
 | These modes are used when working with fopen()/popen()
 |
 */
-defined('FOPEN_READ')                           OR define('FOPEN_READ', 'rb');
-defined('FOPEN_READ_WRITE')                     OR define('FOPEN_READ_WRITE', 'r+b');
-defined('FOPEN_WRITE_CREATE_DESTRUCTIVE')       OR define('FOPEN_WRITE_CREATE_DESTRUCTIVE', 'wb'); // truncates existing file data, use with care
-defined('FOPEN_READ_WRITE_CREATE_DESTRUCTIVE')  OR define('FOPEN_READ_WRITE_CREATE_DESTRUCTIVE', 'w+b'); // truncates existing file data, use with care
-defined('FOPEN_WRITE_CREATE')                   OR define('FOPEN_WRITE_CREATE', 'ab');
-defined('FOPEN_READ_WRITE_CREATE')              OR define('FOPEN_READ_WRITE_CREATE', 'a+b');
-defined('FOPEN_WRITE_CREATE_STRICT')            OR define('FOPEN_WRITE_CREATE_STRICT', 'xb');
-defined('FOPEN_READ_WRITE_CREATE_STRICT')       OR define('FOPEN_READ_WRITE_CREATE_STRICT', 'x+b');
+defined('FOPEN_READ') or define('FOPEN_READ', 'rb');
+defined('FOPEN_READ_WRITE') or define('FOPEN_READ_WRITE', 'r+b');
+defined('FOPEN_WRITE_CREATE_DESTRUCTIVE') or define('FOPEN_WRITE_CREATE_DESTRUCTIVE', 'wb'); // truncates existing file data, use with care
+defined('FOPEN_READ_WRITE_CREATE_DESTRUCTIVE') or define('FOPEN_READ_WRITE_CREATE_DESTRUCTIVE', 'w+b'); // truncates existing file data, use with care
+defined('FOPEN_WRITE_CREATE') or define('FOPEN_WRITE_CREATE', 'ab');
+defined('FOPEN_READ_WRITE_CREATE') or define('FOPEN_READ_WRITE_CREATE', 'a+b');
+defined('FOPEN_WRITE_CREATE_STRICT') or define('FOPEN_WRITE_CREATE_STRICT', 'xb');
+defined('FOPEN_READ_WRITE_CREATE_STRICT') or define('FOPEN_READ_WRITE_CREATE_STRICT', 'x+b');
 
 /*
 |--------------------------------------------------------------------------
@@ -73,27 +79,26 @@ defined('FOPEN_READ_WRITE_CREATE_STRICT')       OR define('FOPEN_READ_WRITE_CREA
 |       http://tldp.org/LDP/abs/html/exitcodes.html
 |
 */
-defined('EXIT_SUCCESS')        OR define('EXIT_SUCCESS', 0); // no errors
-defined('EXIT_ERROR')          OR define('EXIT_ERROR', 1); // generic error
-defined('EXIT_CONFIG')         OR define('EXIT_CONFIG', 3); // configuration error
-defined('EXIT_UNKNOWN_FILE')   OR define('EXIT_UNKNOWN_FILE', 4); // file not found
-defined('EXIT_UNKNOWN_CLASS')  OR define('EXIT_UNKNOWN_CLASS', 5); // unknown class
-defined('EXIT_UNKNOWN_METHOD') OR define('EXIT_UNKNOWN_METHOD', 6); // unknown class member
-defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user input
-defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
-defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
-defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+defined('EXIT_SUCCESS') or define('EXIT_SUCCESS', 0); // no errors
+defined('EXIT_ERROR') or define('EXIT_ERROR', 1); // generic error
+defined('EXIT_CONFIG') or define('EXIT_CONFIG', 3); // configuration error
+defined('EXIT_UNKNOWN_FILE') or define('EXIT_UNKNOWN_FILE', 4); // file not found
+defined('EXIT_UNKNOWN_CLASS') or define('EXIT_UNKNOWN_CLASS', 5); // unknown class
+defined('EXIT_UNKNOWN_METHOD') or define('EXIT_UNKNOWN_METHOD', 6); // unknown class member
+defined('EXIT_USER_INPUT') or define('EXIT_USER_INPUT', 7); // invalid user input
+defined('EXIT_DATABASE') or define('EXIT_DATABASE', 8); // database error
+defined('EXIT__AUTO_MIN') or define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
+defined('EXIT__AUTO_MAX') or define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
 
-
-define('DB_OP_OK',0);
-define('DB_ERR_ALLOK',-100000);
-define('DB_ERR_SERVERNOTFOUND',-100001);
-define('DB_ERR_RECORDNOTFOUND',-100002);
-define('DB_ERR_RECORDNOTDELETED',-100003);
-define('DB_ERR_RECORDEXIST',-100004);
-define('DB_ERR_FOREIGNKEY',-100005);
-define('DB_ERR_CANTEXECUTE',-100006);
-define('DB_ERR_RECORD_MODIFIED',-100007);
-define('DB_ERR_RECORDINACTIVE',-100008);
-define('DB_ERR_DUPLICATEKEY',-100009);
+defined('DB_OP_OK') or define('DB_OP_OK', 0);
+defined('DB_ERR_ALLOK') or define('DB_ERR_ALLOK', -100000);
+defined('DB_ERR_SERVERNOTFOUND') or define('DB_ERR_SERVERNOTFOUND', -100001);
+defined('DB_ERR_RECORDNOTFOUND') or define('DB_ERR_RECORDNOTFOUND', -100002);
+defined('DB_ERR_RECORDNOTDELETED') or define('DB_ERR_RECORDNOTDELETED', -100003);
+defined('DB_ERR_RECORDEXIST') or define('DB_ERR_RECORDEXIST', -100004);
+defined('DB_ERR_FOREIGNKEY') or define('DB_ERR_FOREIGNKEY', -100005);
+defined('DB_ERR_CANTEXECUTE') or define('DB_ERR_CANTEXECUTE', -100006);
+defined('DB_ERR_RECORD_MODIFIED') or define('DB_ERR_RECORD_MODIFIED', -100007);
+defined('DB_ERR_RECORDINACTIVE') or define('DB_ERR_RECORDINACTIVE', -100008);
+defined('DB_ERR_DUPLICATEKEY') or define('DB_ERR_DUPLICATEKEY', -100009);

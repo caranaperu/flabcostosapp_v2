@@ -11,7 +11,7 @@ isc.defineClass("WinLoginForm", "WindowBasicFormExt");
 isc.WinLoginForm.addProperties({
     ID: "winLoginForm",
     title: "Ingreso al Sistema",
-    width: 320, height: 160,
+    width: 320, height: 180,
     canDragResize: true,
     createForm: function(formMode) {
         return isc.DynamicFormExt.create({
@@ -26,11 +26,10 @@ isc.WinLoginForm.addProperties({
             focusInEditFld: 'usuarios_code',
             //disableValidation: true,
             fields: [
-                {name: "usuarios_code", width: 80, size: 15, endRow: true},
-                {name: "usuarios_password", size: 20, width: 150, endRow: true}
+                {name: "usuarios_code", width: 150, size: 15, endRow: true},
+                {name: "usuarios_password", size: 20, width: 160, type: "password",endRow: true}
             ],
             postSaveData: function(formMode,data)  {
-                //alert(glb_dataUrl + 'systemEntryController?op=fetchForUser&libid=SmartClient');
                 window.location = glb_dataUrl + 'systemEntryController?op=fetch&libid=SmartClient';
             }
         });

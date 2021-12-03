@@ -26,9 +26,13 @@ class UsuariosBussinessService extends \app\common\bussiness\TSLAppCRUDBussiness
      * @return \TSLDataModel en este caso UsuariosModel
      */
     protected function &getModelToAdd(\TSLIDataTransferObj $dto) : \TSLDataModel {
+
+        // hash para el passsword
+        $hash = SALT_HASH . md5(SALT_HASH .$dto->getParameterValue('usuarios_password'));
+
         $model = new UsuariosModel();
         $model->set_usuarios_code($dto->getParameterValue('usuarios_code'));
-        $model->set_usuarios_password($dto->getParameterValue('usuarios_password'));
+        $model->set_usuarios_password($hash);
         $model->set_usuarios_nombre_completo($dto->getParameterValue('usuarios_nombre_completo'));
         $model->set_usuarios_admin(($dto->getParameterValue('usuarios_admin') == 'true' ? true : false));
 
@@ -47,11 +51,14 @@ class UsuariosBussinessService extends \app\common\bussiness\TSLAppCRUDBussiness
      * @return  \TSLDataModel en este caso UsuariosModel
      */
     protected function &getModelToUpdate(\TSLIDataTransferObj $dto): \TSLDataModel {
+        // hash para el passsword
+        $hash = SALT_HASH . md5(SALT_HASH .$dto->getParameterValue('usuarios_password'));
+
         $model = new UsuariosModel();
 
         $model->set_usuarios_id($dto->getParameterValue('usuarios_id'));
         $model->set_usuarios_code($dto->getParameterValue('usuarios_code'));
-        $model->set_usuarios_password($dto->getParameterValue('usuarios_password'));
+        $model->set_usuarios_password($hash);
         $model->set_usuarios_nombre_completo($dto->getParameterValue('usuarios_nombre_completo'));
         $model->set_usuarios_admin(($dto->getParameterValue('usuarios_admin') == 'true' ? true : false));
 

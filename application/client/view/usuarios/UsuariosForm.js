@@ -28,13 +28,12 @@ isc.WinUsuariosForm.addProperties({
             addOperation:'readAfterSaveJoined',
             updateOperation:'readAfterUpdateJoined',
             fields: [
-                {name: "usuarios_code", width: 80, size: 15, showPending: true, endRow: true},
-                {name: "usuarios_password", size: 20, width: 150, showPending: true, endRow: true},
+                {name: "usuarios_code", width: 150, size: 15, showPending: true, endRow: true},
+                {name: "usuarios_password", size: 20, width: 150, type: "password",showPending: true, endRow: true},
                 {name: "usuarios_nombre_completo", size: 250, width: 300, showPending: true, endRow: true},
                 {name: "usuarios_admin", defaultValue: false, showPending: true, endRow: true},
                 {name: "activo", defaultValue: true, showPending: true, endRow: true}
             ]
-                    //  disableValidation: true
         });
     },
     canShowTheDetailGridAfterAdd: function () {
@@ -49,6 +48,7 @@ isc.WinUsuariosForm.addProperties({
                 dataSource: 'mdl_usuario_perfil',
                 fetchOperation: 'fetchFull',
                 autoFetchData: false,
+                canAdd: true,
                 fields: [
                     {name: "perfil_id", editorType: "comboBoxExt",
                         valueField: "perfil_id", displayField: "perfil_descripcion",

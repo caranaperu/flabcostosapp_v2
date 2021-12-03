@@ -40,7 +40,7 @@ isc.WinCostoListWindow.addProperties({
             selectionType: 'single',
             fields: [
                 {
-                    name: "costos_list_ide",
+                    name: "costos_list_id",
                     hidden: true
                 },
                 {

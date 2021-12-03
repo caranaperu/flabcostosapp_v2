@@ -38,12 +38,12 @@ class UsuariosDAO_postgre extends \app\common\dao\TSLAppBasicRecordDAO_postgre {
     protected function getAddRecordQuery(\TSLDataModel &$record, \TSLRequestConstraints &$constraints = NULL)  : string {
         /* @var $record  UsuariosModel  */
         return 'insert into tb_usuarios (usuarios_code,usuarios_password,usuarios_nombre_completo,usuarios_admin,activo,usuario) values(\''.
-                $record->get_usuarios_code() . '\',\'' .
-                $record->get_usuarios_password() . '\',\'' .
-                $record->get_usuarios_nombre_completo() . '\',\'' .
-                ($record->get_usuarios_admin() != TRUE ? '0' : '1') .  '\',\'' .
-                ($record->getActivo() != TRUE ? '0' : '1') . '\',\'' .
-                $record->getUsuario() . '\')';
+            $record->get_usuarios_code() . '\',\'' .
+            $record->get_usuarios_password() . '\',\'' .
+            $record->get_usuarios_nombre_completo() . '\',\'' .
+            ($record->get_usuarios_admin() != TRUE ? '0' : '1') .  '\',\'' .
+            ($record->getActivo() != TRUE ? '0' : '1') . '\',\'' .
+            $record->getUsuario() . '\')';
     }
 
     /**
@@ -59,7 +59,7 @@ class UsuariosDAO_postgre extends \app\common\dao\TSLAppBasicRecordDAO_postgre {
 
         if ($this->activeSearchOnly == TRUE) {
             // Solo activos
-            $sql .= ' where u.activo=TRUE ';
+            $sql .= ' where activo=TRUE ';
         }
 
         $where = $constraints->getFilterFieldsAsString();
@@ -75,7 +75,7 @@ class UsuariosDAO_postgre extends \app\common\dao\TSLAppBasicRecordDAO_postgre {
         }
 
         $sql = str_replace('like', 'ilike', $sql);
-//echo $sql;
+        //echo $sql;
         return $sql;
     }
 
@@ -97,10 +97,11 @@ class UsuariosDAO_postgre extends \app\common\dao\TSLAppBasicRecordDAO_postgre {
         } else if ($subOperation == 'checkLogin') {
 
             $usuarios_code = $constraints->getFilterField('usuarios_code');
-            $usuarios_password = $constraints->getFilterField('usuarios_password');
+            // hash para el passsword
+            $hash = SALT_HASH . md5(SALT_HASH .$constraints->getFilterField('usuarios_password'));
 
             $sql ='select usuarios_id,usuarios_code,usuarios_nombre_completo,usuarios_admin from tb_usuarios '
-                . 'where usuarios_code =  \'' . $usuarios_code . '\' and usuarios_password = \''.$usuarios_password.'\' and activo=true ';
+                . 'where usuarios_code =  \'' . $usuarios_code . '\' and usuarios_password = \''.$hash.'\' and activo=true ';
         } else {
             $sql ='select usuarios_id,usuarios_code,usuarios_password,usuarios_nombre_completo,usuarios_admin,activo,xmin as "versionId" from tb_usuarios '
                 . 'where usuarios_id =  ' . $code;
@@ -116,12 +117,12 @@ class UsuariosDAO_postgre extends \app\common\dao\TSLAppBasicRecordDAO_postgre {
     protected function getUpdateRecordQuery(\TSLDataModel &$record) : string {
         /* @var $record  UsuariosModel  */
         return 'update tb_usuarios set usuarios_code=\'' . $record->get_usuarios_code() . '\',' .
-                'usuarios_password=\''.$record->get_usuarios_password(). '\',' .
-                'usuarios_nombre_completo=\''.$record->get_usuarios_nombre_completo(). '\',' .
-                'usuarios_admin=\''.($record->get_usuarios_admin() != TRUE ? '0' : '1') . '\',' .
-                'activo=\'' . ($record->getActivo() != TRUE ? '0' : '1') . '\',' .
-                'usuario_mod=\'' . $record->get_Usuario_mod() . '\'' .
-                ' where "usuarios_id" = ' . $record->get_usuarios_id() . '  and xmin =' . $record->getVersionId();
+            'usuarios_password=\''.$record->get_usuarios_password(). '\',' .
+            'usuarios_nombre_completo=\''.$record->get_usuarios_nombre_completo(). '\',' .
+            'usuarios_admin=\''.($record->get_usuarios_admin() != TRUE ? '0' : '1') . '\',' .
+            'activo=\'' . ($record->getActivo() != TRUE ? '0' : '1') . '\',' .
+            'usuario_mod=\'' . $record->get_Usuario_mod() . '\'' .
+            ' where "usuarios_id" = ' . $record->get_usuarios_id() . '  and xmin =' . $record->getVersionId();
     }
 
     private function _getFecthNormalized() {
