@@ -11,7 +11,7 @@
 isc.defineClass("WinCostoListForm", "WindowBasicFormExt");
 isc.WinCostoListForm.addProperties({
     ID: "winCostoListForm",
-    title: "Mantenimiento de CostoListes",
+    title: "Mantenimiento de Listas de Costos",
     width: 700,
     height: 200,
     useSaveButton: false,

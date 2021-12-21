@@ -94,7 +94,7 @@ isc.WinCostoListWindow.addProperties({
                 var fieldName = this.getFieldName(colNum);
 
                 if (fieldName == "I") {
-                    console.log("Paso a crear boton "+ record.costos_list_descripcion);
+                    //console.log("Paso a crear boton "+ record.costos_list_descripcion);
                     return isc.ImgButton.create({
                         showDown: false,
                         showRollOver: false,
@@ -121,8 +121,8 @@ isc.WinCostoListWindow.addProperties({
             updateRecordComponent: function (record, colNum, component, recordChanged) {
 
                 var fieldName = this.getFieldName(colNum);
-                console.log("Paso a reusar boton "+record.costos_list_descripcion);
-                console.log(component);
+                //console.log("Paso a reusar boton "+record.costos_list_descripcion);
+                //console.log(component);
 
                 if (fieldName == "I") {
                    CostoList.selectSingleRecord(record);
@@ -169,7 +169,7 @@ isc.WinCostoListWindow.addProperties({
                     url += '&j_username=' + glb_reportServerUser;
                     url += '&j_password=' + glb_reportServerPsw;
 
-                    url += '&userLocale=es_PE';
+                    url += '&userLocale=es_ES';
 
                     if (format !== undefined) {
                         url += (format == 'XLS' ? '&output=xlsx' : '&output=pdf');
