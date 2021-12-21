@@ -206,7 +206,7 @@
                 members: [
                     isc.SectionStack.create({
                         ID: "sectionStack",
-                        align: "left",
+                        //align: "left",
                         showResizeBar: true,
                         visibilityMode: "multiple",
                         width: "15%",
