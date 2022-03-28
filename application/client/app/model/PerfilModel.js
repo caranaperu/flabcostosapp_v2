@@ -17,7 +17,7 @@ isc.RestDataSource.create({
     fields: [
         {name: "perfil_id", title: "ID", primaryKey: "true", canEdit: "false", required: true},
         {name: "sys_systemcode", title: "Cod.Sistema", canEdit: "false", required: true},
-        {name: "perfil_codigo", title: "Codigo", canEdit: "true", required: true},
+        {name: "perfil_codigo", title: "Codigo",  required: true},
         {name: "perfil_descripcion", title: "Descripcion", required: true,
             validators: [{type: "regexp", expression: glb_RE_onlyValidText}]
         }

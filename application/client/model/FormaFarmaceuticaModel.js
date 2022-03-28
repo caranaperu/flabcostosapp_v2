@@ -5,11 +5,10 @@
  * @since 1.00
  * $Author: aranape $
  */
-isc.RestDataSource.create({
+isc.defineClass("RestDataSourceFormaFarmaceutica", "RestDataSourceExt");
+
+isc.RestDataSourceFormaFarmaceutica.create({
     ID: "mdl_ffarmaceutica",
-    dataFormat: "json",
-    jsonPrefix: '',
-    jsonSuffix: '',
    // cacheAllData: true, // Son datos pequeños hay que evitar releer
     fields: [
         {name: "ffarmaceutica_codigo", title: "Codigo", primaryKey: "true", required: true},
@@ -17,22 +16,9 @@ isc.RestDataSource.create({
             validators: [{type: "regexp", expression: glb_RE_onlyValidText}]
         },
         {name: "ffarmaceutica_protected", title: '', type: 'boolean', getFieldValue: function(r, v, f, fn) {
-            return mdl_presentacion._getBooleanFieldValue(v);
+            return mdl_ffarmaceutica._getBooleanFieldValue(v);
         }, required: true}
     ],
-    /**
-     * Normalizador de valores booleanos ya que el backend pude devolver de diversas formas
-     * segun la base de datos.
-     */
-    _getBooleanFieldValue: function(value) {
-        //  console.log(value);
-        if (value !== 't' && value !== 'T' && value !== 'Y' && value !== 'y' && value !== 'TRUE' && value !== 'true' && value !== true) {
-            return false;
-        } else {
-            return true;
-        }
-
-    },
     fetchDataURL: glb_dataUrl + 'formaFarmaceuticaController?op=fetch&libid=SmartClient',
     addDataURL: glb_dataUrl + 'formaFarmaceuticaController?op=add&libid=SmartClient',
     updateDataURL: glb_dataUrl + 'formaFarmaceuticaController?op=upd&libid=SmartClient',

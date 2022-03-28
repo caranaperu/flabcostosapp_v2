@@ -30,7 +30,7 @@ isc.WinTipoAplicacionProcesosForm.addProperties({
             formMode: this.formMode, // parametro de inicializacion
             keyFields: ['taplicacion_codigo'],
             saveButton: this.getFormButton('save'),
-            focusInEditFld: 'taplicacion_descripcion',
+            focusInEditFld: 'taplicacion_procesos_fecha_desde',
             addOperation: 'readAfterSaveJoined',
             updateOperation: 'readAfterUpdateJoined',
          //   disableValidation: true,
@@ -44,7 +44,7 @@ isc.WinTipoAplicacionProcesosForm.addProperties({
                     editorType: "comboBoxExt",
                     mask: ">LLLLLLLLLL",
                     showPending: true,
-                    width: "120",
+                    width: 120,
                     valueField: "taplicacion_codigo",
                     displayField: "taplicacion_descripcion",
                     optionDataSource: mdl_taplicacion,
@@ -67,7 +67,7 @@ isc.WinTipoAplicacionProcesosForm.addProperties({
                     name: "taplicacion_procesos_fecha_desde",
                     showPending: true,
                     // length: 60,
-                    width: "220"
+                    width: 220
                 }
             ]
         });
@@ -155,7 +155,7 @@ isc.WinTipoAplicacionProcesosForm.addProperties({
                             {
                                 name: "taplicacion_procesos_detalle_porcentaje",
                                 showPending: true,
-                                width: '80'
+                                width: 80
                             }
                         ]
                     });

@@ -20,6 +20,7 @@
     <SCRIPT SRC=../../../common/client/isomorphic_lib/view/WindowBasicFormNCExt.js></SCRIPT>
     <SCRIPT SRC=../../../common/client/isomorphic_lib/view/WindowGridListExt.js></SCRIPT>
     <SCRIPT SRC=../../../common/client/isomorphic_lib/view/TabSetExt.js></SCRIPT>
+    <SCRIPT SRC=../../../common/client/isomorphic_lib/ds/RestDataSourceExt.js></SCRIPT>
 
 
     <SCRIPT SRC=./model/LoginModel.js></SCRIPT>

@@ -6,11 +6,10 @@
  * $Author: aranape $
  * $Date: 2014-04-06 19:53:42 -0500 (dom, 06 abr 2014) $
  */
-isc.RestDataSource.create({
+isc.defineClass("RestDataSourceUnidadMedida", "RestDataSourceExt");
+
+isc.RestDataSourceUnidadMedida.create({
     ID: "mdl_unidadmedida",
-    dataFormat: "json",
-    jsonPrefix: '',
-    jsonSuffix: '',
     cacheAllData: true, // Son datos pequeños hay que evitar releer
     fields: [
         {name: "unidad_medida_codigo", title: 'Codigo', primaryKey: "true", required: true},
@@ -24,19 +23,6 @@ isc.RestDataSource.create({
             return mdl_unidadmedida._getBooleanFieldValue(v);
         }, required: true},
     ],
-    /**
-     * Normalizador de valores booleanos ya que el backend pude devolver de diversas formas
-     * segun la base de datos.
-     */
-    _getBooleanFieldValue: function(value) {
-        //  console.log(value);
-        if (value !== 't' && value !== 'T' && value !== 'Y' && value !== 'y' && value !== 'TRUE' && value !== 'true' && value !== true) {
-            return false;
-        } else {
-            return true;
-        }
-
-    },
     fetchDataURL: glb_dataUrl + 'unidadMedidaController?op=fetch&libid=SmartClient',
     addDataURL: glb_dataUrl + 'unidadMedidaController?op=add&libid=SmartClient',
     updateDataURL: glb_dataUrl + 'unidadMedidaController?op=upd&libid=SmartClient',

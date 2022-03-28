@@ -6,11 +6,10 @@
  * $Author: aranape $
  * $Date: 2014-04-06 19:53:42 -0500 (dom, 06 abr 2014) $
  */
-isc.RestDataSource.create({
+isc.defineClass("RestDataSourceTipoCostoGlobal", "RestDataSourceExt");
+
+isc.RestDataSourceTipoCostoGlobal.create({
     ID: "mdl_tcosto_global",
-    dataFormat: "json",
-    jsonPrefix: '',
-    jsonSuffix: '',
     cacheAllData: false, // Son datos pequeños hay que evitar releer
     fields: [
         {name: "tcosto_global_codigo", title: 'Codigo', primaryKey: "true", required: true},
@@ -20,18 +19,6 @@ isc.RestDataSource.create({
             }, required: true}
 
     ],
-    /**
-     * Normalizador de valores booleanos ya que el backend pude devolver de diversas formas
-     * segun la base de datos.
-     */
-    _getBooleanFieldValue: function(value) {
-        //  console.log(value);
-        if (value !== 't' && value !== 'T' && value !== 'Y' && value !== 'y' && value !== 'TRUE' && value !== 'true' && value !== true) {
-            return false;
-        } else {
-            return true;
-        }
-    },
     fetchDataURL: glb_dataUrl + 'tipoCostoGlobalController?op=fetch&libid=SmartClient',
     addDataURL: glb_dataUrl + 'tipoCostoGlobalController?op=add&libid=SmartClient',
     updateDataURL: glb_dataUrl + 'tipoCostoGlobalController?op=upd&libid=SmartClient',

@@ -6,11 +6,10 @@
  * @Author: Carlos Arana Reategui
  *
  */
-isc.RestDataSource.create({
+isc.defineClass("RestDataSourceSubProcesos", "RestDataSourceExt");
+
+isc.RestDataSourceSubProcesos.create({
     ID: "mdl_subprocesos",
-    dataFormat: "json",
-    jsonPrefix: '',
-    jsonSuffix: '',
     fields: [
         {name: "subprocesos_codigo", title: 'Codigo', primaryKey: "true", required: true},
         {name: "subprocesos_descripcion", title: "Descripcion", required: true}

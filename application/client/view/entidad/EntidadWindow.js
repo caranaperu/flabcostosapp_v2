@@ -31,12 +31,12 @@ isc.WinEntidadForm.addProperties({
             focusInEditFld: 'entidad_razon_social',
             //disableValidation: true,
             fields: [
-                {name: "entidad_razon_social", showPending: true, width: "300", length: 200, type: 'text', colSpan: 4},
-                {name: "entidad_direccion", showPending: true, width: "300", length: 200, colSpan: 4},
-                {name: "entidad_ruc", showPending: true, width: "120", endRow: true, colSpan: 4},
-                {name: "entidad_correo", showPending: true, width: "220", length: 100, colSpan: 4},
-                {name: "entidad_telefonos", showPending: true, width: "240", length: 60},
-                {name: "entidad_fax", showPending: true, width: "120", length: 10, endRow: true}
+                {name: "entidad_razon_social", showPending: true, width: 300, length: 200, type: 'text', colSpan: 4},
+                {name: "entidad_direccion", showPending: true, width: 300, length: 200, colSpan: 4},
+                {name: "entidad_ruc", showPending: true, width: 120, endRow: true, colSpan: 4},
+                {name: "entidad_correo", showPending: true, width: 220, length: 100, colSpan: 4},
+                {name: "entidad_telefonos", showPending: true, width: 240, length: 60},
+                {name: "entidad_fax", showPending: true, width: 120, length: 10, endRow: true}
             ],
             /**
              * Override , ver clase base

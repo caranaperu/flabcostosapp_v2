@@ -5,12 +5,10 @@
  * @since 26-MAY-2021
  * @Author: Carlos Arana Reategui
  */
-isc.RestDataSource.create({
+isc.defineClass("RestDataSourceTipoAplicacionProcesosDetalle", "RestDataSourceExt");
+
+isc.RestDataSourceTipoAplicacionProcesosDetalle.create({
     ID: "mdl_taplicacion_procesos_detalle",
-    showPrompt: true,
-    dataFormat: "json",
-    jsonPrefix: '',
-    jsonSuffix: '',
     fields: [
         {name: "taplicacion_procesos_detalle_id", primaryKey: "true", required: true},
         {name: "taplicacion_procesos_id", foreignKey: "mdl_producto_procesos.taplicacion_procesos_id", required: true},

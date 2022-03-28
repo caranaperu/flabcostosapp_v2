@@ -6,12 +6,10 @@
  * $Author: aranape $
  * $Date: 2014-06-24 04:42:57 -0500 (mar, 24 jun 2014) $
  */
-isc.RestDataSource.create({
+isc.defineClass("RestDataSourceProductoDetalle", "RestDataSourceExt");
+
+isc.RestDataSourceProductoDetalle.create({
     ID: "mdl_productodetalle",
-    showPrompt: true,
-    dataFormat: "json",
-    jsonPrefix: '',
-    jsonSuffix: '',
     fields: [
         {
             name: "producto_detalle_id",
@@ -121,18 +119,6 @@ isc.RestDataSource.create({
             required: true
         }
     ],
-    /**
-     * Normalizador de valores booleanos ya que el backend pude devolver de diversas formas
-     * segun la base de datos.
-     */
-    _getBooleanFieldValue: function(value) {
-        if (value !== 't' && value !== 'T' && value !== 'Y' && value !== 'y' && value !== 'TRUE' && value !== 'true' && value !== true) {
-            return false;
-        } else {
-            return true;
-        }
-
-    },
     fetchDataURL: glb_dataUrl + 'productoDetalleController?op=fetch&libid=SmartClient',
     addDataURL: glb_dataUrl + 'productoDetalleController?op=add&libid=SmartClient',
     updateDataURL: glb_dataUrl + 'productoDetalleController?op=upd&libid=SmartClient',

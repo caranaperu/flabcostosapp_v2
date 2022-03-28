@@ -34,7 +34,7 @@ isc.WinCostoProcesoForm.addProperties({
             focusInEditFld: 'costos_list_descripcion',
             //disableValidation: true,
             fields: [
-                {name: "costos_list_descripcion", showPending: true, width: "300", length: 60, colSpan: 4},
+                {name: "costos_list_descripcion", showPending: true, width: 300, length: 60, colSpan: 4},
                 {name: "costos_list_fecha_desde",
                     useTextField: true,
                     showPending: true,

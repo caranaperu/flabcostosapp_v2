@@ -35,13 +35,14 @@ isc.WinProduccionForm.addProperties({
                     showPending: true,
                     useTextField: true,
                     showPickerIcon: true,
-                    width: "100"
+                    width: 100
                 },
                 {name: "taplicacion_entries_id", editorType: "comboBoxExt",
                     length: 50, width: 180,
                     showPending: true,
                     displayField: "taplicacion_entries_descripcion",
                     valueField: "taplicacion_entries_id",
+                    optionCriteria : {},
                     pickListFields: [
                         {name: "taplicacion_descripcion", width: '50%'},
                         {name: "taplicacion_entries_descripcion", width: '50%'}
@@ -54,7 +55,7 @@ isc.WinProduccionForm.addProperties({
                 {
                     name: "produccion_qty",
                     showPending: true,
-                    width: "85"
+                    width: 85
                 }
             ]
         });

@@ -6,12 +6,10 @@
  * $Author: aranape@gmail.com $
  * $Date: 2015-08-23 18:01:21 -0500 (dom, 23 ago 2015) $
  */
-isc.RestDataSource.create({
+isc.defineClass("RestDataSourceLogin", "RestDataSourceExt");
+
+isc.RestDataSourceLogin.create({
     ID: "mdl_login",
-    dataFormat: "json",
-    jsonPrefix: '',
-    jsonSuffix: '',
-    showPrompt: true,
     fields: [
         {name: "usuarios_code", title: 'Codigo', required: true, validators: [{type: "regexp", expression: glb_RE_alpha_dash}]},
         {name: "usuarios_password", title: 'Password', required: true},
@@ -24,18 +22,5 @@ isc.RestDataSource.create({
     operationBindings: [
         {operationType: "add", dataProtocol: "postParams"},
         {operationType: "remove", dataProtocol: "postParams"}
-    ],
-    /**
-     * Normalizador de valores booleanos ya que el backend pude devolver de diversas formas
-     * segun la base de datos.
-     */
-    _getBooleanFieldValue: function (value) {
-        //  console.log(value);
-        if (value !== 't' && value !== 'T' && value !== 'Y' && value !== 'y' && value !== 'TRUE' && value !== 'true' && value !== true) {
-            return false;
-        } else {
-            return true;
-        }
-
-    }
+    ]
 });

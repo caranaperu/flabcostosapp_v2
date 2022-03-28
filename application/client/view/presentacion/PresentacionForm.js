@@ -28,16 +28,16 @@ isc.WinPresentacionForm.addProperties({
             saveButton: this.getFormButton('save'),
             focusInEditFld: 'tpresentacion_descripcion',
             fields: [
-                {name: "tpresentacion_codigo",  type: "text", showPending: true, width: "75", mask: ">LLLLLLLLLL"},
-                {name: "tpresentacion_descripcion",  showPending: true, length: 60, width: "260"},
-                {name: "tpresentacion_cantidad_costo", showPending: true, width: '80',
+                {name: "tpresentacion_codigo",  type: "text", showPending: true, width: 75, mask: ">LLLLLLLLLL"},
+                {name: "tpresentacion_descripcion",  showPending: true, length: 60, width: 260},
+                {name: "tpresentacion_cantidad_costo", showPending: true, width: 80,
                     startRow: true
                 },
                 {
                     name: "unidad_medida_codigo_costo",
                     editorType: "comboBoxExt",
                     showPending: true,
-                    width: "120",
+                    width: 120,
                     valueField: "unidad_medida_codigo",
                     displayField: "unidad_medida_descripcion",
                     optionDataSource: mdl_unidadmedida,

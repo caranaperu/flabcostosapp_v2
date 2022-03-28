@@ -27,7 +27,7 @@ isc.WinTipoCambioForm.addProperties({
             addOperation:'readAfterSaveJoined',
             updateOperation:'readAfterUpdateJoined',
             fields: [
-                {name: "moneda_codigo_origen",  editorType: "comboBoxExt",showPending: true, width: "140",
+                {name: "moneda_codigo_origen",  editorType: "comboBoxExt",showPending: true, width: 140,
                     valueField: "moneda_codigo", displayField: "moneda_descripcion",
                     optionDataSource: mdl_moneda,
                     pickListFields: [{name: "moneda_codigo", width: '30%'}, {name: "moneda_descripcion", width: '70%'}],
@@ -37,7 +37,7 @@ isc.WinTipoCambioForm.addProperties({
                     // de lo contrario el sort se hace en el lado cliente.
                     initialSort: [{property: 'moneda_descripcion'}]
                 },
-                {name: "moneda_codigo_destino", editorType: "comboBoxExt",showPending: true, width: "140",
+                {name: "moneda_codigo_destino", editorType: "comboBoxExt",showPending: true, width: 140,
                     valueField: "moneda_codigo", displayField: "moneda_descripcion",
                     optionDataSource: mdl_moneda,
                     pickListFields: [{name: "moneda_codigo", width: '30%'}, {name: "moneda_descripcion", width: '70%'}],
@@ -69,8 +69,8 @@ isc.WinTipoCambioForm.addProperties({
                         }
                         return true;
                     }},
-                {name: "tipo_cambio_tasa_compra",  showPending: true,width:'80'},
-                {name: "tipo_cambio_tasa_venta",  showPending: true,width:'80'}
+                {name: "tipo_cambio_tasa_compra",  showPending: true,width:80},
+                {name: "tipo_cambio_tasa_venta",  showPending: true,width:80}
             ]
         });
     },

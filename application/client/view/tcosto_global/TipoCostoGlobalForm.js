@@ -22,10 +22,10 @@ isc.WinTipoCostoGlobalForm.addProperties({
             formMode: this.formMode, // parametro de inicializacion
             keyFields: ['tcosto_global_codigo'],
             saveButton: this.getFormButton('save'),
-            focusInEditFld: 'tcosto_global_simbolo',
+            focusInEditFld: 'tcosto_global_descripcion',
             fields: [
-                {name: "tcosto_global_codigo", type: "text", showPending: true, width: "90", mask: ">LLLLLLL"},
-                {name: "tcosto_global_descripcion", showPending: true, length: 120, width: "260"}
+                {name: "tcosto_global_codigo", type: "text", showPending: true, width: 90, mask: ">LLLLLLL"},
+                {name: "tcosto_global_descripcion", showPending: true, length: 120, width: 260}
             ],
             isAllowedToSave: function (values, oldValues) {
                 // Si el registro tienen flag de protegido no se permite la grabacacion desde el GUI.

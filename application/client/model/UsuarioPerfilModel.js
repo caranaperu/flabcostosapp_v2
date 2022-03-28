@@ -10,12 +10,10 @@
  * $Author: aranape $
  * $Date: 2014-01-11 04:42:27 -0500 (sáb, 11 ene 2014) $
  */
-isc.RestDataSource.create({
+isc.defineClass("RestDataSourceUsuarioPerfil", "RestDataSourceExt");
+
+isc.RestDataSourceUsuarioPerfil.create({
     ID: "mdl_usuario_perfil",
-    showPrompt: true,
-    dataFormat: "json",
-    jsonPrefix: '',
-    jsonSuffix: '',
     fields: [
         {name: "usuario_perfil_id", primaryKey: "true"},
         {name: "usuarios_id", required: true, hidden: true},
@@ -33,43 +31,5 @@ isc.RestDataSource.create({
         {operationType: "add", dataProtocol: "postParams"},
         {operationType: "update", dataProtocol: "postParams"},
         {operationType: "remove", dataProtocol: "postParams"}
-    ],
-    /**
-     * Normalizador de valores booleanos ya que el backend pude devolver de diversas formas
-     * segun la base de datos.
-     */
-    _getBooleanFieldValue: function(value) {
-        //  console.log(value);
-        if (value !== 't' && value !== 'T' && value !== 'Y' && value !== 'y' && value !== 'TRUE' && value !== 'true' && value !== true) {
-            return false;
-        } else {
-            return true;
-        }
-
-    },
-    /**
-     * Dado que cuando se esita en grilla no se pasan todos los valores
-     * y estos se conservan en _oldValues , copiamos todos los
-     * de oldValues a la data a transmitir siempre que oldvalues este
-     * este definida , lo cual sucede solo para el update.
-     */
-    transformRequest: function(dsRequest) {
-        var data = this.Super("transformRequest", arguments);
-        if (dsRequest.operationType == 'add' || dsRequest.operationType == 'update') {
-            //  var data = isc.addProperties({}, dsRequest.data);
-            // Solo para los valores que se encuentran en oldValues de no existir
-            // se deja como esta.
-            for (var fieldName in dsRequest.oldValues) {
-                if (data[fieldName] === undefined) {
-                    data[fieldName] = dsRequest.oldValues[fieldName];
-                }
-                else if (data[fieldName] === null) {
-                    data[fieldName] = '';
-                }
-            }
-            return data;
-        } else {
-            return data;
-        }
-    }
+    ]
 });

@@ -7,11 +7,10 @@
  * $Date: 2014-02-11 18:50:24 -0500 (mar, 11 feb 2014) $
  * $Rev: 6 $
  */
-isc.RestDataSource.create({
+isc.defineClass("RestDataSourceProceso", "RestDataSourceExt");
+
+isc.RestDataSourceProceso.create({
     ID: "mdl_proceso_costo",
-    dataFormat: "json",
-    jsonPrefix: '',
-    jsonSuffix: '',
     fields: [
         {name: "costos_list_descripcion", title: "Descripcion", required: true,
             validators: [{type: "regexp", expression: glb_RE_onlyValidText},{type: "lengthRange", max: 60}]

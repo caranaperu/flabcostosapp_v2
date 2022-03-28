@@ -1,5 +1,7 @@
 
-isc.RestDataSource.create({
+isc.defineClass("RestDataSourceProduccion", "RestDataSourceExt");
+
+isc.RestDataSourceProduccion.create({
     /**
      * Definicion del modelo para los ingresos produccion de los modos de aplicacion.
      *
@@ -10,10 +12,6 @@ isc.RestDataSource.create({
      * $Date: 2014-06-27 17:27:42 -0500 (vie, 27 jun 2014) $
      */
     ID: "mdl_produccion",
-    dataFormat: "json",
-    jsonPrefix: '',
-    jsonSuffix: '',
-    showPrompt: true,
     fields: [
         {
             name: "produccion_id",
@@ -75,33 +73,5 @@ isc.RestDataSource.create({
             operationType: "remove",
             dataProtocol: "postParams"
         }
-    ],
-    /**
-     * Caso especial para generar el JSON de un advanced criteria para ser pasada como parte del
-     * POST.
-     */
-    transformRequest: function(dsRequest) {
-        var data = this.Super("transformRequest", arguments);
-        // Si esxiste criteria y se define que proviene de un advanced filter y la operacion es fetch,
-        // construimos un objeto JSON serializado como texto para que el lado servidor lo interprete correctamente.
-        if (data.criteria && data._constructor == "AdvancedCriteria" && data._operationType == 'fetch') {
-            var advFilter = {};
-            advFilter.operator = data.operator;
-            advFilter.criteria = data.criteria;
-
-            // Borramos datos originales que no son necesario ya que  seran trasladados al objeto JSON
-            delete data.operator;
-            delete data.criteria;
-            delete data._constructor;
-
-            // Creamos el objeto json como string para pasarlo al rest
-            // finalmente se coloca como data del request para que siga su proceso estandard.
-            var jsonCriteria = isc.JSON.encode(advFilter, {prettyPrint: false});
-            if (jsonCriteria) {
-                //console.log(jsonCriteria);
-                data._acriteria = jsonCriteria;
-            }
-        }
-        return data;
-    }
+    ]
 });

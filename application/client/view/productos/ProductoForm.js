@@ -48,16 +48,17 @@ isc.WinProductoForm.addProperties({
                     name: "insumo_codigo",
                     type: "text",
                     showPending: true,
-                    width: "85",
+                    width: 85,
                     mask: ">LLLLLLLLLL"
                 },
                 {
                     name: "insumo_descripcion",
                     showPending: true,
                     length: 60,
-                    width: "220"
+                    width: 220
                 },
                 {name: "taplicacion_entries_id", editorType: "comboBoxExt",
+                    title: 'Tipo Aplicacion',
                     length: 50, width: 180,
                     showPending: true,
                     displayField: "taplicacion_entries_descripcion",
@@ -69,24 +70,24 @@ isc.WinProductoForm.addProperties({
                     pickListWidth: 240,
                     optionOperationId: 'fetchForPick',
                     optionDataSource: mdl_taplicacion_entries,
-                    title: 'Tipo Aplicacion'
+                    optionCriteria: {},
                 },
                 {
                     name: "tpresentacion_codigo",
                     editorType: "comboBoxExt",
                     showPending: true,
-                    width: "250",
+                    width: 250,
                     valueField: "tpresentacion_codigo",
                     displayField: "tpresentacion_descripcion",
                     optionDataSource: mdl_presentacion,
                     pickListFields: [{
                         name: "tpresentacion_codigo",
-                        width: '20%'
+                        width: '25%'
                     }, {
                         name: "tpresentacion_descripcion",
-                        width: '80%'
+                        width: '75%'
                     }],
-                    pickListWidth: 260,
+                    pickListWidth: 300,
                     completeOnTab: true,
                     // Solo es pasado al servidor si no existe cache data all en el modelo
                     // de lo contrario el sort se hace en el lado cliente.
@@ -95,7 +96,7 @@ isc.WinProductoForm.addProperties({
                 {
                     name: "insumo_merma",
                     showPending: true,
-                    width: '80',
+                    width: 80,
                     startRow: true
                 },
                 {
@@ -112,7 +113,7 @@ isc.WinProductoForm.addProperties({
                     name: "moneda_codigo_costo",
                     editorType: "comboBoxExt",
                     showPending: true,
-                    width: "140",
+                    width: 140,
                     valueField: "moneda_codigo",
                     displayField: "moneda_descripcion",
                     optionDataSource: mdl_moneda,
@@ -130,7 +131,7 @@ isc.WinProductoForm.addProperties({
                     initialSort: [{property: 'moneda_descripcion'}],
                     startRow: true
                 },
-                {name: "insumo_precio_mercado", showPending: true, width: '80'
+                {name: "insumo_precio_mercado", showPending: true, width: 80
                  //   visibleWhen: {tcostos_indirecto: false}
                 }
             ]
@@ -264,6 +265,7 @@ isc.WinProductoForm.addProperties({
                                 displayField: "insumo_descripcion",
                                 optionDataSource: mdl_insumo_producto_detalle,
                                 optionOperationId: 'fetchForProductoDetalle',
+                                optionCriteria: {},
                                 pickListFields: [
                                     {
                                         name: "insumo_codigo",
@@ -335,7 +337,7 @@ isc.WinProductoForm.addProperties({
                                 name: "unidad_medida_codigo",
                                 editorType: "comboBoxExt",
                                 showPending: true,
-                                width: "120",
+                                width: 120,
                                 valueField: "unidad_medida_codigo",
                                 displayField: "unidad_medida_descripcion",
                                 optionDataSource: mdl_unidadmedida,
@@ -356,13 +358,13 @@ isc.WinProductoForm.addProperties({
                             {
                                 name: "producto_detalle_cantidad",
                                 showPending: true,
-                                width: '80',
+                                width: 80,
                                 startRow: true
                             },
                             {
                                 name: "producto_detalle_valor",
                                 showPending: true,
-                                width: '80',
+                                width: 80,
                                 canEdit: false,
                                 // Override para cambiar el tipo de moneda al titulo del campo
                                 // de acuerdo a la moneda de costo del insumo.
@@ -378,7 +380,7 @@ isc.WinProductoForm.addProperties({
                             {
                                 name: "producto_detalle_merma",
                                 showPending: true,
-                                width: '80',
+                                width: 80,
                                 visibleWhen: {tcostos_indirecto: false}
                             },
                             {
@@ -392,18 +394,18 @@ isc.WinProductoForm.addProperties({
                          *
                          * @param {string} mode 'add' o 'edit'
                          */
-                        setEditMode: function(mode) {
+                        /*setEditMode: function(mode) {
                             this.Super("setEditMode", arguments);
                             if (mode == 'add') {
                                 //  this.getItem('producto_detalle_valor').setCanEdit(false);
                             }
-                        },
-                        editSelectedData: function(component) {
+                        },*/
+                        /*editSelectedData: function(component) {
                             this.Super("editSelectedData", arguments);
                             //  var record = component.getSelectedRecord();
                             //  this.getItem('producto_detalle_valor').setCanEdit(record.tcostos_indirecto);
 
-                        },
+                        },*/
                         // Luego de agregarse un item debemos encender el flag _canFetchInsumos a true ya que la siguiente
                         // vez que se pique un insumoproducto a agregarse como item hay que releer ya que no queremos que
                         // se muestre el recien agregado, Recordar que en modo add esta forma no se cierra en el modo

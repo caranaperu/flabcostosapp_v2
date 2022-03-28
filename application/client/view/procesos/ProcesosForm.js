@@ -25,8 +25,8 @@ isc.WinProcesosForm.addProperties({
             saveButton: this.getFormButton('save'),
             focusInEditFld: 'procesos_descripcion',
             fields: [
-                {name: "procesos_codigo", type: "text", showPending: true, width: "90", mask: ">LLLLLLLL"},
-                {name: "procesos_descripcion", showPending: true, length: 120, width: "260"}
+                {name: "procesos_codigo", type: "text", showPending: true, width: 90, mask: ">LLLLLLLL"},
+                {name: "procesos_descripcion", showPending: true, length: 120, width: 260}
             ]
         });
     },

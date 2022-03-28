@@ -9,12 +9,10 @@
  * $Author: aranape $
  * $Date: 2014-06-27 17:27:42 -0500 (vie, 27 jun 2014) $
  */
-isc.RestDataSource.create({
+isc.defineClass("RestDataSourceInsumoProductoDetalle", "RestDataSourceExt");
+
+isc.RestDataSourceInsumoProductoDetalle.create({
     ID: "mdl_insumo_producto_detalle",
-    dataFormat: "json",
-    jsonPrefix: '',
-    jsonSuffix: '',
-    showPrompt: true,
     fields: [
         {
             name: "insumo_id",
@@ -44,18 +42,6 @@ isc.RestDataSource.create({
             required: true
         }
     ],
-    /**
-     * Normalizador de valores booleanos ya que el backend pude devolver de diversas formas
-     * segun la base de datos.
-     */
-    _getBooleanFieldValue: function(value) {
-        if (value !== 't' && value !== 'T' && value !== 'Y' && value !== 'y' && value !== 'TRUE' && value !== 'true' && value !== true) {
-            return false;
-        } else {
-            return true;
-        }
-
-    },
     fetchDataURL: glb_dataUrl + 'insumoController?op=fetch&libid=SmartClient',
     operationBindings: [
         {

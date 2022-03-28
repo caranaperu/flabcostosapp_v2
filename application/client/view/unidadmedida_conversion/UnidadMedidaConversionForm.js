@@ -28,7 +28,7 @@ isc.WinUMConversionForm.addProperties({
             addOperation:'readAfterSaveJoined',
             updateOperation:'readAfterUpdateJoined',
             fields: [
-                {name: "unidad_medida_origen",  editorType: "comboBoxExt",showPending: true, width: "120",
+                {name: "unidad_medida_origen",  editorType: "comboBoxExt",showPending: true, width: 120,
                     valueField: "unidad_medida_codigo", displayField: "unidad_medida_descripcion",
                     optionDataSource: mdl_unidadmedida,
                     pickListFields: [{name: "unidad_medida_codigo", width: '30%'}, {name: "unidad_medida_descripcion", width: '70%'}],
@@ -38,7 +38,7 @@ isc.WinUMConversionForm.addProperties({
                     // de lo contrario el sort se hace en el lado cliente.
                     initialSort: [{property: 'unidad_medida_descripcion'}]
                 },
-                {name: "unidad_medida_destino", editorType: "comboBoxExt",showPending: true, width: "120",
+                {name: "unidad_medida_destino", editorType: "comboBoxExt",showPending: true, width: 120,
                     valueField: "unidad_medida_codigo", displayField: "unidad_medida_descripcion",
                     optionDataSource: mdl_unidadmedida,
                     pickListFields: [{name: "unidad_medida_codigo", width: '30%'}, {name: "unidad_medida_descripcion", width: '70%'}],
@@ -48,7 +48,7 @@ isc.WinUMConversionForm.addProperties({
                     // de lo contrario el sort se hace en el lado cliente.
                     initialSort: [{property: 'unidad_medida_descripcion'}]
                 },
-                {name: "unidad_medida_conversion_factor",  showPending: true,width:'80'}
+                {name: "unidad_medida_conversion_factor",  showPending: true,width:80}
             ]
         });
     },

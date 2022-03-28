@@ -26,10 +26,10 @@ isc.WinUnidadMedidaForm.addProperties({
             saveButton: this.getFormButton('save'),
             focusInEditFld: 'unidad_medida_siglas',
             fields: [
-                {name: "unidad_medida_codigo", type: "text", showPending: true, width: "90", mask: ">LLLLLLL"},
-                {name: "unidad_medida_siglas",  showPending: true, length: 6, width: "260"},
-                {name: "unidad_medida_descripcion",  showPending: true, length: 120, width: "260"},
-                {name: "unidad_medida_tipo", showPending: true, length: 1, width: "85"},
+                {name: "unidad_medida_codigo", type: "text", showPending: true, width: 90, mask: ">LLLLLLL"},
+                {name: "unidad_medida_siglas",  showPending: true, length: 6, width: 260},
+                {name: "unidad_medida_descripcion",  showPending: true, length: 120, width: 260},
+                {name: "unidad_medida_tipo", showPending: true, length: 1, width: 85},
                 {name: "unidad_medida_protected", hidden: true,defaultValue: false},
                 {name: "unidad_medida_default", showPending: true,defaultValue: false}
             ],

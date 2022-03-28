@@ -5,11 +5,10 @@
  * @since 1.00
  * $Author: aranape $
  */
-isc.RestDataSource.create({
+isc.defineClass("RestDataSourcePresentacion", "RestDataSourceExt");
+
+isc.RestDataSourcePresentacion.create({
     ID: "mdl_presentacion",
-    dataFormat: "json",
-    jsonPrefix: '',
-    jsonSuffix: '',
    // cacheAllData: true, // Son datos pequeños hay que evitar releer
     fields: [
         {name: "tpresentacion_codigo", title: "Codigo", primaryKey: "true", required: true},
@@ -44,19 +43,6 @@ isc.RestDataSource.create({
             title: "Unidad Costo"
         }
     ],
-    /**
-     * Normalizador de valores booleanos ya que el backend pude devolver de diversas formas
-     * segun la base de datos.
-     */
-    _getBooleanFieldValue: function(value) {
-        //  console.log(value);
-        if (value !== 't' && value !== 'T' && value !== 'Y' && value !== 'y' && value !== 'TRUE' && value !== 'true' && value !== true) {
-            return false;
-        } else {
-            return true;
-        }
-
-    },
     fetchDataURL: glb_dataUrl + 'presentacionController?op=fetch&libid=SmartClient',
     addDataURL: glb_dataUrl + 'presentacionController?op=add&libid=SmartClient',
     updateDataURL: glb_dataUrl + 'presentacionController?op=upd&libid=SmartClient',

@@ -6,12 +6,10 @@
  * $Author: aranape $
  * $Date: 2014-06-24 04:42:57 -0500 (mar, 24 jun 2014) $
  */
-isc.RestDataSource.create({
+isc.defineClass("RestDataSourceUnidadMedidaConversion", "RestDataSourceExt");
+
+isc.RestDataSourceUnidadMedidaConversion.create({
     ID: "mdl_umconversion",
-    showPrompt: true,
-    dataFormat: "json",
-    jsonPrefix: '',
-    jsonSuffix: '',
     fields: [
         {name: "unidad_medida_conversion_id", primaryKey: "true", required: true},
         {name: "unidad_medida_origen", title:'U.M Origen',foreignKey: "mdl_unidadmedida.unidad_medida_codigo", required: true},

@@ -55,7 +55,7 @@ isc.InsumoUsedByForm.addProperties({
             alternateRecordStyles: true,
             dataPageSize: 25,
             canReorderFields: false,
-            showFilterEditor: true,
+            showFilterEditor: false,
             gridComponents: ["header",  "body",
                              isc.ToolStrip.create({
                                  width: "100%", height: 24,

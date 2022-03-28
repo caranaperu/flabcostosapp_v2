@@ -7,11 +7,10 @@
  * $Date: 2014-02-11 18:50:24 -0500 (mar, 11 feb 2014) $
  * $Rev: 6 $
  */
-isc.RestDataSource.create({
+isc.defineClass("RestDataSourceEmpresa", "RestDataSourceExt");
+
+isc.RestDataSourceEmpresa.create({
     ID: "mdl_empresa",
-    dataFormat: "json",
-    jsonPrefix: '',
-    jsonSuffix: '',
     disableQueuing: true,
     fields: [
         {name: "empresa_id", title: "id", canEdit: "false", primaryKey: true,required: false},

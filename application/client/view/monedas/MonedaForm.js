@@ -26,9 +26,9 @@ isc.WinMonedaForm.addProperties({
             saveButton: this.getFormButton('save'),
             focusInEditFld: 'moneda_simbolo',
             fields: [
-                {name: "moneda_codigo", type: "text", showPending: true, width: "90", mask: ">LLLLLLL"},
-                {name: "moneda_simbolo", showPending: true, length: 6, width: "260"},
-                {name: "moneda_descripcion", showPending: true, length: 120, width: "260"}
+                {name: "moneda_codigo", type: "text", showPending: true, width: 90, mask: ">LLLLLLL"},
+                {name: "moneda_simbolo", showPending: true, length: 6, width: 260},
+                {name: "moneda_descripcion", showPending: true, length: 120, width: 260}
             ],
             isAllowedToSave: function (values, oldValues) {
                 // Si el registro tienen flag de protegido no se permite la grabacacion desde el GUI.

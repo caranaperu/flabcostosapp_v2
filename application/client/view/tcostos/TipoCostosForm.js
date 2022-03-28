@@ -26,8 +26,8 @@ isc.WinTipoCostosForm.addProperties({
             saveButton: this.getFormButton('save'),
             focusInEditFld: 'tcostos_descripcion',
             fields: [
-                {name: "tcostos_codigo",  type: "text", showPending: true, width: "75", mask: ">LLLL"},
-                {name: "tcostos_descripcion",  showPending: true, length: 60, width: "260"},
+                {name: "tcostos_codigo",  type: "text", showPending: true, width: 75, mask: ">LLLL"},
+                {name: "tcostos_descripcion",  showPending: true, length: 60, width: 260},
                 {name: "tcostos_indirecto",showPending: true,defaultValue: false},
                 {name: "tcostos_protected", hidden:true,defaultValue: false}
             ],

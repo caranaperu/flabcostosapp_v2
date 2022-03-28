@@ -1,4 +1,6 @@
-isc.RestDataSource.create({
+isc.defineClass("RestDataSourceTipoAplicacionEntries", "RestDataSourceExt");
+
+isc.RestDataSourceTipoAplicacionEntries.create({
     /**
      * Definicion del modelo para los ingresos de cada entrada de valor para cada tipo de costo global valido
      * desde una determinada fecha.

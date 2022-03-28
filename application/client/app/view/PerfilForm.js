@@ -14,7 +14,7 @@ isc.WinPerfilForm.addProperties({
     ID: "winPerfilForm",
     title: "Mantenimiento de Perfiles",
     joinKeyFields: [{fieldName: 'perfil_id', fieldValue: ''}],
-    width: 575,
+    width: 600,
     height: 210,
     createForm: function (formMode) {
 
@@ -46,8 +46,8 @@ isc.WinPerfilForm.addProperties({
                         formPerfiles.setValue("prm_copyFromPerfil", undefined);
                     }
                 },
-                {name: "perfil_codigo", type: "text", width: "120", mask: ">AAAAAAAAAAAAAA", showPending: true},
-                {name: "perfil_descripcion", length: 120, width: '400', showPending: true},
+                {name: "perfil_codigo", type: "text", width: 120, mask: ">AAAAAAAAAAAAAA", showPending: true},
+                {name: "perfil_descripcion", length: 120, width: 400, showPending: true},
                 // Sera tratado como una sub operacion en el backend
                 {
                     name: "prm_copyFromPerfil",
@@ -89,7 +89,7 @@ isc.WinPerfilForm.addProperties({
     },
     createDetailGridContainer: function (mode) {
         return isc.DetailGridContainer.create({
-            width: 550,
+            width: 575,
             height: 350,
             sectionTitle: 'Permisos',
             gridProperties: {

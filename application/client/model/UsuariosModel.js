@@ -10,10 +10,6 @@ isc.defineClass("RestDataSourceUsuarios", "RestDataSourceExt");
 
 isc.RestDataSourceUsuarios.create({
     ID: "mdl_usuarios",
-    dataFormat: "json",
-    jsonPrefix: '',
-    jsonSuffix: '',
-    showPrompt: true,
     fields: [
         {name: "usuarios_id", primaryKey: "true"},
         {name: "usuarios_code", title: 'Codigo', required: true, validators: [{type: "regexp", expression: glb_RE_alpha_dash}]},

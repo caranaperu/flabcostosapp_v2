@@ -10,10 +10,6 @@ isc.defineClass("RestDataSourceTipoCambio", "RestDataSourceExt");
 
 isc.RestDataSourceTipoCambio.create({
     ID: "mdl_tipocambio",
-    showPrompt: true,
-    dataFormat: "json",
-    jsonPrefix: '',
-    jsonSuffix: '',
     fields: [
         {name: "tipo_cambio_id", primaryKey: "true", required: true},
         {name: "moneda_codigo_origen", title:'Moneda Origen',foreignKey: "mdl_moneda.moneda_codigo", required: true},

@@ -7,12 +7,10 @@
  * $Author: aranape $
  * $Date: 2014-06-24 04:42:57 -0500 (mar, 24 jun 2014) $
  */
-isc.RestDataSource.create({
+isc.defineClass("RestDataSourceProductoCostosHistorico", "RestDataSourceExt");
+
+isc.RestDataSourceProductoCostosHistorico.create({
     ID: "mdl_producto_costos_historico",
-    showPrompt: true,
-    dataFormat: "json",
-    jsonPrefix: '',
-    jsonSuffix: '',
    // dropExtraFields: true,
     fields: [
         {name: "costos_list_detalle_id", primaryKey: "true", required: true},

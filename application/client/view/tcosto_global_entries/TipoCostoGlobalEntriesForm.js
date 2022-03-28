@@ -23,7 +23,7 @@ isc.WinTipoCostoGlobalEntriesForm.addProperties({
             dataSource: mdl_tcosto_global_entries,
             formMode: this.formMode, // parametro de inicializacion
             saveButton: this.getFormButton('save'),
-            focusInEditFld: 'tcosto_global_entries_fecha',
+            focusInEditFld: 'tcosto_global_entries_fecha_desde',
             addOperation: 'readAfterSaveJoined',
             updateOperation: 'readAfterUpdateJoined',
          //   disableValidation: true,
@@ -37,7 +37,7 @@ isc.WinTipoCostoGlobalEntriesForm.addProperties({
                     showPending: true,
                     useTextField: true,
                     showPickerIcon: true,
-                    width: "100"
+                    width: 100
                 },
                 {
                     name: "tcosto_global_codigo",
@@ -62,7 +62,7 @@ isc.WinTipoCostoGlobalEntriesForm.addProperties({
                     pickListWidth: 350,
                     completeOnTab: true
                 },
-                {name: "moneda_codigo",  editorType: "comboBoxExt",showPending: true, width: "140",
+                {name: "moneda_codigo",  editorType: "comboBoxExt",showPending: true, width: 140,
                     valueField: "moneda_codigo", displayField: "moneda_descripcion",
                     optionDataSource: mdl_moneda,
                     pickListFields: [{name: "moneda_codigo", width: '30%'}, {name: "moneda_descripcion", width: '70%'}],
@@ -75,7 +75,7 @@ isc.WinTipoCostoGlobalEntriesForm.addProperties({
                 {
                     name: "tcosto_global_entries_valor",
                     showPending: true,
-                    width: "85"
+                    width: 85
                 }
             ]
         });

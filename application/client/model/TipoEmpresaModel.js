@@ -6,11 +6,10 @@
  * $Author: aranape $
  * $Date: 2014-04-06 19:53:42 -0500 (dom, 06 abr 2014) $
  */
-isc.RestDataSource.create({
+isc.defineClass("RestDataSourceTipoEmpresa", "RestDataSourceExt");
+
+isc.RestDataSourceTipoEmpresa.create({
     ID: "mdl_tipoempresa",
-    dataFormat: "json",
-    jsonPrefix: '',
-    jsonSuffix: '',
     cacheAllData: true, // Son datos pequeños hay que evitar releer
     fields: [
         {name: "tipo_empresa_codigo", title: 'Codigo', primaryKey: "true", required: true},

@@ -11,10 +11,6 @@ isc.defineClass("RestDataSourceProductoProcesos", "RestDataSourceExt");
 
 isc.RestDataSourceProductoProcesos.create({
     ID: "mdl_producto_procesos",
-    showPrompt: true,
-    dataFormat: "json",
-    jsonPrefix: '',
-    jsonSuffix: '',
     fields: [
         {name: "producto_procesos_id", primaryKey: "true", required: true},
         {name: "insumo_id",title: 'Producto',foreignKey: "mdl_insumo.insumo_id", required: true},

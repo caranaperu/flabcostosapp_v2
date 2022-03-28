@@ -30,13 +30,13 @@ isc.WinTipoAplicacionForm.addProperties({
             formMode: this.formMode, // parametro de inicializacion
             keyFields: ['taplicacion_codigo'],
             saveButton: this.getFormButton('save'),
-            focusInEditFld: 'taplicacion',
+            focusInEditFld: 'taplicacion_descripcion',
             addOperation: 'readAfterSaveJoined',
             updateOperation: 'readAfterUpdateJoined',
             disableValidation: true,
             fields: [
-                {name: "taplicacion_codigo", type: "text", showPending: true, width: "85", mask: ">LLLLLLLLLL"},
-                {name: "taplicacion_descripcion", showPending: true, length: 60, width: "220"},
+                {name: "taplicacion_codigo", type: "text", showPending: true, width: 85, mask: ">LLLLLLLLLL"},
+                {name: "taplicacion_descripcion", showPending: true, length: 60, width: 220},
             ]
         });
     },
@@ -98,7 +98,7 @@ isc.WinTipoAplicacionForm.addProperties({
                                 name: "taplicacion_codigo",
                                 hidden: true
                             },
-                            {name: "taplicacion_entries_descripcion", showPending: true, length: 60, width: "500"}
+                            {name: "taplicacion_entries_descripcion", showPending: true, length: 60, width: 500}
                         ]
                     });
                 } else {

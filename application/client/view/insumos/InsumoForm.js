@@ -29,10 +29,10 @@ isc.WinInsumoForm.addProperties({
             updateOperation: 'readAfterUpdateJoined',
             fields: [
                 {name: "insumo_tipo", defaultValue:"IN", hidden: true},
-                {name: "insumo_codigo", type: "text", showPending: true, width: "85", mask: ">LLLLLLLLLL"},
-                {name: "insumo_descripcion", showPending: true, length: 60, width: "220"},
+                {name: "insumo_codigo", type: "text", showPending: true, width: 85, mask: ">LLLLLLLLLL"},
+                {name: "insumo_descripcion", showPending: true, length: 60, width: 220},
                 {
-                    name: "tinsumo_codigo", editorType: "comboBoxExt", showPending: true, width: "135",
+                    name: "tinsumo_codigo", editorType: "comboBoxExt", showPending: true, width: 150,
                     valueField: "tinsumo_codigo", displayField: "tinsumo_descripcion",
                     optionDataSource: mdl_tinsumo,
                     pickListFields: [{name: "tinsumo_codigo", width: '30%'}, {
@@ -46,7 +46,7 @@ isc.WinInsumoForm.addProperties({
                     initialSort: [{property: 'insumo_descripcion'}]
                 },
                 {
-                    name: "tcostos_codigo", editorType: "comboBoxExt", showPending: true, width: "120",
+                    name: "tcostos_codigo", editorType: "comboBoxExt", showPending: true, width: 150,
                     valueField: "tcostos_codigo", displayField: "tcostos_descripcion",
                     optionDataSource: mdl_tcostos,
                     pickListFields: [{name: "tcostos_codigo", width: '30%'}, {
@@ -76,7 +76,7 @@ isc.WinInsumoForm.addProperties({
                     }
                 },
                 {
-                    name: "unidad_medida_codigo_ingreso", editorType: "comboBoxExt", showPending: true, width: "120",
+                    name: "unidad_medida_codigo_ingreso", editorType: "comboBoxExt", showPending: true, width: 120,
                     valueField: "unidad_medida_codigo", displayField: "unidad_medida_descripcion",
                     optionDataSource: mdl_unidadmedida,
                     pickListFields: [{name: "unidad_medida_codigo", width: '30%'}, {
@@ -90,7 +90,7 @@ isc.WinInsumoForm.addProperties({
                     initialSort: [{property: 'unidad_medida_descripcion'}],
                     visibleWhen: {tcostos_indirecto: false}
                 },
-                {name: "insumo_merma", showPending: true, width: '80',
+                {name: "insumo_merma", showPending: true, width: 80,
                     visibleWhen: {tcostos_indirecto: false}
                 },
                 {
@@ -105,7 +105,7 @@ isc.WinInsumoForm.addProperties({
                     itemIds: ["unidad_medida_codigo_costo","insumo_costo"]
                 },
                 {
-                    name: "unidad_medida_codigo_costo", editorType: "comboBoxExt", showPending: true, width: "120",
+                    name: "unidad_medida_codigo_costo", editorType: "comboBoxExt", showPending: true, width: 120,
                     valueField: "unidad_medida_codigo", displayField: "unidad_medida_descripcion",
                     optionDataSource: mdl_unidadmedida,
                     pickListFields: [{name: "unidad_medida_codigo", width: '30%'}, {
@@ -119,7 +119,7 @@ isc.WinInsumoForm.addProperties({
                     initialSort: [{property: 'unidad_medida_descripcion'}],
                     startRow: true
                 },
-                {name: "moneda_codigo_costo",  editorType: "comboBoxExt",showPending: true, width: "140",
+                {name: "moneda_codigo_costo",  editorType: "comboBoxExt",showPending: true, width: 140,
                     valueField: "moneda_codigo", displayField: "moneda_descripcion",
                     optionDataSource: mdl_moneda,
                     pickListFields: [{name: "moneda_codigo", width: '30%'}, {name: "moneda_descripcion", width: '70%'}],
@@ -129,8 +129,8 @@ isc.WinInsumoForm.addProperties({
                     // de lo contrario el sort se hace en el lado cliente.
                     initialSort: [{property: 'moneda_descripcion'}]
                 },
-                {name: "insumo_costo", showPending: true, width: '80'},
-                {name: "insumo_precio_mercado", showPending: true, width: '80',
+                {name: "insumo_costo", showPending: true, width: 80},
+                {name: "insumo_precio_mercado", showPending: true, width: 80,
                     visibleWhen: {tcostos_indirecto: false}
                 },
                 {name: "tcostos_indirecto", hidden:true}
